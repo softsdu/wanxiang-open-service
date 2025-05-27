@@ -37,4 +37,5 @@
 ![展示截图4](/images/展示4.png)
 
 # 三、开发环境搭建
-暂无
+1. 项目资源文件下载地址（百度网盘）：https://pan.baidu.com/s/1vjc2FMnjZZQFCTIUsPjidw?dp-logid=76942200897556390002&pwd=wn4n
+2. 本地开发环境搭建步骤（待完善） 
