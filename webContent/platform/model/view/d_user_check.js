@@ -1,0 +1,40 @@
+viewModels.d_user_check = {
+  id:"e161248d-2212-481f-9385-6c7219f91ed1",
+  name:"d_user_check",
+  dataName:"d_User",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"statustext", label:"状态", width:80, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"orgname", label:"企业名称", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"code", label:"账号", width:90, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"name", label:"姓名", width:90, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"mobilenum", label:"联系电话", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"email", label:"邮箱", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"province", label:"注册所在省", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"city", label:"注册所在市", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"county", label:"注册所在区", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"activecode", label:"激活码", width:60, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"regtime", label:"注册时间", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"usertype", label:"用户类型", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"status", label:"状态", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"county_xid", label:"注册区县XID", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"statustext", label:"状态", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"orgname", label:"企业名称", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"code", label:"账号", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"name", label:"姓名", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"mobilenum", label:"联系电话", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"email", label:"邮箱", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"province", label:"注册所在省", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"city", label:"注册所在市", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"county", label:"注册所在区", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"activecode", label:"激活码", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"regtime", label:"注册时间", editable:false,nullable:false, hidden:false, dispunitType:"time", },
+    {name:"usertype", label:"用户类型", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"status", label:"状态", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"county_xid", label:"注册区县XID", editable:false,nullable:false, hidden:true, dispunitType:"text", }
+  ]
+}

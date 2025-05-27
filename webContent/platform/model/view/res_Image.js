@@ -1,0 +1,26 @@
+viewModels.res_Image = {
+  id:"539eaa09-bfb1-4656-85dd-e78681b09643",
+  name:"res_Image",
+  dataName:"res_Image",
+  title:"图片资产",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:30, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, align:'center', edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"name", label:"名称", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"accessoryid", label:"附件ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"companyid", label:"所属公司ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createusername", label:"创建人", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"createuser_xid", label:"创建人id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:true, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"ncpRowOperate", label:"操作", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:false, canEdit:false, nullable:true, align:'center'}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"name", label:"名称", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"accessoryid", label:"附件ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"companyid", label:"所属公司ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"createusername", label:"创建人", editable:false,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"createuser_xid", label:"创建人id", editable:false,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"createtime", label:"创建时间", editable:false,nullable:true, hidden:false, dispunitType:"time", }
+  ]
+}

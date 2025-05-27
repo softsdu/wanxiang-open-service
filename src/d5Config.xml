@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"> 
+
+	<!-- 图片 --> 
+	<bean id="cms_Image" class="com.zlp.cms.page.Cms_ImageImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean> 
+	<bean id="cmsImageServiceBean" class="com.zlp.cms.service.ImageService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="imageProcessor" ref="cmsImageProcessor" />		 
+	</bean> 
+	<bean id="cmsImageProcessor" class="com.zlp.cms.processor.ImageProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="onePageImageCount" value="20" />
+	</bean>
+	
+	<!-- 视频 --> 
+	<bean id="cms_Video" class="com.zlp.cms.page.Cms_VideoImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean> 
+	<bean id="cmsVideoServiceBean" class="com.zlp.cms.service.VideoService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="videoProcessor" ref="cmsVideoProcessor" />		 
+	</bean> 
+	<bean id="cmsVideoProcessor" class="com.zlp.cms.processor.VideoProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="onePageVideoCount" value="20" />
+	</bean>
+	
+	<!-- 音频 --> 
+	<bean id="cms_Audio" class="com.zlp.cms.page.Cms_AudioImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean> 
+	<bean id="cmsAudioServiceBean" class="com.zlp.cms.service.AudioService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="audioProcessor" ref="cmsAudioProcessor" />		 
+	</bean> 
+	<bean id="cmsAudioProcessor" class="com.zlp.cms.processor.AudioProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="onePageAudioCount" value="20" />
+	</bean>
+	
+	<!-- 文字 --> 
+	<bean id="cms_TextImage" class="com.zlp.cms.page.Cms_TextImageImpl" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property>
+        <property name="hasIsDeletedMark" value="true"></property>
+	</bean> 
+	
+	<!-- 外部资源 --> 
+	<bean id="resourceFileServiceBean" class="com.zlp.external.service.ResourceFileService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="resourceFileProcessor" ref="resourceFileProcessor" />		 
+	</bean> 
+	<bean id="resourceFileProcessor" class="com.zlp.external.processor.ResourceFileProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" /> 
+		<property name="fileOperate" ref="fileOperate" /> 
+	</bean>
+
+	<!-- 外部资源-Gltf -->
+	<bean id="gltfZipServiceBean" class="com.zlp.external.resource.gltfZip.service.GltfZipService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="resourceFileProcessor" ref="gltfZipProcessor" />
+	</bean>
+	<bean id="gltfZipProcessor" class="com.zlp.external.resource.gltfZip.processor.GltfZipProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="fileOperate" ref="fileOperate" />
+	</bean>
+	<bean id="res_Gltf" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- 外部资源Fbx-->
+	<bean id="fbxZipServiceBean" class="com.zlp.external.resource.fbxZip.service.FbxZipService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="resourceFileProcessor" ref="fbxZipProcessor" />
+		<property name="s3dComponentLocalProcessor" ref="s3dComponentLocalProcessor" />
+		<property name="s3dComponentProcessor" ref="s3dComponentProcessor" />
+	</bean>
+	<bean id="fbxZipProcessor" class="com.zlp.external.resource.fbxZip.processor.FbxZipProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="fileOperate" ref="fileOperate" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+		<property name="defaultFilterType" value="s3dComponentLocalFbx" />
+	</bean>
+	<bean id="res_Fbx" class="com.zlp.external.resource.impl.Res_FbxImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>
+
+	<!-- 外部资源Image-->
+	<bean id="resImageServiceBean" class="com.zlp.external.resource.image.service.ImageService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="imageProcessor" ref="resImageProcessor" />
+	</bean>
+	<bean id="resImageProcessor" class="com.zlp.external.resource.image.processor.ImageProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="sequenceGenerator" ref="sequenceGenerator" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="onePageImageCount" value="20" />
+		<property name="defaultFilterType" value="s3dImage" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+	</bean>
+	<bean id="res_Image" class="com.zlp.external.resource.impl.Res_ImageImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="imageProcessor" ref="resImageProcessor" />
+	</bean>
+
+	<!-- 天空  added by ls 20250125 	-->
+	<bean id="res_Sky" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<bean id="materialServiceBean" class="com.zlp.mdl.service.MaterialService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="materialProcessor" ref="materialProcessor" />
+	</bean>
+	<bean id="materialProcessor" class="com.zlp.mdl.processor.MaterialProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="standardFileModulePath" value="${file.dir}mdl/js3StandardMaterials.js" />
+		<property name="outputDirPath" value="design/common/js/" />
+		<property name="imageDirPath" value="design/common/img/material/" />
+		<property name="redisSessionCacheClient" ref="redisSessionCacheClient" />
+	</bean> 
+
+	 <!-- 图片处理 -->
+	<bean id="pictureProcessor" class="com.zlp.mdl.processor.PictureProcessor" scope="prototype">  
+		<property name="pictureDirPath" value="${file.dir}pictures" />
+	</bean>	
+
+	<bean id="mdlComponentProcessor" class="com.zlp.mdl.processor.MdlComponentProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="accessoryDao" ref="accessoryDao" /> 
+		<property name="imageProcessor" ref="cmsImageProcessor" />	
+		<property name="filterType" value="mdlComponent" />	
+		<property name="normalComponentFilePath" value="${file.dir}mdl/normal.component" />
+		<property name="exportDir" value="/web/design/export" />
+		
+		<!-- Redis客户端 added by ls 20220913 -->
+        <property name="redisSessionCacheClient" ref="redisSessionCacheClient"></property>
+        <!-- 模型缓存前缀 added by ls 20220913 -->
+        <property name="mdlComponentCacheKeyPrefix" value="MdlComponent_"></property>
+	</bean>
+
+	<!-- 图元类型属性 added by ls 20210823 -->
+	<bean id="cat_CategoryProperty" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property> 
+        <property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- 元数据查询  added by yay 20221107 -->
+	<bean id="mdl_extendmaterial" class="com.zlp.mdl.dao.Mdl_ExtendMaterialDataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>
+	
+	<!-- 记录更新的日志的相关功能 added by ls 20230518 -->
+	<bean id="log_SystemUpdate" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property> 
+        <property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+	<bean id="log_ModelUpdate" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property> 
+        <property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+		
+	<!-- 构件关系 added by ls 20230731 -->
+	<bean id="mdl_MapCom" class="com.zlp.mdl.dao.Mdl_MapComImpl" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property>
+        <property name="hasIsDeletedMark" value="true"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+		
+	<!-- 构件参数分类关系 added by ls 20230731 -->
+	<bean id="mdl_PropertyCategory" class="com.zlp.mdl.dao.Mdl_PropertyCategoryImpl" scope="prototype" parent="dataBaseDao">
+        <property name="autoAssignFieldValueBeforeSave" value="false"></property>
+        <property name="hasIsDeletedMark" value="false"></property>
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+</beans>

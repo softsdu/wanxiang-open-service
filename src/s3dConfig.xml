@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- s3d模型服务 added by ls 20240105 -->
+	<bean id="s3dModelServiceBean" class="com.zlp.s3d.service.S3dModelService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="mdlComponentProcessor" ref="mdlComponentProcessor" />
+		<property name="s3dModelProcessor" ref="s3dModelProcessor" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+	</bean>
+
+	<!-- s3d发布服务 added by ls 20240105 -->
+	<bean id="s3dPublishServiceBean" class="com.zlp.s3d.service.S3dPublishService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dPublishProcessor" ref="s3dPublishProcessor" />
+	</bean>
+
+	<!-- s3d天空服务 added by ls 20240105 -->
+	<bean id="s3dSkyServiceBean" class="com.zlp.s3d.service.S3dSkyService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dSkyProcessor" ref="s3dSkyProcessor" />
+	</bean>
+
+	<bean id="s3dContent2DServiceBean" class="com.zlp.s3d.service.S3dContent2DService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dContent2DProcessor" ref="s3dContent2DProcessor" />
+	</bean>
+
+	<bean id="s3dSystemServiceBean" class="com.zlp.s3d.service.S3dSystemService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+	</bean>
+
+	<bean id="s3dImageServiceBean" class="com.zlp.s3d.service.S3dImageService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dImageProcessor" ref="s3dImageProcessor" />
+	</bean>
+
+	<bean id="s3dComponentServiceBean" class="com.zlp.s3d.service.S3dComponentService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dComponentProcessor" ref="s3dComponentProcessor" />
+		<property name="s3dComponentLocalProcessor" ref="s3dComponentLocalProcessor" />
+	</bean>
+
+	<bean id="s3dUserServiceBean" class="com.zlp.s3d.service.S3dUserService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="s3dUserProcessor" ref="s3dUserProcessor" />
+	</bean>
+
+	<bean id="s3dPublishProcessor" class="com.zlp.s3d.processor.S3dPublishProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+		<property name="s3dModelProcessor" ref="s3dModelProcessor" />
+		<property name="s3dImageProcessor" ref="s3dImageProcessor" />
+		<property name="s3dSkyProcessor" ref="s3dSkyProcessor" />
+		<property name="s3dContent2DProcessor" ref="s3dContent2DProcessor" />
+	</bean>
+
+	<bean id="s3dModelProcessor" class="com.zlp.s3d.processor.S3dModelProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="materialProcessor" ref="materialProcessor" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+		<property name="blankS3dFileDirectory" value="${file.dir}s3d/templates/"></property>
+	</bean>
+
+	<bean id="s3dSystemProcessor" class="com.zlp.s3d.processor.S3dSystemProcessor" scope="prototype">
+		<property name="s3dAppKeyCacheName" value="s3dAppKeyCache" />
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="redisSessionCacheClient" ref="redisSessionCacheClient" />
+		<property name="s3dResourcesRelativeFolder" value="web/design/s3d/appResources/" />
+		<property name="systemImageRelativeFolder" value="web/design/common/img/material/" />
+		<property name="materialProcessor" ref="materialProcessor" />
+	</bean>
+
+	<bean id="s3dSkyProcessor" class="com.zlp.s3d.processor.S3dSkyProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="s3dResourcesRelativeFolder" value="web/design/s3d/appResources/skies/" />
+	</bean>
+
+	<bean id="s3dContent2DProcessor" class="com.zlp.s3d.processor.S3dContent2DProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="s3dResourcesRelativeFolder" value="web/design/s3d/appResources/content2D/" />
+	</bean>
+
+	<bean id="s3dImageProcessor" class="com.zlp.s3d.processor.S3dImageProcessor" scope="prototype">
+		<property name="imageProcessor" ref="resImageProcessor" />
+		<property name="accessoryDao" ref="accessoryDao" />
+	</bean>
+
+	<bean id="s3dComponentLocalProcessor" class="com.zlp.s3d.processor.S3dComponentLocalProcessor" scope="prototype">
+		<property name="fbxZipProcessor" ref="fbxZipProcessor" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>
+
+	<bean id="s3dComponentProcessor" class="com.zlp.s3d.processor.S3dComponentProcessor" scope="prototype">
+		<property name="fbxZipProcessor" ref="fbxZipProcessor" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="s3dSystemProcessor" ref="s3dSystemProcessor" />
+	</bean>
+
+	<bean id="s3dUserProcessor" class="com.zlp.s3d.processor.S3dUserProcessor" scope="prototype">
+	</bean>
+
+	<bean id="s3d_App" class="com.zlp.s3d.impl.S3dAppImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true" />
+		<property name="hasIsDeletedMark" value="true" />
+	</bean>
+
+	<!-- s3d模型 added by ls 20240624 -->
+	<bean id="s3d_Model" class="com.zlp.s3d.impl.S3d_ModelImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- s3dComType-->
+	<bean id="s3d_ComType" class="com.zlp.s3d.impl.S3d_ComTypeImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- s3d在线组件 added by ls 20240624 -->
+	<bean id="s3d_ComponentServer" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- s3d本地组件 added by ls 20240624 -->
+	<bean id="s3d_ComponentLocal" class="com.zlp.s3d.impl.S3d_ComponentLocalImpl" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+
+	<!-- 二维页面模板 -->
+	<bean id="s3d_Content2DTheme" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+	<bean id="s3d_Content2DModule" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+	<bean id="s3d_Content2DNavigator" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype" parent="dataBaseDao">
+		<property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="hasIsDeletedMark" value="true"></property>
+	</bean>
+</beans>

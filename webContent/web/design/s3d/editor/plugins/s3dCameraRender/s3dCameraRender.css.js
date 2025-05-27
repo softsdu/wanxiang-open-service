@@ -1,0 +1,6 @@
+import styleInject from '../../node_modules/style-inject/dist/style-inject.es.js';
+
+var css_248z = ".s3dCameraRenderContainer{\r\n    position: relative;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.s3dCameraRenderNormalViewContainer{\r\n    position: relative;\r\n    object-fit: contain;\r\n    width: 100%;\r\n    height: auto;\r\n    display: none;\r\n}\r\n.s3dCameraRenderMessageContainer{\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n.s3dCameraRenderMessage{\r\n    position: relative;\r\n    height: 40px;\r\n    width: auto;\r\n    top: 50%;\r\n    line-height: 40px;\r\n    font-size: 20px;\r\n    color: #CCCCCC;\r\n}\r\n.s3dCameraRenderMiniView{\r\n    position: absolute;\r\n    right: 10px;\r\n    bottom: 10px;\r\n    width: auto;\r\n    height: auto;\r\n    padding: 3px;\r\n    background-color: #888888;\r\n    display: none;\r\n}\r\n.s3dCameraRenderMiniViewContainer{\r\n    position: relative;\r\n    width: auto;\r\n    height: auto;\r\n    display: block;\r\n}\r\n.s3dCameraRenderStats{\r\n    position: absolute;\r\n    left: 0;\r\n    bottom: 0;\r\n}";
+styleInject(css_248z);
+
+export { css_248z as default };

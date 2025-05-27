@@ -1,0 +1,505 @@
+﻿@CHARSET "UTF-8"; 
+html,body {
+	overflow: auto;
+}
+.loginPageHeaderContainer{
+	position: relative;
+	width: 100%;
+	height: 150px;
+}
+.loginPageHeaderInnerContainer{
+	position: relative;
+	width: 1000px;
+	height: 150px;
+	margin: auto;	
+}
+.loginPageHeaderImage{
+	position: absolute;
+	left:200px;
+	top: 30px;
+	width: 600px;
+	height: 100px;
+	background: url("../../images/login/loginLogo.png?t='20220906'") no-repeat;
+}
+.loginPageMainContainer{
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background-color: #A0C5E8;
+	background-image: url("../../images/login/loginMainBack.jpg");
+    background-position-x: center;
+}
+.loginPageMainInnerContainer{
+	position: relative;
+	width: 1000px;
+	height: 500px;	
+	margin: auto;
+}
+.loginPageMainImage{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 500px;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display:none;
+}
+.loginPageInputContainer{
+	position: absolute;
+	left: 290px;
+	top: 100px;
+	width: 420px;
+	height: 300px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #ffffff; 
+}
+.loginPageInputTitle{
+	position: absolute;
+	left: 60px;
+	top: 30px;
+	height: 40px;
+	width: 300px;
+	line-height: 40px;
+	font-size: 22px;
+	color: #337ab7;
+	text-align: left;
+    text-indent: 3px;
+    letter-spacing: 3px;
+}
+.loginPageInputInnerContainer{
+	position: absolute;
+	top: 70px;
+	left: 60px;
+	width: 300px;  
+	height: 200px; 
+}
+.userCodeInput{
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	right: 0px;
+	height: 40px;
+}
+.passwordInput{
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	right: 0px;
+	height: 40px;
+}
+.rememberPasswordInput{
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	right: 5px;
+	text-align: right;
+    color: #888888;
+}
+.promptInfoLine{
+	position: absolute;
+	top: 190px;
+	left: 0px;
+	right: 5px;
+	text-align: center;
+    color: #55a7bf;
+}
+.loginBtn{
+	position: absolute;
+	top: 140px;
+	left: 0px;
+	right: 0px;
+	height: 40px;
+	
+}
+.loginToForgetPwd{
+	position: absolute;
+	top: 210px;
+	right: 5px;
+	width: 70px;
+	height: 20px;
+	color: #888888;
+	text-align: right;
+}
+.loginPageFooterContainer{
+	position: relative;
+	width: 100%;
+	height: 150px;
+}
+.loginPageFooterInnerContainer{
+	position: relative;
+	width: 1000px;
+	height: 150px;
+	margin: auto;
+}
+.loginPageFooterLine{
+	position: relative;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #888888;
+}
+
+@media all and (min-width: 240px) and (max-width: 359px){ 
+	.loginPageHeaderContainer{
+		height: 120px;
+	}
+	.loginPageHeaderInnerContainer{ 
+		width: 100%;
+		height: 120px;
+	}
+	.loginPageHeaderImage{
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		right: 20px;
+		width: 100%;
+		bottom: 0px;  
+		background-size: 100%;
+	}
+	.loginPageMainContainer{ 
+		width: 100%;
+		height: 400px;
+		background-color: #ffffff;
+	}
+	.loginPageMainInnerContainer{ 
+		width: 100%;
+		height: 350px;	
+		margin: auto;
+	}
+	.loginPageMainImage{
+		display: none;
+	}
+	.loginPageInputContainer{ 
+		top: 50px;
+		right: 10px;
+		left: 10px;
+		width: auto;
+		height: 300px;
+		border-radius: 0px;
+		-moz-border-radius: 0px; 
+	}
+	.loginPageInputTitle{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px; 
+		width: auto; 
+		text-align: center;
+	    text-indent: 0px; 
+	}
+	.loginPageInputInnerContainer{
+		position: absolute;
+		top: 50px;
+		left: 10px;
+		right: 10px;
+		width: auto;  
+		height: 200px; 
+	}
+	.loginPageFooterInnerContainer{  
+		width: 100%;
+	}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.loginPageHeaderContainer{
+		height: 120px;
+	}
+	.loginPageHeaderInnerContainer{ 
+		width: 100%;
+		height: 120px;
+	}
+	.loginPageHeaderImage{
+		position: absolute;
+		top: 30px;
+		left: 0px;
+		right: 20px;
+		width: 100%;
+		bottom: 0px;  
+		background-size: 100%;
+	}
+	.loginPageMainContainer{ 
+		width: 100%;
+		height: 400px;
+		background-color: #ffffff;
+	}
+	.loginPageMainInnerContainer{ 
+		width: 100%;
+		height: 350px;	
+		margin: auto;
+	}
+	.loginPageMainImage{
+		display: none;
+	}
+	.loginPageInputContainer{ 
+		top: 50px;
+		right: 10px;
+		left: 10px;
+		width: auto;
+		height: 300px;
+		border-radius: 0px;
+		-moz-border-radius: 0px; 
+	}
+	.loginPageInputTitle{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px; 
+		width: auto; 
+		text-align: center;
+	    text-indent: 0px; 
+	}
+	.loginPageInputInnerContainer{
+		position: absolute;
+		top: 50px;
+		left: 10px;
+		right: 10px;
+		width: auto;  
+		height: 200px; 
+	}
+	.loginPageFooterInnerContainer{  
+		width: 100%;
+	}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){ 
+	.loginPageHeaderContainer{
+		height: 150px;
+	}
+	.loginPageHeaderInnerContainer{ 
+		width: 100%;
+		height: 150px;
+	}
+	.loginPageHeaderImage{
+		position: absolute;
+		top: 30px;
+		left: 0px;
+		right: 20px; 
+		width: 100%;
+		bottom: 0px;  
+		background-size: 100%;
+	}
+	.loginPageMainContainer{ 
+		width: 100%;
+		height: 400px;
+		background-color: #ffffff;
+	}
+	.loginPageMainInnerContainer{ 
+		width: 100%;
+		height: 350px;	
+		margin: auto;
+	}
+	.loginPageMainImage{
+		display: none;
+	}
+	.loginPageInputContainer{ 
+		top: 50px;
+		right: 10px;
+		left: 10px;
+		width: auto;
+		height: 300px;
+		border-radius: 0px;
+		-moz-border-radius: 0px; 
+	}
+	.loginPageInputTitle{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px; 
+		width: auto; 
+		text-align: center;
+	    text-indent: 0px; 
+	}
+	.loginPageInputInnerContainer{
+		position: absolute;
+		top: 50px;
+		left: 10px;
+		right: 10px;
+		width: auto;  
+		height: 200px; 
+	}
+	.loginPageFooterInnerContainer{  
+		width: 100%;
+	}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){ 
+	.loginPageHeaderContainer{
+		height: 150px;
+	}
+	.loginPageHeaderInnerContainer{ 
+		width: 100%;
+		height: 150px;
+	}
+	.loginPageHeaderImage{
+		position: absolute;
+		top: 30px;
+		left: 20px;
+		right: 20px;
+		bottom: 0px;  
+		background-size: 100%;
+	}
+	.loginPageMainContainer{ 
+		width: 100%;
+		height: 400px;
+		background-color: #ffffff;
+	}
+	.loginPageMainInnerContainer{ 
+		width: 100%;
+		height: 350px;	
+		margin: auto;
+	}
+	.loginPageMainImage{
+		display: none;
+	}
+	.loginPageInputContainer{ 
+		top: 50px;
+		right: 10px;
+		left: 10px;
+		width: auto;
+		height: 300px;
+		border-radius: 0px;
+		-moz-border-radius: 0px; 
+	}
+	.loginPageInputTitle{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px; 
+		width: auto; 
+		text-align: center;
+	    text-indent: 0px; 
+	}
+	.loginPageInputInnerContainer{
+		position: absolute;
+		top: 50px;
+		left: 10px;
+		right: 10px;
+		width: auto;  
+		height: 200px; 
+	} 
+	.loginPageFooterInnerContainer{  
+		width: 100%;
+	} 
+}
+
+@media all and (min-width: 768px) and (max-width: 999px){	 
+	.loginPageHeaderInnerContainer{ 
+		width: 750px; 
+	} 
+	.loginPageHeaderImage{
+		left: 75px;
+	}
+	.loginPageMainContainer{
+		height: 400px; 
+	}
+	.loginPageMainInnerContainer{ 
+		width: 750px; 
+		height: 400px; 
+	}
+	.loginPageMainImage{ 
+		top: 50px;
+		left: 30px;
+		width: 300px; 
+		height: 300px;
+	}
+	.loginPageInputContainer{ 
+		top: 50px;
+		left: 225px; 
+		width: 300px; 
+	}
+	.loginPageInputTitle{ 
+		left: 20px;
+		top: 30px; 
+		width: 200px; 
+	}
+	.loginPageInputInnerContainer{ 
+		top: 70px;
+		left: 20px;
+		width: 260px;  
+		height: 200px; 
+	} 
+	.loginPageFooterInnerContainer{ 
+		width: 750px; 
+	} 
+}
+
+@media all and (min-width: 1000px) and (max-width: 1199px){  	 
+	.loginPageHeaderInnerContainer{ 
+		width: 1000px; 
+	} 
+	.loginPageMainContainer{
+		height: 500px; 
+	}
+	.loginPageMainInnerContainer{ 
+		width: 1000px; 
+		height: 500px; 
+	}
+	.loginPageMainImage{ 
+		top: 50px;
+		left: 50px;
+		width: 400px; 
+		height: 400px;
+	}
+	.loginPageInputContainer{ 
+		top: 80px;
+		right: 50px; 
+		width: 400px; 
+		height: 330px; 
+	}
+	.loginPageInputTitle{ 
+		left: 20px;
+		top: 30px; 
+		width: 300px; 
+	}
+	.loginPageInputInnerContainer{ 
+		top: 70px;
+		left: 20px;
+		width: 360px;  
+		height: 230px; 
+	} 
+	.loginPageFooterInnerContainer{ 
+		width: 1000px; 
+	} 
+}
+
+@media all and (min-width: 1200px){  
+	.loginPageHeaderInnerContainer{ 
+		width: 1000px; 
+	} 
+	.loginPageMainContainer{
+		height: 500px; 
+	}
+	.loginPageMainInnerContainer{ 
+		width: 1000px; 
+		height: 500px; 
+	}
+	.loginPageMainImage{ 
+		top: 0px;
+		left: 0px;
+		width: 500px; 
+		height: 500px;
+	}
+	.loginPageInputContainer{ 
+		top: 80px;
+		right: 0px; 
+		width: 400px; 
+		height: 330px; 
+	}
+	.loginPageInputTitle{ 
+		left: 20px;
+		top: 30px; 
+		width: 300px; 
+	}
+	.loginPageInputInnerContainer{ 
+		top: 70px;
+		left: 20px;
+		width: 360px;  
+		height: 230px; 
+	} 
+	.loginPageFooterInnerContainer{ 
+		width: 1000px; 
+	} 
+ }

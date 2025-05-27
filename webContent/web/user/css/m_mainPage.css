@@ -1,0 +1,994 @@
+@CHARSET "UTF-8";
+
+html,body {
+	background-color:#323232;
+}
+table {
+	font-size: 14px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #404040;
+}
+.outerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 14px;
+	font-family: "calibri",STHeiti,MingLiu,"Microsoft YaHei",微软雅黑;
+	overflow: auto;
+}
+.sectionContainer{
+	position: relative;
+	float: left;
+	height: auto;
+}
+.leftContainer{
+	width: 62%;
+}
+.centerContainer{
+	width: 38%;
+}
+.rightContainer{
+	width: 0;
+}
+.halfContainer{
+	width: 50%;
+}
+.blockContainer{
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 0 5px 10px 5px;
+}
+.blockInnerContainer{    
+	position: relative;
+    width: 100%;
+    height: auto;
+    border: solid 0 #eeeeee;
+	color: #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+	background-color: #282828;
+	letter-spacing: 1px;
+	padding: 5px;
+}
+.blockHeader{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border-bottom: solid 1px #383838;
+}
+.blockTitle{
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	right: 10px;
+	height: 20px;
+	line-height: 20px;
+	font-weight: 600;
+	display: flex;
+	justify-content: left;
+	font-size: 15px;
+}
+.blockItemContainer{
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.blockItemImageContainer{
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+.blockItemHeader{
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.blockItemList{
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 5px 0 5px 0;
+}
+.itemLink{
+	color: #DDDDDD;
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	justify-content: left;
+	width: 100%;
+}
+.itemLink:hover{
+	color: #000000;
+}
+.itemBtnLink{
+	color: #DDDDDD;
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	justify-content: left;
+	width: 100%;
+}
+.itemBtnLink:hover{
+	color: #ffffff;
+}
+.systemItem{
+	position: relative;
+	width: 25%;
+	float: left;
+	height: 150px;
+	display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.systemItem:hover{
+	background-color:#f7f7f7;
+}
+.systemImage{
+	position: relative;
+	padding-top: 25px;
+	height: 90px;
+}
+.systemTitle{
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 0px;
+	right: 0px;
+	bottom: 20px;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+.systemItem:hover .systemTitle{
+	font-weight: 600;
+}
+.publishedModelItem{
+	position: relative;
+	width: 20%;
+	float: left;
+	height: 150px;
+	display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.publishedModelItem:hover{
+	background-color:#f7f7f7;
+}
+.publishedModelImage{
+	position: relative;
+	padding-top: 25px;
+	height: 90px;
+}
+.publishedModelTitle{
+	position: absolute;
+	height: 40px;
+	line-height: 18px;
+	left: 0px;
+	right: 0px;
+	bottom: 10px;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+.publishedModelItem:hover .publishedModelTitle{
+	font-weight: 600;
+}
+.blockHeaderItemTitle{
+	position: relative;
+	font-weight: 600;
+}
+.blockHeaderItem{
+	position: relative;
+	cursor: pointer;
+	font-weight: 400;
+}
+.mdlTypeLink{
+	color: #888888;
+}
+.mdlTypeLink:hover{
+	color: #FFFFFF;
+}
+.mdlTypeLinkActive{
+	color: #FFFFFF;
+}
+.blockHeaderSpliter{
+	position: relative;
+	padding-left: 4px;
+	padding-right: 4px;
+	color: #CCCCCC;
+	font-weight: 400;
+}
+.blockItemLine{
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: left;
+}
+.blockItemLine:hover{
+	background-color:#F2f2f2;
+}
+.blockItemNone{
+	position: relative;
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #AAAAAA;
+}
+.modelHeader{
+	border-bottom: solid 1px #323232;
+}
+.modelHeader:hover{
+	background-color:transparent;
+}
+.modelItem{
+}
+.blockFooter{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-top: solid 1px #404040;
+}
+.blockFooterLine{
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+.blockHeaderMore{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	font-weight: 400;
+	text-align: right;
+}
+.blockFooterMore{
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	font-weight: 400;
+	text-align: right;
+}
+.itemFieldName{
+	position: relative;
+	float: left;
+	text-align: left;
+  	text-indent: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: 400;
+    color: #FFFFFF;
+  	white-space: nowrap; /* 强制文本在一行显示 */
+  	overflow: hidden; /* 隐藏溢出的文本 */
+  	text-overflow: ellipsis; /* 使用省略号代替溢出的文本 */
+}
+.itemFieldValue{
+	position: relative;
+	float: left;
+	text-align: left;
+  	text-indent: 20px;
+	height: 45px;
+	line-height: 45px;
+  	white-space: nowrap; /* 强制文本在一行显示 */
+  	overflow: hidden; /* 隐藏溢出的文本 */
+  	text-overflow: ellipsis; /* 使用省略号代替溢出的文本 */
+}
+.modelFieldCode{
+	width: 25%;
+	text-align: center;
+}
+.modelFieldName{
+	width: 35%;
+}
+.modelSnapshotDiv{
+	position: absolute;
+	left: 25px;
+	top: 5px;
+	width: 40px;
+	bottom: 5px;
+    text-indent: 0;
+    border-radius: 5px;
+	background-color: #303030;
+}
+.blockItemLine:hover .modelSnapshotDiv{
+	background-color: #BBBBBB;
+}
+.modelSnapshotImage{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	object-fit: cover;
+    border-radius: 5px;
+}
+.modelNameText{
+	position: absolute;
+	left: 70px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	text-indent: 5px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.modelFieldOperate{
+	width: 0;
+	display: none;
+}
+.modelFieldOperate{
+	width: 0;
+	display: none;
+}
+.modelFieldView{
+	width: 0;
+	display: none;
+}
+.modelFieldVersion{
+	width: 0;
+	display: none;
+}
+.modelFieldCategoryCode{
+	width: 0;
+	display: none;
+}
+.modelFieldCategoryName{
+	width: 20%;
+	text-align: center;
+}
+.modelFieldCreateTime{
+	width: 0;
+	display: none;
+}
+.modelFieldModifyTime{
+	width: 20%;
+	text-align: center;
+}
+.modelFieldCreateUserName{
+	width: 0;
+	display: none;
+}
+.projectInfoContainer{
+	position: relative;
+	height: 150px;
+	width: 100%;
+	text-align: center;
+	line-height: 150px;
+	color: #AAAAAA;
+}
+.imageItem{
+	position: relative;
+	width: 90px;
+	height: 100px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	margin: 0 5px 5px 5px;
+	padding: 10px 0 10px 0;
+	justify-content: center;
+}
+.imageItem:hover{
+	background-color:#DDDDDD;
+	color: #111111;
+}
+.imageItemSplitter{
+	width: 1px;
+	margin: 0;
+}
+.imageItemSplitter:hover{
+	background-color:transparent;
+}
+.imageItemSplitterInner{
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 0px;
+	width: 1px;
+	border-left: solid 1px #505050;
+	box-shadow: 1px 0 0 rgba(0, 0, 0, 0.3);
+}
+.imageItemImage{
+	position: relative;
+	height: 56px;
+	width: 56px;
+	border-radius: 8px;
+}
+.imageItemTitle{
+	position: relative;
+	padding: 10px 3px 0 3px;
+	height: 40px;
+	line-height: 16px;
+	width: 100%;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.imageItemBig{
+	position: relative;
+	width: 16.66%;
+	aspect-ratio: 6 / 5;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	justify-content: center;
+}
+.imageItemBig:hover{
+}
+.imageItemBigImageContainer{
+	position: absolute;
+	left: 20px;
+	top: 10px;
+	right: 20px;
+	bottom: 40px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.imageItemBigImage{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	object-fit: cover;
+}
+.imageItemBig:hover .imageItemBigImage{
+	opacity: 0.1;
+}
+.imageItemLinkBtn{
+	position: relative;
+	height: 32px;
+	width: 70px;
+	text-align: center;
+	line-height: 32px;
+	background-color: #1c73c5;
+	color: #DDDDDD;
+	display: none;
+	border-radius: 5px;
+	margin: 5px;
+}
+.imageItemLinkBtn:hover{
+	background-color: #5791c7;
+	color:#FFFFFF;
+}
+.imageItemLinkBtnEdit{
+}
+.imageItemLinkBtnPreview{
+}
+.imageItemBig:hover .imageItemLinkBtn{
+	display: block;
+}
+.imageItemBigTitle{
+	position: absolute;
+	height: 20px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	line-height: 20px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999999;
+}
+.imageItemBigTime{
+	position: absolute;
+	width: auto;
+	height: 20px;
+	top: 13px;
+	right: 26px;
+	text-align: right;
+	font-weight: 600;
+	font-size: 12px;
+	color: #dddddd;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	display: none;
+}
+.imageItemBig:hover .imageItemBigTime{
+	display: block;
+}
+.imageItemBig:hover .imageItemBigTitle{
+	color: #FFFFFF;
+}
+
+.imageItemMiddle{
+	position: relative;
+	width: 16.6%;
+	aspect-ratio: 1;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	justify-content: center;
+}
+.imageItemMiddle:hover{
+	background-color:#DDDDDD;
+	color: #111111;
+}
+.imageItemMiddleImageContainer{
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	right: 15px;
+	bottom: 30px;
+	border-radius: 8px;
+}
+.imageItemMiddleImage{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	object-fit: cover;
+}
+.imageItemMiddleTitle{
+	position: absolute;
+	height: 30px;
+	bottom: 0;
+	left: 3px;
+	right: 3px;
+	line-height: 30px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.imageItemMiddleTime{
+	position: absolute;
+	width: auto;
+	height: 20px;
+	top: 13px;
+	right: 16px;
+	text-align: right;
+	font-weight: 600;
+	font-size: 12px;
+	color: #dddddd;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+.imageItemMiddle:hover .imageItemMiddleTime{
+	color: #000000;
+	text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+.devLogFieldPublishTime{
+	text-align: center;
+	width: 30%;
+	padding-left: 10px;
+}
+.devLogFieldTitle{
+	text-align: left;
+	width: 70%;
+}
+.designLogFieldPublishTime{
+	text-align: center;
+	width: 30%;
+	padding-left: 10px;
+}
+.designLogFieldTitle{
+	text-align: left;
+	width: 70%;
+}
+.designLogFieldCreateUserName{
+	text-align: right;
+	padding-right: 10px;
+	width: 0;
+	display: none;
+}
+
+@media all and (min-width: 1500px) and (max-width: 1920px){
+	.outerContainer{
+		font-size: 14px;
+	}
+	.systemItem{
+		height: 140px;
+	}
+	.systemImage{
+		height: 75px;
+	}
+	.systemTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.publishedModelItem{
+		height: 140px;
+	}
+	.publishedModelImage{
+		height: 75px;
+	}
+	.publishedModelTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.blockFooter{
+		height: 35px;
+	}
+	.blockFooterLine{
+		height: 35px;
+	}
+	.blockFooterMore{
+		top: 8px;
+	}
+	.blockItemLine{
+		height: 35px;
+	}
+	.modelSnapshotDiv{
+		top: 2px;
+		bottom: 2px
+	}
+	.itemFieldName{
+		height: 35px;
+		line-height: 35px;
+	}
+	.itemFieldValue{
+		height: 35px;
+		line-height: 35px;
+	}
+	.assetItem{
+		height: 120px;
+	}
+	.assetImage{
+		height: 75px;
+	}
+	.devLogFieldPublishTime{
+		width: 30%;
+	}
+	.devLogFieldTitle{
+		width: 70%;
+	}
+	.designLogFieldPublishTime{
+		width: 30%;
+	}
+	.designLogFieldTitle{
+		width: 70%;
+	}
+	.designLogFieldCreateUserName{
+		width: 15%;
+	}
+	.imageItemBig{
+		width: 20%;
+	}
+	.imageItemMiddle{
+		width: 25%;
+	}
+}
+
+
+@media all and (min-width: 850px) and (max-width: 1500px){
+	.outerContainer{
+		font-size: 14px;
+	}
+	.systemItem{
+		height: 140px;
+	}
+	.systemImage{
+		height: 75px;
+	}
+	.systemTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.publishedModelItem{
+		height: 140px;
+	}
+	.publishedModelImage{
+		height: 75px;
+	}
+	.publishedModelTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.blockFooter{
+		height: 35px;
+	}
+	.blockFooterLine{
+		height: 35px;
+	}
+	.blockFooterMore{
+		top: 8px;
+	}
+	.blockItemLine{
+		height: 35px;
+	}
+	.modelSnapshotDiv{
+		top: 2px;
+		bottom: 2px
+	}
+	.itemFieldName{
+		height: 35px;
+		line-height: 35px;
+	}
+	.itemFieldValue{
+		height: 35px;
+		line-height: 35px;
+	}
+	.assetItem{
+		height: 120px;
+	}
+	.assetImage{
+		height: 75px;
+	}
+	.devLogFieldPublishTime{
+		width: 25%;
+	}
+	.devLogFieldTitle{
+		width: 75%;
+	}
+	.designLogFieldPublishTime{
+		width: 25%;
+	}
+	.designLogFieldTitle{
+		width: 60%;
+	}
+	.designLogFieldCreateUserName{
+		width: 15%;
+	}
+	.imageItemBig{
+		width: 33.33%;
+	}
+	.imageItemMiddle{
+		width: 33.3%;
+	}
+}
+@media all and (min-width: 420px) and (max-width: 850px){
+	.outerContainer{
+		font-size: 14px;
+	}
+	.outerContainer{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.leftContainer{
+		width: 100%;
+	}
+	.centerContainer{
+		width: 100%;
+	}
+	.rightContainer{
+		width: 100%;
+	}
+	.systemItem{
+		height: 150px;
+		width: 25%;
+	}
+	.systemImage{
+		padding-top: 30px;
+		height: 80px;
+	}
+	.systemTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.modelFieldName{
+		width: 50%
+	}
+	.modelFieldCode{
+		width: 0;
+		display: none;
+	}
+	.modelFieldCategoryName{
+		width: 25%
+	}
+	.modelFieldModifyTime{
+		width: 25%
+	}
+	.publishedModelItem{
+		height: 150px;
+		width: 20%;
+	}
+	.publishedModelImage{
+		padding-top: 30px;
+		height: 80px;
+	}
+	.publishedModelTitle{
+		bottom: 25px;
+		font-size: 14px;
+	}
+	.blockFooter{
+		height: 35px;
+	}
+	.blockFooterLine{
+		height: 35px;	
+	}
+	.blockFooterMore{
+		top: 8px;
+	}
+	.blockItemLine{
+		height: 35px;
+	}
+	.modelSnapshotDiv{
+		top: 2px;
+		bottom: 2px
+	}
+	.itemFieldName{
+		height: 35px;
+		line-height: 35px;
+	}
+	.itemFieldValue{
+		height: 35px;
+		line-height: 35px;
+	}
+	.blockHeaderRight{
+		right: 10px;
+	}
+	.blockHeaderRightItem{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.assetItem{
+		height: 120px;
+	}
+	.assetImage{
+		height: 80px;
+	}
+	.devLogFieldPublishTime{
+		width: 30%;
+	}
+	.devLogFieldTitle{
+		width: 80%;
+	}
+	.designLogFieldPublishTime{
+		width: 30%;
+	}
+	.designLogFieldTitle{
+		width: 70%;
+	}
+	.designLogFieldCreateUserName{
+		width: 10%;
+	}
+	.imageItemBig{
+		width: 33.33%;
+	}
+	.imageItemMiddle{
+		width: 33.3%;
+	}
+	.imageItemSplitter{
+		display: none;
+	}
+	.blockItemImageContainer{
+		justify-content: center;
+	}
+}
+@media all and (max-width: 420px){
+	.outerContainer{
+		font-size: 14px;
+	}
+	.outerContainer{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.leftContainer{
+		width: 100%;
+	}
+	.centerContainer{
+		width: 100%;
+	}
+	.rightContainer{
+		width: 100%;
+	}
+	.blockContainer{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.blockInnerContainer {
+	    border-radius: 2px;
+	    -moz-border-radius: 2px;
+	}
+	.modelFieldName{
+		width: 65%;
+	}
+	.modelFieldCode{
+		width: 0;
+		display: none;
+	}
+	.modelFieldCategoryName{
+		width: 0;
+		display: none;
+	}
+	.modelFieldModifyTime{
+		width: 35%;
+	}
+	.systemItem{
+		height: 120px;
+		width: 25%;
+	}
+	.systemImage{
+		padding-top: 15px;
+		height: 70px;
+	}
+	.systemTitle{
+		bottom: 15px;
+		font-size: 14px;
+	}
+	.publishedModelItem{
+		height: 120px;
+		width: 20%;
+	}
+	.publishedModelImage{
+		padding-top: 15px;
+		height: 70px;
+	}
+	.publishedModelTitle{
+		bottom: 15px;
+		font-size: 14px;
+	}
+	.blockFooter{
+		height: 35px;
+	}
+	.blockFooterLine{
+		height: 35px;	
+	}
+	.blockFooterMore{
+		top: 8px;
+	}
+	.blockItemLine{
+		height: 35px;
+	}
+	.modelSnapshotDiv{
+		top: 2px;
+		bottom: 2px
+	}
+	.itemFieldName{
+		height: 35px;
+		line-height: 35px;
+	}
+	.itemFieldValue{
+		height: 35px;
+		line-height: 35px;
+	}
+	.blockHeaderRight{
+		right: 10px;
+	}
+	.blockHeaderRightItem{
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.assetItem{
+		height: 120px;
+	}
+	.assetImage{
+		height: 80px;
+	}
+	.devLogFieldPublishTime{
+		width: 35%;
+	}
+	.devLogFieldTitle{
+		width: 65%;
+	}
+	.designLogFieldPublishTime{
+		width: 35%;
+	}
+	.designLogFieldTitle{
+		width: 65%;
+	}
+	.designLogFieldCreateUserName{
+		width: 17%;
+	}
+	.imageItemBig{
+		width: 100%;
+	}
+	.imageItemMiddle{
+		width: 50%;
+	}
+	.imageItemSplitter{
+		display: none;
+	}
+	.blockItemImageContainer{
+		justify-content: center;
+	}
+}

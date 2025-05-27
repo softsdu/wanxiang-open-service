@@ -1,0 +1,198 @@
+@CHARSET "UTF-8";
+body{
+	width:100%;
+	height:100%;
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+.pageContentPageDiv{
+	height:100%;
+	width:100%;
+	background-color:#ffffff;
+	text-align:center;
+}
+.pageContentMainDiv{
+	width:100%;
+	position:relative;
+	height:100%;
+
+	/*deleted by liyh 20210825*/
+	/*margin:1px auto;*/
+}
+.pageContentMainInnerDiv{
+	position:absolute;
+	left:100px;
+	right:100px;
+	height:100%;
+}
+.fileQueueDiv{
+	max-height:260px;
+	overflow-y:auto;
+}
+.uploadFilesNavigator{
+	width:500px;
+	height:280px;
+	border: solid 0px #cccccc;
+	margin:0 auto; 
+}
+.uploadFilesTitleDiv{
+	position:relative;
+	width:100%;
+	height:50px;
+	text-align:left;
+	border-bottom:solid 1px #dddddd;
+}
+.uploadFilesTitle{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	font-size:15px; 
+	font-weight:600;
+	padding-left:5px;
+}
+.uploadFilesBackToBegin{
+	position:absolute;
+	right:10px;
+	bottom:5px;
+	font-size:13px; 
+	cursor:pointer;
+	text-decoration:none;
+	color:#888888;
+}
+.uploadFilesBackToBegin:hover{
+	text-decoration:underline;
+}
+.uploadFilesStyleItem{
+	width:400px;
+	height:80px;
+	cursor:pointer;
+	border: solid 1px #dddddd;
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.uploadFilesStyleItem:hover{
+	background-color:#F56600; 
+	border: solid 0px #dddddd;
+	color:#ffffff;
+}
+
+.uploadFilesStyleItem h3{ 
+	height:40px;
+	margin:0px;
+	line-height:40px;
+	font-size:15px;
+	padding-left:10px;
+}
+
+.uploadFilesStyleItem span{ 
+	height:40px; 
+	font-size:10px;
+	padding-left:10px;
+	text-decoration:none;
+}
+/*改变样式 modified by lixin 202203*/
+.uploadFilesStyleUpload{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:100%;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:3px;
+	font-size:15px;
+}
+/*改变样式 modified by lixin 202203*/
+.selectFilesDiv{
+	width:100%;
+	height:60px;
+	margin:0 auto;
+	margin-top:20px;
+	position:relative;
+	text-align:left;
+	font-size:14px;
+}
+.uploadFilesStyleUpload input{
+	position:absolute;
+	top:5px; 
+	cursor:pointer;
+	margin:0px;
+	text-align:center;
+}
+/*改变样式 modified by lixin 202203*/
+.selectFilesPromptDiv{
+	position:absolute;
+	top:0px;
+	left:105px;
+	right:0px;
+	height:23px;
+	line-height:23px; 
+	font-size:15px;
+}
+.selectErrorDiv{
+	width:100%;
+	height:100p;
+	font-size:10px;
+	color: #FF4300;
+	display:none;
+}
+.uploadFilesBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+}
+
+.waitingValidateFileDiv{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:400px;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+}
+
+.fileInfoContainerDiv{ 
+	margin-top:10px;
+	margin-bottom:10px;
+	width:100%;
+	height:80px;
+	border: solid 0px #dddddd;
+	padding:0px;
+	font-size:15px;
+	overflow: hidden;
+}
+.processStatusDiv{
+	width:100%;
+	height:100%;
+	line-height:30px;
+	border: solid 0px #dddddd;
+	margin:0 auto;
+	margin-top:15px;
+	margin-bottom:5px;
+	font-size:15px;
+	text-align:left; 
+}
+.beginProcessFileBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+} 
+.beginProcessFileBtnDivDisable{
+	background-color:#c0c0c0; 
+}
+.ncpGridDiv div{
+	border-width:0px;
+}

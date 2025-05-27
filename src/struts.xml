@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <include file="struts-default.xml" ></include>
+
+    <!-- session 拦截器 -->
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <interceptor name="session" class="com.zlp.platform.interceptor.SessionInterceptor">
+            </interceptor>
+
+            <interceptor-stack name="sessionDefault">
+                <interceptor-ref name="session">
+                	<!-- 增加了importData排除拦截 modified by ls 20190112 -->
+                    <param name="excludeMethods">login,logout,importData,getComProductList</param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="sessionDefault" />
+    </package>
+	
+	<package name="treeNcpService" namespace="/treeNcpService" extends="default">
+		<action name="save" class="treeServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="delete" class="treeServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="sheetNcpService" namespace="/sheetNcpService" extends="default">
+		<action name="save" class="sheetServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="delete" class="sheetServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="paramWinNcpService" namespace="/paramWinNcpService" extends="default">
+		<action name="getList" class="paramWinServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="doOtherAction" class="paramWinServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="dataNcpService" namespace="/dataNcpService" extends="default">
+		<action name="getInputStatus" class="dataServiceBean" method="getInputStatus">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getList" class="dataServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>		
+		<action name="add" class="dataServiceBean" method="add">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="select" class="dataServiceBean" method="select">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="save" class="dataServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="delete" class="dataServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="doOtherAction" class="dataServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="viewGridNcpService" namespace="/viewGridNcpService" extends="default">
+		<action name="saveComplexQuery" class="viewGridServiceBean" method="saveComplexQuery">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getComplexQuery" class="viewGridServiceBean" method="getComplexQuery">   
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="dataPurviewNcpService" namespace="/dataPurviewNcpService" extends="default">
+		<action name="getRoleAndDataPurviewFactor" class="dataPurviewServiceBean" method="getRoleAndDataPurviewFactor">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="accessoryNcpService" namespace="/accessoryNcpService" extends="default">
+		<action name="getFileCountByFilter" class="accessoryServiceBean" method="getFileCountByFilter">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getAccessoryIds" class="accessoryServiceBean" method="getAccessoryIds">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="deleteAccessory" class="accessoryServiceBean" method="deleteAccessory">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		
+		<!-- 下载附件  added by liyh 20190617 -->
+		<action name="downloadAccessory" class="accessoryServiceBean" method="downloadAccessory">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		
+		<!-- 附件编辑（上传、删除）完毕后，更新业务表相关的附件ID字段值  added by liyh 20190617 -->
+		<action name="saveAccessoryIdStrToDB" class="accessoryServiceBean" method="saveAccessoryIdStrToDB">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+
+		<!-- 删除没有关联的附件记录（打删除标记） -->
+		<action name="deleteUnrelatedAccessory" class="accessoryServiceBean" method="deleteUnrelatedAccessory">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 备份所有附件 -->
+		<action name="backupAllAccessoryFiles" class="accessoryServiceBean" method="backupAllAccessoryFiles">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="userNcpService" namespace="/userNcpService" extends="default">
+		<action name="login" class="userServiceBean" method="login">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getSysParam" class="userServiceBean" method="getSysParam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="logout" class="userServiceBean" method="logout">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getMenu" class="userServiceBean" method="getMenu">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="changePassword" class="userServiceBean" method="changePassword">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getMainMenuList" class="userServiceBean" method="getMainMenuList">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<!--	检查登录密码是否等于配置文件的默认密码	-->
+		<action name="checkDefaultConfig" class="userServiceBean" method="checkDefaultConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="accessory" namespace="/accessory" extends="default">
+		<action name="uploadFile" class="FileUploadActionBean" method ="uploadFile">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- CMS图片服务 added by ls20210625 -->
+	<package name="cmsImageNcpService" namespace="/cmsImageNcpService" extends="struts-default">
+		<action name="importImage" class="cmsImageServiceBean" method="importImage">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getImageList" class="cmsImageServiceBean" method="getImageList">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- CMS视频服务 added by ls20210804 -->
+	<package name="cmsVideoNcpService" namespace="/cmsVideoNcpService" extends="struts-default">
+		<action name="importVideo" class="cmsVideoServiceBean" method="importVideo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getVideoList" class="cmsVideoServiceBean" method="getVideoList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<!-- CMS音频服务 added by ls20211020 -->
+	<package name="cmsAudioNcpService" namespace="/cmsAudioNcpService" extends="struts-default">
+		<action name="importAudio" class="cmsAudioServiceBean" method="importAudio">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getAudioList" class="cmsAudioServiceBean" method="getAudioList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+
+	<!-- CMS图片服务 added by ls20210625 -->
+	<package name="resImageNcpService" namespace="/resImageNcpService" extends="struts-default">
+		<action name="importImage" class="resImageServiceBean" method="importImage">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getImageList" class="resImageServiceBean" method="getImageList">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 资源导入服务 added by ls20210702 -->
+	<package name="resourceFileNcpService" namespace="/resourceFileNcpService" extends="struts-default">
+		<!-- 上传dxf added by ls 20230420 -->
+		<action name="importDxf" class="dxfServiceBean" method="importDxf">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		
+		<!-- 导入gltf modified by ls 20231101 -->
+		<action name="importGltf" class="gltfZipServiceBean" method="importGltf">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 完成导入gltf modified by ls 20231101 -->
+		<action name="endImportGltf" class="gltfZipServiceBean" method="endImportGltf">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 导入FBX modified by ls 20231101 -->
+		<action name="importFbx" class="fbxZipServiceBean" method="importFbx">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 完成导入FBX modified by ls 20240112 -->
+		<action name="endImportFbx" class="fbxZipServiceBean" method="endImportFbx">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 导入wall2DJson modified by ls 20231101 -->
+		<action name="importWall2DJson" class="wall2DJsonServiceBean" method="importWall2DJson">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 完成导入wall2DJson modified by ls 20231101 -->
+		<action name="endImportWall2DJson" class="wall2DJsonServiceBean" method="endImportWall2DJson">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 导入dxfSlab added by ls 20231101 -->
+		<action name="importDxfSlab" class="dxfSlabServiceBean" method="importDxfSlab">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 完成导入dxfSlab added by ls 20231101 -->
+		<action name="endImportDxfSlab" class="dxfSlabServiceBean" method="endImportDxfSlab">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 保存解析结果 dxfSlab added by ls 20231106 -->
+		<action name="saveDxfSlabResult" class="dxfSlabServiceBean" method="saveDxfSlabResult">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 获取解析结果 dxfSlab added by ls 20231106 -->
+		<action name="getDxfSlabResult" class="dxfSlabServiceBean" method="getDxfSlabResult">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+				
+		<!-- 导入地形数据文件 modified by ls 20231109 -->
+		<action name="importGround" class="groundServiceBean" method="importGround">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<!-- 完成导入地形数据文件 modified by ls 20231108 -->
+		<action name="endImportGround" class="groundServiceBean" method="endImportGround">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- license 授权服务 added by ls20190618 -->
+	<package name="licenseNcpService" namespace="/licenseNcpService" extends="struts-default">
+		<action name="getLicenseInfo" class="licenseServiceBean" method="getLicenseInfo">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="generateSN" class="licenseServiceBean" method="generateSN">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+ 
+	<!-- bimFileNcpService added by ls 20190129 --> 
+	<package name="d5BimFileNcpService" namespace="/d5BimFileNcpService" extends="struts-default">
+		<action name="beginConvertModel" class="d5BimFileServiceBean" method="beginConvertModel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getConvertModelLogInfo" class="d5BimFileServiceBean" method="getConvertModelLogInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createBuildingRvtConvertLog" class="d5BimFileServiceBean" method="createBuildingRvtConvertLog">    
+			<result  name="success" type="plainText">      
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createComponentRvtConvertLog" class="d5BimFileServiceBean" method="createComponentRvtConvertLog">    
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getModelElementInfo" class="d5BimFileServiceBean" method="getModelElementInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getModelTree" class="d5BimFileServiceBean" method="getModelTree">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- bimFileNcpService added by ls 20190129 --> 
+	<package name="mdlNcpService" namespace="/mdlNcpService" extends="struts-default">
+		<action name="getModelFile" class="mdlServiceBean" method="getModelFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getModelComponentTree" class="mdlServiceBean" method="getModelComponentTree">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getComponentProperties" class="mdlServiceBean" method="getComponentProperties">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createModel" class="mdlServiceBean" method="createModel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getModelFiles" class="mdlServiceBean" method="getModelFiles">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getComponentFile" class="mdlServiceBean" method="getComponentFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getComponentFilesByCode" class="mdlServiceBean" method="getComponentFilesByCode">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getComponentFileByKey" class="mdlServiceBean" method="getComponentFileByKey">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="saveModel" class="mdlServiceBean" method="saveModel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="deleteModel" class="mdlServiceBean" method="deleteModel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="saveAsModel" class="mdlServiceBean" method="saveAsModel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package> 
+	
+	<package name="materialNcpService" namespace="/materialNcpService" extends="struts-default">
+		<action name="generateStandardMaterialFile" class="materialServiceBean" method="generateStandardMaterialFile">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>	 
+	
+	<!-- 解析rvtGltf文件 added by ls 20210225-->
+	<package name="toGltfFileNcpService" namespace="/toGltfFileNcpService" extends="struts-default">
+		<action name="convert" class="toGltfFileServiceBean" method="convert">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+
+	<!-- 导入构件的gltf文件 added by ls 20210323 -->
+	<package name="importComponentNcpService" namespace="/importComponentNcpService" extends="struts-default">
+		<action name="importGltf" class="importComponentServiceBean" method="importGltf">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 导入S3D服务 added by ls 20231220 -->
+	<package name="mdlExportS3DNcpService" namespace="/mdlExportS3DNcpService" extends="struts-default">
+		<action name="getSubComponentUnitMap" class="mdlExportS3DServiceBean" method="getSubComponentUnitMap">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="saveS3D" class="mdlExportS3DServiceBean" method="saveS3D">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 约束求解服务 added by ls 20210316 -->
+	<package name="constraintSolverNcpService" namespace="/constraintSolverNcpService" extends="struts-default">
+		<action name="getAreaBlocks" class="constraintSolverServiceBean" method="getAreaBlocks">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- geometray2d计算 added by ls 20220511 -->
+	<package name="geometry2DNcpService" namespace="/geometry2DNcpService" extends="struts-default">
+		<action name="clipPolygon" class="geometry2DServiceBean" method="clipPolygon">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- geometray3d计算 added by ls 20210603 -->
+	<package name="geometry3DNcpService" namespace="/geometry3DNcpService" extends="struts-default">
+		<action name="createObject3D" class="geometry3DServiceBean" method="createObject3D">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		
+		<!-- 批量构造 added by ls 20230403 -->
+		<action name="createObject3Ds" class="geometry3DServiceBean" method="createObject3Ds">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		
+		<action name="createPreviewObject3D" class="geometry3DServiceBean" method="createPreviewObject3D">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createSurfaceObject3D" class="geometry3DServiceBean" method="createSurfaceObject3D">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<!-- 根据输入参数构造组件实例，返回组件实例的属性值 added by ls 202202 -->
+		<action name="getInstanceParameters" class="geometry3DServiceBean" method="getInstanceParameters">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		
+		<!-- 根据输入参数构造组件实例，返回组件实例的属性值 added by ls 20220607 -->
+		<action name="getInstanceParametersByCode" class="geometry3DServiceBean" method="getInstanceParametersByCode">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+
+		<!-- 据接收到的ComponentInfo的内容文本进行造型（涉及返回模型文件20220714） added by ls 20220705 -->
+		<action name="createInstanceObject3D" class="geometry3DServiceBean" method="createInstanceObject3D">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<!-- cpbim 导出测试 added by yay 20230413 -->
+		<action name="exportCpbimComponentNeedExcel" class="geometry3DServiceBean" method="exportCpbimComponentNeedExcel">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<!-- cpbim 装配率计算 added by yay 202301106 -->
+		<action name="cpbimAssemblyRateCalc" class="geometry3DServiceBean" method="cpbimAssemblyRateCalc">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<!-- cpbim 装配率计算 从模型获取数据 added by yay 20231111 -->
+		<action name="getCpbimAssemblyRateFromModel" class="geometry3DServiceBean" method="getCpbimAssemblyRateFromModel">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 构件参数驱动 added by ls 20210324 -->
+	<package name="comDriverNcpService" namespace="/comDriverNcpService" extends="struts-default">
+		<action name="getComDriverFile" class="comDriverServiceBean" method="getComDriverFile">    
+			<result name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- 表达式服务 -->
+	<package name="expressionNcpService" namespace="/expressionNcpService" extends="default">
+		<action name="validateExp" class="expressionServiceBean" method="validateExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		
+		<action name="validateJsExp" class="expressionServiceBean" method="validateJsExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+		
+		<action name="validateJsExps" class="expressionServiceBean" method="validateJsExps">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+		
+		<action name="runExp" class="expressionServiceBean" method="runExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+		<!-- 生成所有函数列表的js脚本文件，编辑表达式时用到此js脚本文件 -->
+		<action name="generateFunctionListJs" class="expressionServiceBean" method="generateFunctionListJs">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+	</package> 
+	
+	
+	<!-- BIM表达式服务 added by ls 200220905 -->
+	<package name="bimExpressionNcpService" namespace="/bimExpressionNcpService" extends="default">
+		<action name="validateJsExp" class="bimExpressionServiceBean" method="validateJsExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package> 
+	
+	<package name="mdlPublishNcpService" namespace="/mdlPublishNcpService" extends="struts-default">
+		<action name="beginPublishFile" class="mdlPublishServiceBean" method="beginPublishFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="generateUnitFile" class="mdlPublishServiceBean" method="generateUnitFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="endPublishFile" class="mdlPublishServiceBean" method="endPublishFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getPublishFile" class="mdlPublishServiceBean" method="getPublishFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getUnitFile" class="mdlPublishServiceBean" method="getUnitFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		
+		<!-- 发布结果查看器的配置 added by ls 20220607 -->
+		<action name="savePublishSetting" class="mdlPublishServiceBean" method="savePublishSetting">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getPublishSetting" class="mdlPublishServiceBean" method="getPublishSetting">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		
+		<!-- 导出PIM文件 added by ls 20220606 -->
+		<action name="exportPim" class="mdlPublishServiceBean" method="exportPim">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		
+		<!-- 导出蓝图文件 added by ls 20220606 -->
+		<action name="exportBlueprint" class="mdlPublishServiceBean" method="exportBlueprint">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+	</package> 
+	
+	<!-- 导出3D模型的服务 added by ls 20220606 -->
+	<package name="mdlExport3DModelNcpService" namespace="/mdlExport3DModelNcpService" extends="struts-default">
+		<action name="getRevitMapJson" class="mdlExport3DModelServiceBean" method="getRevitMapJson">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+	</package> 
+	
+	<package name="mdlComponentNcpService" namespace="/mdlComponentNcpService" extends="struts-default">
+		<action name="getComponentFile" class="mdlComponentServiceBean" method="getComponentFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getComponentFileByCode" class="mdlComponentServiceBean" method="getComponentFileByCode">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getComponentFileByName" class="mdlComponentServiceBean" method="getComponentFileByName">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 根据编码和版本号，获取组件信息 added by ls 20210820 -->
+		<action name="getComponentInfoByCode" class="mdlComponentServiceBean" method="getComponentInfoByCode">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		
+		<action name="createComponent" class="mdlComponentServiceBean" method="createComponent">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+
+		<!-- 新建模型并自动实例化 added by liyh 20221229 -->
+		<action name="createComponentWithUnitSetting" class="mdlComponentServiceBean" method="createComponentWithUnitSetting">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		
+		<!-- 批量获取多个组件信息（涉及返回模型文件20220714）  added by ls 20220705 -->
+		<action name="getComponentFilesByCodes" class="mdlComponentServiceBean" method="getComponentFilesByCodes">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 创建component的内容文本（涉及返回模型文件20220714）  added by ls 20220705 -->
+		<action name="createComponentText" class="mdlComponentServiceBean" method="createComponentText">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 增加复制组件功能 added by ls 20210823 -->
+		<action name="copyComponent" class="mdlComponentServiceBean" method="copyComponent">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		
+		<!-- 获取类型的属性列表 added by ls 20210824 -->
+		<action name="getCategoryProperties" class="mdlComponentServiceBean" method="getCategoryProperties">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		
+		<!-- 获取类型树 added by ls 20211202 -->
+		<action name="getCategoryTree" class="mdlComponentServiceBean" method="getCategoryTree">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		
+		<!-- //根据mdlType获取当前用户的模型列表  added by ls 20230518 -->
+		<action name="getUserComponents" class="mdlComponentServiceBean" method="getUserComponents">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		
+		<!-- 已发布的模型  added by ls 20230810 -->
+		<action name="getPublishedComponents" class="mdlComponentServiceBean" method="getPublishedComponents">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		
+		<!-- 查询组件列表 added by ls 20211202 -->
+		<action name="queryComponents" class="mdlComponentServiceBean" method="queryComponents">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		
+		<!-- 发布 added by ls 20230810 -->
+		<action name="changePublishStatus" class="mdlComponentServiceBean" method="changePublishStatus">
+			<result name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		
+		<action name="changeComponentProperty" class="mdlComponentServiceBean" method="changeComponentProperty">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		<action name="saveComponent" class="mdlComponentServiceBean" method="saveComponent">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		
+		<!-- 保存截屏 added by ls 20230523 -->
+		<action name="saveImage" class="mdlComponentServiceBean" method="saveImage">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+
+		<!--增加删除构件接口（Adim调用） added by liyih 20221202-->
+		<action name="deleteComponent" class="mdlComponentServiceBean" method="deleteComponent">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="exportLZW" class="mdlComponentServiceBean" method="exportLZW">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+
+		<!-- 获取模型某个属性的值集合列表（自上而下嵌套解析-同属性只解析父节点） added by liyh 20211125 -->
+		<action name="getComponentPropertyValueList" class="mdlComponentServiceBean" method="getComponentPropertyValueList">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 获取模型某个统计指标的值集合列表（自上而下嵌套解析-同属性只解析父节点，平级返回） added by liyh 20211129 -->
+		<action name="getComponentValueByIndexList" class="mdlComponentServiceBean" method="getComponentValueByIndexList">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+
+		<!-- 获取组件统计指标列表 added by liyh 20211129 -->
+		<action name="getMdlStatisticIndexList" class="mdlComponentServiceBean" method="getMdlStatisticIndexList">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<!--  adim 加密信息 访问页面 added by yay 20221215 -->
+		<action name="adimRequest" class="mdlComponentServiceBean" method="adimRequest">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package> 
+	
+	<!-- 建筑设计服务 added by ls 20220810 -->
+	<package name="buildingDesignNcpService" namespace="/buildingDesignNcpService" extends="struts-default">
+		<!-- 根据管道设置，生成给管道的交叉情况 added by ls 20220810 -->
+		<action name="getCrossesByPipeSolids" class="buildingDesignServiceBean" method="getCrossesByPipeSolids">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package> 
+	
+	<package name="mdlSurfaceNcpService" namespace="/mdlSurfaceNcpService" extends="struts-default">
+		<action name="getSurfaceFile" class="mdlSurfaceServiceBean" method="getSurfaceFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getSurfaceFileByCode" class="mdlSurfaceServiceBean" method="getSurfaceFileByCode">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action> 
+		<action name="createSurface" class="mdlSurfaceServiceBean" method="createSurface">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		<action name="changeSurfaceProperty" class="mdlSurfaceServiceBean" method="changeSurfaceProperty">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		<action name="saveSurface" class="mdlSurfaceServiceBean" method="saveSurface">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+	</package> 
+	
+	<package name="flatShapeNcpService" namespace="/flatShapeNcpService" extends="struts-default">
+		<action name="generateShape" class="flatShapeServiceBean" method="generateShape">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+	</package> 
+	
+	<package name="mdlPathNcpService" namespace="/mdlPathNcpService" extends="struts-default">
+		<action name="getPathFile" class="mdlPathServiceBean" method="getPathFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getPathFileByCode" class="mdlPathServiceBean" method="getPathFileByCode">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action> 
+		<action name="createPath" class="mdlPathServiceBean" method="createPath">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		<action name="changePathProperty" class="mdlPathServiceBean" method="changePathProperty">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action>  
+		<action name="savePath" class="mdlPathServiceBean" method="savePath">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+	</package> 
+	
+	<!-- 记录更新的日志的相关功能 added by ls 20230518 -->
+	<package name="mdlLogNcpService" namespace="/mdlLogNcpService" extends="default">
+		<action name="getSystemUpdateLogs" class="mdlLogServiceBean" method="getSystemUpdateLogs">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getModelUpdateLogs" class="mdlLogServiceBean" method="getModelUpdateLogs">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/web/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+
+	<!-- s3d在线造型服务 added by ls 20240105 -->
+	<package name="s3dSystemNcpService" namespace="/s3dSystemNcpService" extends="struts-default">
+		<action name="refreshAppKeysCache" class="s3dSystemServiceBean" method="refreshAppKeysCache">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="generateComponentConfigJsons" class="s3dSystemServiceBean" method="generateComponentConfigJsons">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="generateMaterialConfigFile" class="s3dSystemServiceBean" method="generateMaterialConfigFile">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="checkAppMaterialConfig" class="s3dSystemServiceBean" method="checkAppMaterialConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dModelNcpService added by ls 20240105 -->
+	<package name="s3dModelNcpService" namespace="/s3dModelNcpService" extends="struts-default">
+		<action name="getCategoryTree" class="s3dModelServiceBean" method="getCategoryTree">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="queryComponents" class="s3dModelServiceBean" method="queryComponents">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getComponentFilesByCodes" class="s3dModelServiceBean" method="getComponentFilesByCodes">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getComponentFileByCode" class="s3dModelServiceBean" method="getComponentFileByCode">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="createObject3D" class="s3dModelServiceBean" method="createObject3D">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="createModel" class="s3dModelServiceBean" method="createModel">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="saveModel" class="s3dModelServiceBean" method="saveModel">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="copyModel" class="s3dModelServiceBean" method="copyModel">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getModel" class="s3dModelServiceBean" method="getModel">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getAppComponentConfigText" class="s3dModelServiceBean" method="getAppComponentConfigText">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getMaterialConfigText" class="s3dModelServiceBean" method="getMaterialConfigText">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getLastModels" class="s3dModelServiceBean" method="getLastModels">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dPublishNcpService added by ls 20250125 -->
+	<package name="s3dPublishNcpService" namespace="/s3dPublishNcpService" extends="struts-default">
+		<action name="publishModel" class="s3dPublishServiceBean" method="publishModel">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dImageNcpService -->
+	<package name="s3dImageNcpService" namespace="/s3dImageNcpService" extends="struts-default">
+		<action name="generateAppImagesAndConfig" class="s3dImageServiceBean" method="generateAppImagesAndConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="checkAppImagesAndConfig" class="s3dImageServiceBean" method="checkAppImagesAndConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="removeImage" class="s3dImageServiceBean" method="removeImage">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dComponentNcpService -->
+	<package name="s3dComponentNcpService" namespace="/s3dComponentNcpService" extends="struts-default">
+		<action name="generateAppComponentsAndConfig" class="s3dComponentServiceBean" method="generateAppComponentsAndConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="checkAppComponentsAndConfig" class="s3dComponentServiceBean" method="checkAppComponentsAndConfig">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="removeComponentLocal" class="s3dComponentServiceBean" method="removeComponentLocal">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dUserNcpService -->
+	<package name="s3dUserNcpService" namespace="/s3dUserNcpService" extends="struts-default">
+		<action name="getUser" class="s3dUserServiceBean" method="getUser">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dSkyNcpService -->
+	<package name="s3dSkyNcpService" namespace="/s3dSkyNcpService" extends="struts-default">
+		<action name="generateSkyConfigFile" class="s3dSkyServiceBean" method="generateSkyConfigFile">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- s3dContent2DNcpService -->
+	<package name="s3dContent2DNcpService" namespace="/s3dContent2DNcpService" extends="struts-default">
+		<action name="generateContent2DConfigFile" class="s3dContent2DServiceBean" method="generateContent2DConfigFile">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/web/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

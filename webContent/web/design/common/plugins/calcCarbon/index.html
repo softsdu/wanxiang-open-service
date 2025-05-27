@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+<!--	<script src="http://cpbim.oss-cn-beijing.aliyuncs.com/index/lib/jquery.min.js" type="text/javascript"-->
+<!--			charset="utf-8"></script>-->
+	<script src="./js/jquery.min.js" type="text/javascript"	charset="utf-8"></script>
+</head>
+<body>
+<form id="typesForm" enctype="multipart/form-data" method="post" onsubmit="return false">
+	<div id="typesArea"></div>
+	<input class="calc-btn canClick" type="button" value="计算" onclick="queryTree()">
+</form>
+<div id="treeArea">
+	<p id="treeName"></p>
+	<ul id="treeUl"></ul>
+</div>
+<div class="loading">
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+	<div class="dot"></div>
+</div>
+<script type="text/javascript">
+    var allBox = []
+    var currHost = window.location.protocol + '//' + window.location.host
+    $(function() {
+        $.ajax({
+            type: "GET",
+            // url: currHost + "/mdlComponentNcpService/getMdlStatisticIndexList.action",
+            url: "../../../../../mdlComponentNcpService/getMdlStatisticIndexList.action",
+            data: {
+                requestParam: JSON.stringify({})
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data[0] && data[0].code == 000) {
+                    allBox = data[0].result.indexList || []
+                    for (let i = 0; i < allBox.length; i++) {
+                        $('#typesArea').append('<p><input id="'+ allBox[i]
+                            .paramtype + [i] +'" type="checkbox" data-unit="'+ (allBox[i].unit || "") +'" name="' + allBox[i]
+                            .paramtype + [i] + '" value="' + decodeURI(allBox[i].name) + '" /><label for="'+ allBox[i]
+                            .paramtype + [i] +'">'+ decodeURI(allBox[i].name) +'</label></p>')
+                    }
+                } else {
+                    alert(data[0].message);
+                }
+            },
+            error:function (data, status, e){
+                alert("数据访问错误，请重试");
+            }
+        });
+    });
+    var urlQuery = window.location.search,
+        str = '',
+        requestParam = {};
+    if (urlQuery.indexOf('?') != -1) {
+        str = decodeURI(urlQuery).substr(1)
+    };
+    var urlQueryArr = str.split('&');
+    for (let j = 0; j < urlQueryArr.length; j++) {
+        let item = urlQueryArr[j]
+        let item1 = item.split('=')
+        requestParam[item1[0]] = item1[1]
+    };
+
+    function queryTree() {
+        var vals = {};
+        $.each($('input:checkbox:checked'), function() {
+            let v = $(this).attr('data-unit')
+            let k = $(this).val()
+            vals[k] = v || '';
+        });
+        requestParam.indexList = vals;
+        $('.loading').css('display', 'flex');
+
+        $('.calc-btn').removeClass('canClick').addClass('notCanClick');
+        $('.calc-btn').attr('disabled', true);
+        $.ajax({
+            type: "GET",
+            // url: currHost + "/mdlComponentNcpService/getComponentValueByIndexList.action",
+            url: "../../../../../mdlComponentNcpService/getComponentValueByIndexList.action",
+            data: {
+                requestParam: JSON.stringify(requestParam)
+            },
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: "json",
+            success: function(data) {
+                $('.loading').css('display', 'none');
+                $('.calc-btn').attr('disabled', false);
+                $('.calc-btn').removeClass('notCanClick').addClass('canClick');
+                $('#treeUl').html('')
+                if (data[0] && data[0].code == 000) {
+                    $("#treeName").html(decodeURI(data[0].result.componentPropertyValueList.name || ''))
+                    let valueList = data[0].result.componentPropertyValueList || {}
+                    if (valueList.indexValue) {
+                        let _res = valueList.indexValue
+                        for (const [key, value] of Object.entries(_res)) {
+                            console.log(`${key}: ${value}`);
+                            let liLv1 = ''
+                            liLv1 += '<li class="li-lv1"><p><a href="javascript:" onclick="toggleShow(this)" class="btn btn-minus" role="button"></a>'+ key +'</p>'
+                            let liLv2 = ''
+                            for (const [k, v] of Object.entries(value)) {
+                                liLv2 += '<li><p><span>'+ k +'</span><span>（'+ v +'）</span></p></li>'
+                            }
+                            $('#treeUl').append(liLv1 + '<ul>' + liLv2 + '</ul>')
+                        }
+                    }
+                } else {
+                    alert(data[0].message);
+                }
+            },
+            error:function (data, status, e){
+                alert("数据访问错误，请重试");
+            }
+        });
+    }
+    function toggleShow(that) {
+        let items = that.offsetParent.children[1]
+        if ($(items).is(":hidden")) {
+            $(that).addClass('btn-minus')
+            $(that).removeClass('btn-plus')
+            $(items).show();
+        } else {
+            $(that).addClass('btn-plus')
+            $(that).removeClass('btn-minus')
+            $(items).hide();
+        }
+    }
+</script>
+<style type="text/css">
+	#typesArea p {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.calc-btn {
+		width: 50px;
+		height: 28px;
+		line-height: 28px;
+		border-radius: 5px;
+		border: 1px solid #565656;
+		margin: 5px 10px;
+		padding: 0;
+	}
+	.canClick {
+		cursor: pointer;
+		color: #409eff;
+		background: #ecf5ff;
+		border-color: #b3d8ff;
+	}
+	.notCanClick {
+		cursor: not-allowed;
+		color: #909399;
+		background: #f4f4f5;
+		border-color: #d3d4d6;
+	}
+	#treeUl {
+		padding: 0;
+		padding-left: 10px;
+	}
+	#treeUl li {
+		list-style: none;
+	}
+	#treeUl li.li-lv1 {
+		position: relative;
+	}
+	#treeUl li.li-lv1 p {
+		display: flex;
+		align-items: center;
+	}
+	#treeUl li.li-lv1 p a {
+		margin-right: 5px;
+	}
+	.btn {
+		display: inline-block;
+		background: #f0f0f0 no-repeat center;
+		border: 1px solid #d0d0d0;
+		width: 18px;
+		height: 18px;
+		border-radius: 2px;
+		box-shadow: 0 1px rgba(100,100,100,.1);
+		color: #666;
+		transition: color .2s, background-color .2s;
+	}
+	.btn:active {
+		box-shadow: inset 0 1px rgba(100,100,100,.1);
+	}
+	.btn:hover {
+		background-color: #e9e9e9;
+		color: #333;
+	}
+	.btn-plus {
+		background-image: linear-gradient(to top, currentColor, currentColor), linear-gradient(to top, currentColor, currentColor);
+		background-size: 10px 2px, 2px 10px;
+	}
+	.btn-minus {
+		background-image: linear-gradient(to top, currentColor, currentColor);
+		background-size: 10px 2px;
+	}
+
+
+	.loading {
+		/* display: flex; */
+		display: none;
+	}
+	.loading .dot {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		margin: 0.8em;
+		border-radius: 50%;
+	}
+	.loading .dot::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: inherit;
+		border-radius: inherit;
+		animation: wave 2s ease-out infinite;
+	}
+	.loading .dot:nth-child(1) {
+		background: #7ef9ff;
+	}
+	.loading .dot:nth-child(1)::before {
+		animation-delay: 0.2s;
+	}
+	.loading .dot:nth-child(2) {
+		background: #89cff0;
+	}
+	.loading .dot:nth-child(2)::before {
+		animation-delay: 0.4s;
+	}
+	.loading .dot:nth-child(3) {
+		background: #4682b4;
+	}
+	.loading .dot:nth-child(3)::before {
+		animation-delay: 0.6s;
+	}
+	.loading .dot:nth-child(4) {
+		background: #0f52ba;
+	}
+	.loading .dot:nth-child(4)::before {
+		animation-delay: 0.8s;
+	}
+	.loading .dot:nth-child(5) {
+		background: #000080;
+	}
+	.loading .dot:nth-child(5)::before {
+		animation-delay: 1s;
+	}
+
+	@keyframes wave {
+		50%, 75% {
+			transform: scale(2.5);
+		}
+		80%, 100% {
+			opacity: 0;
+		}
+	}
+</style>
+</body>
+</html>

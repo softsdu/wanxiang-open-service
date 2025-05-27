@@ -1,0 +1,42 @@
+viewModels.cms_TextImage = {
+  id:"158ee490-3a23-4161-8880-040851508e3c",
+  name:"cms_TextImage",
+  dataName:"cms_TextImage",
+  title:"文字图片",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:30, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, align:'center', edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"name", label:"名称", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"content", label:"内容", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"backcolor", label:"背景色", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"fontcolor", label:"文字颜色", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"fontsize", label:"字号", width:50, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'right', canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"fontfamily", label:"字体", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"imagewidth", label:"宽度", width:50, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'right', canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"imageheight", label:"高度", width:50, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'right', canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"halign", label:"竖向对齐", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"valign", label:"水平对齐", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"createusername", label:"创建人", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"createuserid", label:"创建人id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'', canEdit:false, nullable:true, edittype:"", dispunitType:""},
+    {name:"isdeleted", label:"已删除", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, align:'center', canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"ncpRowOperate", label:"操作", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:false, canEdit:false, nullable:true, align:'center'}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"name", label:"名称", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"content", label:"内容", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"backcolor", label:"背景色", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"fontcolor", label:"文字颜色", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"fontsize", label:"字号", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"fontfamily", label:"字体", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"imagewidth", label:"宽度", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"imageheight", label:"高度", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"halign", label:"竖向对齐", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"valign", label:"水平对齐", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"createtime", label:"创建时间", editable:false,nullable:true, hidden:false, dispunitType:"time", },
+    {name:"createusername", label:"创建人", editable:false,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"createuserid", label:"创建人id", editable:false,nullable:true, hidden:true, dispunitType:"", },
+    {name:"isdeleted", label:"已删除", editable:false,nullable:true, hidden:true, dispunitType:"checkbox", }
+  ]
+}

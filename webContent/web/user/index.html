@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head> 
+	<title>数孪·万象</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="shortcut icon" href="../../images/logo.ico" />
+	<script type="text/javascript" src="../sysInfo.js?t=202409230"></script>
+	<script type="text/javascript" src="../base.js"></script>
+	<script type="text/javascript" src="../../platform/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../platform/jquery/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../platform/base/json.js"></script>
+	<script type="text/javascript" src="../../platform/base/common.js"></script>
+	<script type="text/javascript" src="../../platform/base/datatable.js"></script>
+	<script type="text/javascript" src="../../platform/base/hashtable.js"></script>
+	<script type="text/javascript" src="../../platform/base/datarow.js"></script>
+	<script type="text/javascript" src="../../platform/base/static.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpGrid.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpGridCard.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpCard.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpView.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpSheet.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpTree.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpTreeCard.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpTreeStyleGrid.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpMultiStyleWin.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpDocumentMultiStyleWin.js"></script>
+	<script type="text/javascript" src="../../platform/base/ncpParamWin.js"></script>
+	<script type="text/javascript" src="../../platform/jquery/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../../platform/jquery/myDatepicker.js"></script>
+	<script type="text/javascript" src="../../platform/base/dispunit.js"></script>
+	<script type="text/javascript" src="../../platform/expression/functionList.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expressionRunner.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expCommon.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expMath.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expModel.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expGeometry.js"></script>
+	<script type="text/javascript" src="../../platform/expression/expStandard.js"></script>
+	<script type="text/javascript" src="../../platform/expression/standardList.js"></script>
+	<script type="text/javascript" src="../../platform/expression/funcStepList.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../platform/jquery/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../../platform/jquery/jquery-ui-custom.css">
+	<link rel="stylesheet" type="text/css" href="../../platform/jquery/ui.multiselect.css">
+	<link rel="stylesheet" type="text/css" href="../../platform/jquery/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../platform/jquery/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/index/m_index.css">
+	<script type="text/javascript" src="js/m_index.js"></script>
+</head>
+<body>
+	<div class="indexPageHeaderContainer" >		
+		<div class="indexPageHeaderInnerContainer" > 
+		    <div class="indexPageHeaderLeftContainer" href="#">
+        		<div class="indexPageHeaderImage"></div> 	
+		    </div>
+	        <div class="indexPageHeaderRightContainer">  
+	            <div class="indexPageAllMenuBtn" id="indexPageAllMenuBtnId">☰</div>  
+		    </div> 
+		</div>	
+	</div>	
+    <div class="indexPageHeaderCenterContainer" id="mainMenuContainerId"> 
+    	<div class="indexPageHeaderCenterContainerBackground"></div>
+    	<div class="indexPageHeaderMainMenuContainer"></div>
+		<div class="indexPageHMenuContainer" >
+			<div class="indexPageHMenuInnerContainer" id="indexPageHMenuInnerContainerId"> 
+			</div>
+		</div>
+		<div class="indexPageCloseMenuBtn"><div  style="height: 30px;margin-top: 10px;background-image: url('../../images/index/closeMenu.webp')"></div></div>
+    </div>	 
+	<div class="indexPageMainContainer" >
+		<div class="indexPageMainInnerContainer" id="mainTabContainerId">
+	  		<div class="indexPageTabPageHeader">
+	  			<div class="indexPageTabPageImage"></div>
+	  			<div class="indexPageTabPageTitle" id="indexPageTabPageTitleId"></div>
+	  			<div class="indexPageTabPageTabCloseBtn" id="indexPageTabPageTabCloseBtnId" title="关闭当前窗口"></div>
+	  			<div class="indexPageTabPageTabListBtn" id="indexPageTabPageTabListBtnId" title="已打开的窗口"></div>
+	  		</div>
+		  	<div class="indexPageTabPageContainer" id="indexPageTabPageContainerId"> 
+		  	</div>
+		</div>	
+	</div>	
+	<div class="indexPageFooterContainer" >		
+		<div class="indexPageFooterInnerContainer">
+		  	 <div class="indexPageFooterLine">
+		  	 	<span class="sysParamUserInfoContainer">当前用户：<span id="sysParamUserInfoId"></span></span>
+		  	 </div>
+		</div>	
+	</div>	
+	<div class="indexPageTabHelperContainer" id="indexPageTabHelperContainerId">
+		<div class="indexPageTabHelperBack"></div>	
+		<div class="indexPageTabHelper"></div>	
+	</div>
+</body>
+</html>

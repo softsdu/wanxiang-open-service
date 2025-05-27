@@ -1,0 +1,38 @@
+﻿@CHARSET "UTF-8";
+.zlpToolbarQueryContainer { 
+    width: 100px;
+    
+}
+.zlpToolbarQueryInputText { 
+    width: 57px;
+}
+.zlpToolbarQueryBtn{
+	width:40px;
+}
+.zlpToolbarBtn{
+	padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.zlpPopBox{
+	max-width:320px;
+	max-height:320px;
+}
+.zlpPopInnerBox{
+	left:3px;
+	right:3px;
+}
+.popInnerContainer{
+	left:0px;
+	right:0px;
+}
+.zlpDetailCardContainer{
+	overflow:auto;
+}
+.zlpDispUnitTitle{ 
+	white-space: nowrap;
+}
+.zlpDispUnitValue{ 
+	white-space: nowrap;
+} 

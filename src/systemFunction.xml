@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"> 	
+	<bean id="sqlCollection" class="com.zlp.platform.dao.db.SqlCollection">
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>
+	<bean id="sequenceGenerator" class="com.zlp.platform.dao.db.SequenceGenerator">
+		<property name="transactionManager" ref="transactionManager" />  
+	</bean>  
+	
+	<bean id="dBParserAccess" class="com.zlp.platform.dao.db.DBParserAccess" scope="prototype">  
+		<property name="sequenceGenerator" ref="sequenceGenerator" /> 	  	 
+	</bean>
+			
+	<bean id="dataBaseDao" class="com.zlp.platform.dao.sys.DataBaseDao" scope="prototype"> 
+        <!-- modified by ls 20210113 增加自动给字段赋值的功能 -->
+        <property name="autoAssignFieldValueBeforeSave" value="false"></property>
+        <property name="hasIsDeletedMark" value="false"></property>
+        <property name="createTimeFieldName" value="createtime"></property>
+        <property name="createUserIdFieldName" value="createuser_xid"></property>
+        <property name="modifyTimeFieldName" value="modifytime"></property>
+        <property name="modifyUserIdFieldName" value="modifyuser_xid"></property>
+        <property name="isDeletedFieldName" value="isdeleted"></property>
+        <property name="deleteTimeFieldName" value="deletetime"></property>
+        <property name="companyIdFieldName" value="companyid"></property>
+	</bean>
+	
+	<bean id="sheetBaseDao" class="com.zlp.platform.dao.sys.SheetBaseDao" scope="prototype"> 
+	</bean>
+	
+	<bean id="treeBaseDao" class="com.zlp.platform.dao.sys.TreeBaseDao" scope="prototype">  
+	</bean>
+	
+	<bean id="paramWinBaseDao" class="com.zlp.platform.dao.sys.ParamWinBaseDao" scope="prototype"> 
+	</bean> 
+	 	
+	<bean id="dataCollection" class="com.zlp.platform.model.sysmodel.DataCollection"> 
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+	 	 
+	<bean id="eventCollection" class="com.zlp.platform.model.sysmodel.EventCollection"> 
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+	 	
+	<bean id="downListCollection" class="com.zlp.platform.model.sysmodel.DownListCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />  
+	</bean> 
+	 	
+	<bean id="viewCollection" class="com.zlp.platform.model.sysmodel.ViewCollection">
+		<property name="transactionManager" ref="transactionManager" />   
+		<property name="dBParserAccess" ref="dBParserAccess" />   	 
+	</bean> 
+	 	
+	<bean id="sheetCollection" class="com.zlp.platform.model.sysmodel.SheetCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />  	 
+	</bean> 
+	 	
+	<bean id="treeCollection" class="com.zlp.platform.model.sysmodel.TreeCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean> 
+	 	
+	<bean id="docTypeCollection" class="com.zlp.platform.model.sysmodel.DocTypeCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean> 
+	 	
+	<bean id="paramWinCollection" class="com.zlp.platform.model.sysmodel.ParamWinCollection">  
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />  	 
+	</bean>
+	 	
+	<bean id="reportCollection" class="com.zlp.platform.model.sysmodel.ReportCollection">  
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean>
+	 	
+	<bean id="pagePurviewHash" class="com.zlp.platform.model.sysmodel.PagePurviewHash"> 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>
+	
+    <!-- 文件操作 -->			
+	<bean id="fileOperate" class="com.zlp.platform.common.FileOperate" scope="singleton">
+	</bean>	  
+	
+	<bean id="accessoryDao" class="com.zlp.platform.dao.sys.AccessoryDao" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+
+		<!-- 上传的文件放置在服务器的位置 -->
+  		<property name="uploadFileDir" value="${file.dir}UploadFiles/" />
+		<property name="backupFileDir" value="${file.dir}backupFiles/" />
+  		<property name="fileOperate" ref="fileOperate" />
+
+		<!-- 需要检测的表及附件 -->
+		<property name="dataName2AccessoryIdFieldNames">
+			<map>
+				<entry key="mdl_Component" value="accessoryid,snapshotid,imgid" />
+				<entry key="cms_Image" value="accessoryid" />
+				<entry key="cms_Video" value="accessoryid" />
+				<entry key="res_Dxf" value="accessoryid" />
+				<entry key="res_DxfSlab" value="jsonaccessoryid,accessoryid" />
+				<entry key="res_Fbx" value="accessoryid" />
+				<entry key="res_Gltf" value="accessoryid" />
+				<entry key="res_Ground" value="accessoryid" />
+				<entry key="res_Wall2D" value="accessoryid" />
+				<entry key="mtl_Material" value="imageaccessoryid,metalnessimageaccessoryid,roughnessimageaccessoryid,normalimageaccessoryid,opacityimageaccessoryid" />
+				<entry key="s3d_Model" value="accessoryid" />
+				<entry key="s3d_ModelLog" value="accessoryid" />
+			</map>
+		</property>
+		<property name="dataName2AccessoryFilterTypes">
+			<map>
+				<entry key="res_Fbx" value="fbx" />
+			</map>
+		</property>
+
+		<!-- 默认不对附件类型进行限制 deleted by ls 20240207
+		<property name="fileExtensionMap">
+			<map>
+				<entry key="gltf" value="gltf" />
+				<entry key="bin" value="bin" />
+				<entry key="png" value="png" />
+				<entry key="jpg" value="jpg" />
+				<entry key="s3d" value="s3d" />
+				<entry key="dxf" value="dxf" />
+				<entry key="fbx" value="fbx" />
+				<entry key="obj" value="obj" />
+			</map>
+		</property>
+		-->
+	</bean>
+	  
+	<bean id="accessoryServiceBean" class="com.zlp.platform.service.AccessoryService" scope="prototype"> 
+		<property name="accessoryDao" ref="accessoryDao" /> 	
+		<property name="transactionManager" ref="transactionManager" /> 
+		<!--  <property name="dBParserAccess" ref="dBParserAccess" /> -->	 	
+	</bean> 
+	  
+	<bean id="sheetServiceBean" class="com.zlp.platform.service.SheetService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	  
+	
+	<bean id="userDefinedFeatureDao" class="com.zlp.platform.dao.sys.UserDefinedFeatureDao" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+	</bean>
+	
+	<bean id="viewGridServiceBean" class="com.zlp.platform.service.ViewGridService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="userDefinedFeatureDao" ref="userDefinedFeatureDao" />		
+	</bean>
+	  
+	<bean id="treeServiceBean" class="com.zlp.platform.service.TreeService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	 
+	  
+	<bean id="paramWinServiceBean" class="com.zlp.platform.service.ParamWinService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	 
+	  
+	<bean id="dataPurviewServiceBean" class="com.zlp.platform.service.DataPurviewService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="dBParserAccess" ref="dBParserAccess" />  
+	</bean>	 
+	  
+	<bean id="userServiceBean" class="com.zlp.platform.service.UserService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 	 
+		<property name="dBParserAccess" ref="dBParserAccess" />	
+	</bean>	
+		 
+	<!-- 表达式执行，为表达式内执行的函数提供调用系统功能的接口 -->
+	<bean id="databaseAccess" class="com.zlp.platform.expression.run.DatabaseAccess" scope="prototype">  
+	    <property name="transactionManager" ref="transactionManager" /> 
+	    <property name="dBParserAccess" ref="dBParserAccess" />   
+	    <property name="sequenceGenerator" ref="sequenceGenerator" />   
+	</bean> 
+	
+	<bean id="documentAccess" class="com.zlp.platform.expression.run.DocumentAccess" scope="singleton">   
+	</bean> 
+	
+	<bean id="systemModelAccess" class="com.zlp.platform.expression.run.SystemModelAccess" scope="singleton">   
+	</bean>  
+	 
+	<bean id="jobThreadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">  
+		<!-- 核心线程数  -->  
+	    <property name="corePoolSize" value="4" />  
+	    <!-- 最大线程数 -->  
+	    <property name="maxPoolSize" value="10" />  
+	    <!-- 队列最大长度 >=mainExecutor.maxSize -->  
+	    <property name="queueCapacity" value="1000" />  
+	    <!-- 线程池维护线程所允许的空闲时间 -->  
+	    <property name="keepAliveSeconds" value="300" />  
+	    <!-- 线程池对拒绝任务(无线程可用)的处理策略 -->  
+	    <property name="rejectedExecutionHandler">  
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+    	</property>  
+ 	</bean>
+
+	<bean id="dataServiceBean" class="com.zlp.platform.service.DataService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>
+ 	
+	<!-- added by ls 20180404 设置scope="prototype" -->
+	<bean id="FileUploadActionBean" class="com.zlp.platform.control.FileUploadAction"  scope="prototype">
+	    <property name="fileUploadService" ref="FileUploadServiceBean"></property>
+	 </bean> 
+	<!-- license 授权服务 added by ls20190618 -->
+	<bean id="licenseServiceBean" class="com.zlp.platform.service.LicenseService" scope="prototype">  
+	</bean>	 
+    
+    <!-- 表达式  added by ls 20210419 -->			
+	<bean id="expressionServiceBean" class="com.zlp.platform.service.ExpressionService" scope="prototype">
+		<property name="expValidator" ref="expValidator" />
+		<property name="expRunner" ref="expRunner" />
+	</bean>
+	<bean id="expEnvironment" class="com.zlp.platform.expression.definition.Environment" scope="prototype">
+	</bean>
+	<bean id="expValidator" class="com.zlp.platform.expression.definition.Validator" scope="prototype">
+		<property name="expEnvironment" ref="expEnvironment" />
+	</bean>
+	<bean id="expRunner" class="com.zlp.platform.expression.run.Runner" scope="prototype">
+		<property name="expEnvironment" ref="expEnvironment" />
+	</bean>	
+	
+	<bean id="expCommon" class="com.zlp.platform.expression.expFunction.ExpCommon" scope="singleton"> 
+	</bean>	
+	
+	<bean id="expMath" class="com.zlp.platform.expression.expFunction.ExpMath" scope="singleton"> 
+	</bean>	
+	
+	<bean id="expGeometry" class="com.zlp.platform.expression.expFunction.ExpGeometry" scope="singleton"> 
+	</bean>	
+	
+	<bean id="expModel" class="com.zlp.platform.expression.expFunction.ExpModel" scope="singleton"> 
+	</bean>
+
+</beans>

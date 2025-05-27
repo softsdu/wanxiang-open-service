@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<bean id="d_User" class="com.zlp.platform.dao.system.impl.D_UserImpl" scope="prototype" parent="dataBaseDao">  
+        <property name="autoAssignFieldValueBeforeSave" value="true"></property>
+		<property name="companyIdFieldName" value=""></property>
+	</bean> 
+	
+	<bean id="sys_DataPurviewFactor" class="com.zlp.platform.dao.system.impl.Sys_DataPurviewFactorImpl" scope="prototype">  
+	</bean> 
+	
+	<bean id="sys_Data" class="com.zlp.platform.dao.system.impl.Sys_DataImpl" scope="prototype">  
+		<property name="dataCollection" ref="dataCollection" /> 
+	</bean> 
+	
+	<bean id="sys_View" class="com.zlp.platform.dao.system.impl.Sys_ViewImpl" scope="prototype">  
+		<property name="viewCollection" ref="viewCollection" /> 
+	</bean> 
+	
+	<bean id="sys_Sheet" class="com.zlp.platform.dao.system.impl.Sys_SheetImpl" scope="prototype">  
+		<property name="sheetCollection" ref="sheetCollection" /> 
+	</bean> 
+	
+	<bean id="sys_Tree" class="com.zlp.platform.dao.system.impl.Sys_TreeImpl" scope="prototype">  
+		<property name="treeCollection" ref="treeCollection" /> 
+	</bean>  
+	
+	<bean id="sys_Report" class="com.zlp.platform.dao.system.impl.Sys_ReportImpl" scope="prototype"> 
+		<property name="reportCollection" ref="reportCollection" />  
+	</bean> 
+	
+	<bean id="sys_Menu" class="com.zlp.platform.dao.system.impl.Sys_MenuImpl" scope="prototype">  
+		<property name="pagePurviewHash" ref="pagePurviewHash" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+	</bean>
+	
+	<bean id="d_RoleMenu" class="com.zlp.platform.dao.system.impl.D_RoleMenuImpl" scope="prototype">  
+		<property name="pagePurviewHash" ref="pagePurviewHash" />  
+	</bean>
+	
+	<bean id="d_Role" class="com.zlp.platform.dao.system.impl.D_RoleImpl" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+		<property name="pagePurviewHash" ref="pagePurviewHash" /> 
+	</bean>  
+	
+	<bean id="sys_DownList" class="com.zlp.platform.dao.system.impl.Sys_DownListImpl" scope="prototype">
+		<property name="downListCollection" ref="downListCollection" />    
+	</bean>  
+	
+	<bean id="sys_ParamWin" class="com.zlp.platform.dao.system.impl.Sys_ParamWinImpl" scope="prototype">  
+		<property name="paramWinCollection" ref="paramWinCollection" />    
+	</bean> 
+	
+	<bean id="data" class="com.zlp.platform.dao.sheet.impl.DataImpl" scope="prototype">  
+	</bean>  
+	
+	<bean id="org" class="com.zlp.platform.dao.tree.impl.OrgImpl" scope="prototype">  
+	</bean>
+</beans>

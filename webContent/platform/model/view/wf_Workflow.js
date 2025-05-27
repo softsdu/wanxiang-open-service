@@ -1,0 +1,42 @@
+viewModels.wf_Workflow = {
+  id:"186b7a7e-5bc6-45ff-84cb-360d503fabf3",
+  name:"wf_Workflow",
+  dataName:"wf_Workflow",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"code", label:"编码", width:0, hidden:true, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"name", label:"名称", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"doctypeid", label:"单据类型id", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"doctypename", label:"单据类型", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"pop"},
+    {name:"isactive", label:"已启用", width:50, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"orgid", label:"组织id", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"orgname", label:"组织名称", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"pop"},
+    {name:"orgcode", label:"组织编码", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"abstractexp", label:"摘要信息表达式", width:200, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"createuserid", label:"创建人id", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"createusername", label:"创建人", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"pop"},
+    {name:"createusercode", label:"创建人编码", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"创建时间", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"modifytime", label:"修改时间", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"description", label:"描述", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:true, edittype:"text", dispunitType:"text"}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"code", label:"编码", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"name", label:"名称", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"doctypeid", label:"单据类型id", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"doctypename", label:"单据类型", editable:false,nullable:false, hidden:false, dispunitType:"pop", },
+    {name:"isactive", label:"已启用", editable:false,nullable:false, hidden:false, dispunitType:"checkbox", },
+    {name:"orgid", label:"组织id", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"orgname", label:"组织名称", editable:false,nullable:false, hidden:false, dispunitType:"pop", },
+    {name:"orgcode", label:"组织编码", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"abstractexp", label:"摘要信息表达式", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"createuserid", label:"创建人id", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"createusername", label:"创建人", editable:false,nullable:false, hidden:false, dispunitType:"pop", },
+    {name:"createusercode", label:"创建人编码", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"createtime", label:"创建时间", editable:false,nullable:false, hidden:false, dispunitType:"time", },
+    {name:"modifytime", label:"修改时间", editable:false,nullable:false, hidden:false, dispunitType:"time", },
+    {name:"description", label:"描述", editable:false,nullable:true, hidden:false, dispunitType:"text", }
+  ]
+}

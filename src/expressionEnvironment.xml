@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExpressionEnvironment>
+	<!-- 函数分类 -->
+	<AllCategories>
+		<Category Name="Common" Description="通用函数集" ></Category>
+		<Category Name="Model" Description="造型函数集" ></Category>
+		<Category Name="Geometry" Description="几何函数集" ></Category>
+		<Category Name="Standard" Description="标准" ></Category>
+		<Category Name="ValueConvert" Description="值类型转换" ></Category>
+		<Category Name="UserCustom" Description="自定义函数集" ></Category>
+		<Category Name="Workflow" Description="工作流" ></Category>
+		<Category Name="AsynInvoke" Description="异步调用" ></Category>
+		<Category Name="DocumentAnalysis" Description="文献分析" ></Category>
+		<Category Name="ExcelText" Description="Excel文本" ></Category>
+		<Category Name="BimClient" Description="BIM客户端命令"></Category>
+	</AllCategories>
+	
+	<!-- 类型名称 -->
+	<AllValueTypeDeses>
+		<ValueTypeDes Name="java.lang.String" Description="string"></ValueTypeDes>
+		<ValueTypeDes Name="java.lang.Boolean" Description="boolean"></ValueTypeDes>
+		<ValueTypeDes Name="java.util.Date" Description="date"></ValueTypeDes>
+		<ValueTypeDes Name="java.math.BigDecimal" Description="decimal"></ValueTypeDes>
+		<ValueTypeDes Name="void" Description="无类型"></ValueTypeDes>
+		<ValueTypeDes Name="net.sf.json.JSONObject" Description="Json对象"></ValueTypeDes>
+		<ValueTypeDes Name="net.sf.json.JSONArray" Description="Json数组"></ValueTypeDes>
+		<ValueTypeDes Name="HashMap&lt;String, Object&gt;" Description="字符串对对象的键值对"></ValueTypeDes>
+		<ValueTypeDes Name="INcpSession" Description="应用服务器会话"></ValueTypeDes>
+		<ValueTypeDes Name="js.DataTable" Description="DataTable(js)"></ValueTypeDes>
+		<ValueTypeDes Name="org.hibernate.Session" Description="数据库会话"></ValueTypeDes>		
+		<ValueTypeDes Name="js.NcpView" Description="前端View窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.NcpSheet" Description="前端Sheet窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.NcpTree" Description="前端Tree窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.Array" Description="数组(js)"></ValueTypeDes>		
+	</AllValueTypeDeses>
+	
+
+	<!-- 函数 -->
+	<AllFunctions>
+		<Function Name="add" Description="加" BeanName="expCommon" MethodName="add" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="正数">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="加法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="拼接字符串">
+				<Parameter Name="字符串1" Description="" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="字符串2" Description="" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		<Function Name="subtract" Description="减" BeanName="expCommon" MethodName="subtract" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="">
+				<Parameter Name="数值1" Description="负数" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="减法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="multiply" Description="乘" BeanName="expCommon" MethodName="multiply" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="乘法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="divide" Description="除" BeanName="expCommon" MethodName="divide" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="除法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="remaind" Description="取余" BeanName="expCommon" MethodName="remaind" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="取余">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="equal" Description="相等" BeanName="expCommon" MethodName="equal" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.util.Date" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.util.Date" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="moreThan" Description="大于" BeanName="expCommon" MethodName="moreThan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="lessThan" Description="小于" BeanName="expCommon" MethodName="lessThan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="moreThanOrEqual" Description="大于等于" BeanName="expCommon" MethodName="moreThanOrEqual" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="lessThanOrEqual" Description="小于等于" BeanName="expCommon" MethodName="lessThanOrEqual" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="jsonToString" Description="Json转字符串" BeanName="expCommon" MethodName="jsonToString" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="Json转字符串">
+				<Parameter Name="Json对象" Description="" ValueType="net.sf.json.JSONObject" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="stringToJson" Description="字符串转Json" BeanName="expCommon" MethodName="stringToJson" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="net.sf.json.JSONObject" Description="Json转字符串">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- iif，增加ignoreMark的参数配置 modified by ls 20230421 -->
+		<Function Name="iif" Description="IIF判断" BeanName="expCommon" MethodName="iif" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="net.sf.json.JSONObject" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="net.sf.json.JSONObject" IgnoreMark="!0"></Parameter>
+				<Parameter Name="returnValue2" Description="" ValueType="net.sf.json.JSONObject" IgnoreMark="0"></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.util.Date" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.util.Date" IgnoreMark="!0"></Parameter>
+				<Parameter Name="returnValue2" Description="" ValueType="java.util.Date" IgnoreMark="0"></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.util.Date" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.util.Date" IgnoreMark="!0"></Parameter>
+				<Parameter Name="returnValue2" Description="" ValueType="java.util.Date" IgnoreMark="0"></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.lang.String" IgnoreMark="!0"></Parameter>
+				<Parameter Name="returnValue2" Description="" ValueType="java.lang.String" IgnoreMark="0"></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.math.BigDecimal" IgnoreMark="!0"></Parameter>
+				<Parameter Name="returnValue2" Description="" ValueType="java.math.BigDecimal" IgnoreMark="0"></Parameter>
+			</FunctionSetting>
+		</Function> 
+		<Function Name="and" Description="而且，并且" BeanName="expCommon" MethodName="and" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="而且, 并">
+				<Parameter Name="条件1" Description="" ValueType="java.lang.Boolean" ></Parameter>
+
+				<!-- !0 代表索引为0即第一个参数为false时，忽略本参数的执行 modified by liyh 20230421 -->
+				<Parameter Name="条件2" Description="" ValueType="java.lang.Boolean" IgnoreMark="!0"></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="or" Description="或者" BeanName="expCommon" MethodName="or" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="或者">
+				<Parameter Name="条件1" Description="" ValueType="java.lang.Boolean" ></Parameter>
+
+				<!-- 0 代表索引为0即第一个参数为true时，忽略本参数的执行  modified by liyh 20230421 -->
+				<Parameter Name="条件2" Description="" ValueType="java.lang.Boolean" IgnoreMark="0"></Parameter>
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- 数值转字符串 added by ls 20210927 -->		
+		<Function Name="toString" Description="数值转字符串" BeanName="expCommon" MethodName="toString" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="数值转字符串">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="floor" Description="下取整" BeanName="expMath" MethodName="floor" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="下取整">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="ceil" Description="上取整" BeanName="expMath" MethodName="ceil" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="上取整">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="round" Description="四舍五入" BeanName="expMath" MethodName="round" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="四舍五入">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="sqrt" Description="开方" BeanName="expMath" MethodName="sqrt" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="开方">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>				
+
+		<!-- 取绝对值 added by ls 20230307 -->
+		<Function Name="abs" Description="取绝对值" BeanName="expMath" MethodName="abs" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="取绝对值">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- 坐标取值 add by ls 20220606 -->
+		<Function Name="getX" Description="获取X坐标值" BeanName="expGeometry" MethodName="getX" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="X坐标值"> 
+				<Parameter Name="location" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		<Function Name="getY" Description="获取Y坐标值" BeanName="expGeometry" MethodName="getY" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="Y坐标值"> 
+				<Parameter Name="location" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		<Function Name="getZ" Description="获取Z坐标值" BeanName="expGeometry" MethodName="getZ" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="Z坐标值"> 
+				<Parameter Name="location" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+				
+		<!-- 获取点坐标 added by ls 20230613 -->
+		<Function Name="getFirstPoint" Description="获取第一个点坐标值" BeanName="expGeometry" MethodName="getFirstPoint" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.lang.String" Description="获取第一个点坐标值"> 
+				<Parameter Name="location" Description="线段或多线段" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		<Function Name="getLastPoint" Description="获取最后一个点坐标值" BeanName="expGeometry" MethodName="getLastPoint" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.lang.String" Description="获取最后一个点坐标值"> 
+				<Parameter Name="location" Description="线段或多线段" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		<Function Name="getPoint" Description="获取点坐标值" BeanName="expGeometry" MethodName="getPoint" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.lang.String" Description="获取点坐标值"> 
+				<Parameter Name="location" Description="线段或多线段" ValueType="java.lang.String" ></Parameter> 
+				<Parameter Name="index" Description="序号" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 计算线长度 added by ls 20230615 -->
+		<Function Name="getLineLength" Description="计算线长度" BeanName="expGeometry" MethodName="getLineLength" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="线长度"> 
+				<Parameter Name="pointA" Description="起始点" ValueType="java.lang.String" ></Parameter> 
+				<Parameter Name="pointB" Description="结束点" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 字符串Trim added by ls 20220606 -->
+		<Function Name="isEmpty" Description="判断是否为空" BeanName="expCommon" MethodName="isEmpty" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="判断是否为空"> 
+				<Parameter Name="param1" Description="字符串" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="判断是否为空"> 
+				<Parameter Name="param1" Description="数值" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="判断是否为空"> 
+				<Parameter Name="param1" Description="日期时间" ValueType="java.util.Date" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="判断是否为空"> 
+				<Parameter Name="param1" Description="布尔类型" ValueType="java.lang.Boolean" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- 字符串长度 added by ls 20220606 -->
+		<Function Name="len" Description="获取字符串长度" BeanName="expCommon" MethodName="len" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="字符串长度"> 
+				<Parameter Name="param1" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- 字符串Trim added by ls 20220606 -->
+		<Function Name="trim" Description="去掉前后空格、回车" BeanName="expCommon" MethodName="trim" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="去掉前后空格、回车"> 
+				<Parameter Name="param1" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- 增加三角函数 add by ls 20210902 -->
+		<Function Name="pi" Description="π" BeanName="expMath" MethodName="pi" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="π"> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="sin" Description="sin" BeanName="expMath" MethodName="sin" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="sin">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="cos" Description="cos" BeanName="expMath" MethodName="cos" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="cos">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="tan" Description="tan" BeanName="expMath" MethodName="tan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="tan">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="arcsin" Description="arcsin" BeanName="expMath" MethodName="arcsin" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="arcsin">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="arccos" Description="arccos" BeanName="expMath" MethodName="arccos" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="arccos">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="arctan" Description="arctan" BeanName="expMath" MethodName="arctan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="arctan">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- 等腰三角形 add by ls 20210902 --> 
+		<Function Name="rightTriangle" Description="直角三角形" BeanName="expGeometry" MethodName="rightTriangle" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.lang.String" Description="直角三角形">
+				<Parameter Name="边长1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="边长2" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="isoscelesTriangle" Description="等腰三角形" BeanName="expGeometry" MethodName="isoscelesTriangle" RunAt="All" Category="Geometry">
+			<FunctionSetting ResultType="java.lang.String" Description="等腰三角形">
+				<Parameter Name="高度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="宽度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+		
+		<Function Name="buildStairway" Description="楼梯造型" BeanName="expModel" MethodName="buildStairway" RunAt="All" Category="Model">
+			<FunctionSetting ResultType="java.lang.String" Description="开方">
+				<Parameter Name="高度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="长度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="台阶数" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="buildHandrail" Description="扶手造型" BeanName="expModel" MethodName="buildHandrail" RunAt="All" Category="Model">
+			<FunctionSetting ResultType="java.lang.String" Description="开方">
+				<Parameter Name="高度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="长度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="扶手宽度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="扶手类型" Description="bottom/middle" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<Function Name="buildRightTriangle" Description="直角三角形" BeanName="expModel" MethodName="buildRightTriangle" RunAt="All" Category="Model">
+			<FunctionSetting ResultType="java.lang.String" Description="开方">
+				<Parameter Name="直角边1长度" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="直角边2长度" Description="" ValueType="java.math.BigDecimal" ></Parameter>  
+			</FunctionSetting> 
+		</Function>
+
+		<!-- 类型转换 -->
+		<Function Name="strToDecimal" Description="字符串转数值" BeanName="expCommon" MethodName="strToDecimal" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="字符串转数值">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter>  
+			</FunctionSetting> 
+		</Function> 
+		<Function Name="strToBoolean" Description="字符串转布尔类型" BeanName="expCommon" MethodName="strToBoolean" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="字符串转布尔类型">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter>  
+			</FunctionSetting> 
+		</Function> 
+		<Function Name="strToDate" Description="字符串转日期" BeanName="expCommon" MethodName="strToDate" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转日期">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter>  
+			</FunctionSetting> 
+		</Function> 
+		<Function Name="strToTime" Description="字符串转时间" BeanName="expCommon" MethodName="strToTime" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转时间">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter>  
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- BIM客户端命令 added by ls 20220905 -->
+		<!-- 根据条件获取构件 added by ls 20220905 -->
+		<Function Name="nameGet" Description="根据名称获取构件" BeanName="expBimClientCommon" MethodName="nameGet" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件名称" Description="构件名称，模糊匹配" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		<Function Name="catGet" Description="根据类型名称获取构件" BeanName="expBimClientCommon" MethodName="catGet" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件类型名称" Description="构件类型名称，模糊匹配" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 根据条件选择构件 added by ls 20220905 -->
+		<Function Name="nameSel" Description="根据名称选择构件" BeanName="expBimClientCommon" MethodName="nameSel" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="模糊匹配" Description="是否模糊匹配，默认true" ValueType="java.lang.Boolean" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		<Function Name="catSel" Description="根据类型名称选择构件" BeanName="expBimClientCommon" MethodName="catSel" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件类型名称" Description="构件类型名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="模糊匹配" Description="是否模糊匹配，默认true" ValueType="java.lang.Boolean" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="构件类型名称" Description="构件类型名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>		
+
+		<!-- 根据分组名称选择构件 added by ls 20221206 -->
+		<Function Name="groupSel" Description="根据分组名称选择构件" BeanName="expBimClientCommon" MethodName="groupSel" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="分组名称" Description="分组名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="模糊匹配" Description="是否模糊匹配，默认true" ValueType="java.lang.Boolean" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="分组名称" Description="分组名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		<!-- 根据分组名称获取构件 added by ls 20221206 -->
+		<Function Name="groupGet" Description="根据分组名称获取构件" BeanName="expBimClientCommon" MethodName="groupGet" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="分组名称" Description="分组名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="模糊匹配" Description="是否模糊匹配，默认true" ValueType="java.lang.Boolean" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+				<Parameter Name="分组名称" Description="分组名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 向左（X方向）移动一定距离 added by ls 20221206 -->
+		<Function Name="moveX" Description="向右（X方向）移动一定距离" BeanName="expBimClientCommon" MethodName="moveX" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="移动距离" Description="移动距离(mm)" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 向上（Y方向）移动一定距离 added by ls 20221206 -->
+		<Function Name="moveY" Description="向上（Y方向）移动一定距离" BeanName="expBimClientCommon" MethodName="moveY" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="移动距离" Description="移动距离(mm)" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 向前（Z方向）移动一定距离 added by ls 20221206 -->
+		<Function Name="moveZ" Description="向前（Z方向）移动一定距离" BeanName="expBimClientCommon" MethodName="moveZ" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="移动距离" Description="移动距离(mm)" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 清除构件的位置表达式 added by ls 20221206 -->
+		<Function Name="clearPosExp" Description="清除构件的位置表达式" BeanName="expBimClientCommon" MethodName="clearPosExp" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件左侧对齐 added by ls 20221206 -->
+		<Function Name="alignLeft" Description="左侧对齐构件" BeanName="expBimClientCommon" MethodName="alignLeft" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件右对侧齐 added by ls 20221206 -->
+		<Function Name="alignRight" Description="右侧对齐构件" BeanName="expBimClientCommon" MethodName="alignRight" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件顶部对齐 added by ls 20221206 -->
+		<Function Name="alignTop" Description="顶部对齐构件" BeanName="expBimClientCommon" MethodName="alignTop" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件底部对齐 added by ls 20221206 -->
+		<Function Name="alignBottom" Description="底部对齐构件" BeanName="expBimClientCommon" MethodName="alignBottom" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件前方对齐 added by ls 20221206 -->
+		<Function Name="alignFront" Description="前方对齐构件" BeanName="expBimClientCommon" MethodName="alignFront" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 构件后方对齐 added by ls 20221206 -->
+		<Function Name="alignBack" Description="后方对齐构件" BeanName="expBimClientCommon" MethodName="alignBack" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>		
+		
+		<!-- X方向均匀分布 added by ls 20221209 -->
+		<Function Name="equipartitionX" Description="X方向均匀分布" BeanName="expBimClientCommon" MethodName="equipartitionX" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>		
+		
+		<!-- Y方向均匀分布 added by ls 20221209 -->
+		<Function Name="equipartitionY" Description="Y方向均匀分布" BeanName="expBimClientCommon" MethodName="equipartitionY" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>		
+		
+		<!-- Z方向均匀分布 added by ls 20221209 -->
+		<Function Name="equipartitionZ" Description="Z方向均匀分布" BeanName="expBimClientCommon" MethodName="equipartitionZ" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 获取选中的构件 added by ls 20220905 -->
+		<Function Name="getSel" Description="返回选中的构件名称" BeanName="expBimClientCommon" MethodName="getSel" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="java.lang.String" Description="返回选中的构件名称，多个构件名称以分号(;)隔开">
+			</FunctionSetting>
+		</Function>
+		
+		<!-- 修改构件属性值 added by ls 20220905 -->
+		<!-- 修改函数名 modified by ls 20220217 -->
+		<Function Name="changeVal" Description="修改构件属性值" BeanName="expBimClientCommon" MethodName="changeVal" RunAt="Js" Category="BimClient">
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称，多个构件名称以分号(;)隔开" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="属性名称" Description="属性名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="新属性值" Description="新属性值" ValueType="java.lang.Boolean" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称，多个构件名称以分号(;)隔开" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="属性名称" Description="属性名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="新属性值" Description="新属性值" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称，多个构件名称以分号(;)隔开" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="属性名称" Description="属性名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="新属性值" Description="新属性值" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="void" Description="无返回值">
+				<Parameter Name="构件名称" Description="构件名称，多个构件名称以分号(;)隔开" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="属性名称" Description="属性名称" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="新属性值" Description="新属性值" ValueType="java.util.Date" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+		<!-- 获取数组从0到索引位置所有值的加和 added by liyh 20240528 -->
+		<Function Name="getArraySumByIndex" Description="获取数组从0到索引位置所有值的加和" BeanName="expCommon" MethodName="getArraySumByIndex" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="获取数组从0到索引位置所有值的加和">
+				<Parameter Name="arrayStr" Description="一维数组字符串,逗号分割" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="index" Description="索引,从0开始计算" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+		<!-- 获取一维数组指定索引位置的值 added by liyh 20230303 -->
+		<Function Name="getArrayData" Description="获取数组指定索引值" BeanName="expCommon" MethodName="getArrayData" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="获取一维数组指定索引位置的字符串值">
+				<Parameter Name="arrayStr" Description="一维数组字符串,逗号分割" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="index" Description="索引,从0开始计算" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+		<!-- 获取二维数组指定索引位置的值 added by liyh 20230303 -->
+		<Function Name="getArrayData_TwoDim" Description="获取数组指定索引值" BeanName="expCommon" MethodName="getArrayData_TwoDim" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="获取二维数组指定索引位置的字符串值">
+				<Parameter Name="arrayStr" Description="二维数组字符串,先分号再逗号分割" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="index1" Description="二维索引,从0开始计算" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="index2" Description="一维索引,从0开始计算" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+		<!-- 获取最小值 added by liyh 20230807 -->
+		<Function Name="max" Description="获取最大值" BeanName="expCommon" MethodName="max" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="获取最大值">
+				<Parameter Name="arrayStr" Description="数字字符串,逗号分割" ValueType="java.lang.String"></Parameter>
+			</FunctionSetting>
+		</Function>
+
+
+		<!-- 获取最小值 added by liyh 20230807 -->
+		<Function Name="min" Description="获取最小值" BeanName="expCommon" MethodName="min" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="获取最小值">
+				<Parameter Name="arrayStr" Description="数字字符串,逗号分割" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+		<!-- 获取二维数组的行数量 added by liyh 20240104 -->
+		<Function Name="getMatrixRowsNumber" Description="获取二维数组的行数量" BeanName="expCommon" MethodName="getMatrixRowsNumber" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="获取二维数组的行数量">
+				<Parameter Name="arrayStr" Description="二维数组字符串,先分号再逗号分割" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+
+	</AllFunctions>
+	
+	<!-- 操作符 -->
+	<AllOperators>
+		<Operator Name="+" Description="加" FunctionName="add" Level="1"></Operator>
+		<Operator Name="-" Description="减" FunctionName="subtract" Level="1"></Operator>
+		<Operator Name="*" Description="乘" FunctionName="multiply" Level="2"></Operator>
+		<Operator Name="/" Description="除" FunctionName="divide" Level="2"></Operator>
+		
+		<!-- 取余 added by ls 20210827 -->
+		<Operator Name="%" Description="取余" FunctionName="remaind" Level="2"></Operator>
+		
+		<Operator Name="=" Description="等于" FunctionName="equal" Level="2"></Operator>
+		<Operator Name="&gt;" Description="大于" FunctionName="moreThan" Level="2"></Operator>
+		<Operator Name="&lt;" Description="小于" FunctionName="lessThan" Level="2"></Operator>
+		<Operator Name="&gt;=" Description="大于等于" FunctionName="moreThanOrEqual" Level="2"></Operator>
+		<Operator Name="&lt;=" Description="小于等于" FunctionName="lessThanOrEqual" Level="2"></Operator>
+		<Operator Name="&amp;&amp;" Description="而且" FunctionName="and" Level="1"></Operator>
+		<Operator Name="||" Description="或者" FunctionName="or" Level="1"></Operator>
+	</AllOperators>
+	
+	<!-- 保留字 -->
+	<AllKeyWords>
+		<KeyWord Name="+" Description="加"></KeyWord>
+		<KeyWord Name="-" Description="减"></KeyWord>
+		<KeyWord Name="*" Description="乘"></KeyWord>
+		<KeyWord Name="/" Description="除"></KeyWord>
+		
+		<!-- 取余 added by ls 20210827 -->
+		<KeyWord Name="%" Description="取余"></KeyWord>
+		
+		<KeyWord Name="(" Description="前括号"></KeyWord>
+		<KeyWord Name=")" Description="后括号"></KeyWord>
+		<KeyWord Name="&quot;" Description="双引号"></KeyWord>
+		<KeyWord Name=" " Description="空格"></KeyWord>
+		<KeyWord Name="," Description="逗号"></KeyWord>
+		<KeyWord Name="=" Description="等于"></KeyWord>
+		<KeyWord Name="&gt;" Description="大于"></KeyWord>
+		<KeyWord Name="&lt;" Description="小于"></KeyWord>
+		<KeyWord Name="&gt;=" Description="大于等于"></KeyWord>
+		<KeyWord Name="&lt;=" Description="小于等于"></KeyWord>
+		<KeyWord Name="&amp;&amp;" Description="而且"></KeyWord>
+		<KeyWord Name="||" Description="或者"></KeyWord>
+	</AllKeyWords>
+</ExpressionEnvironment>

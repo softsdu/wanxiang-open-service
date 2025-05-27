@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ include file="../../../../base.jsp" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<title></title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<script type="text/javascript" src="${dataModel}/res_Ground.js"></script>
+	<script type="text/javascript" src="${viewModel}/res_Ground.js"></script>
+	
+	<style>
+	.ncpMultiSelectItemSpan{
+		border:solid 1px #A6C9E2;
+		margin:2px;
+		font-size:9px;
+		height:16px;
+		display:inline-block;
+	}
+	.ncpMultiSelectItemSpanCurrent{
+		background-color:#FF9393;
+	}
+	.ncpMultiSelectItemValueSpan{
+		line-height:16px; 
+		height:16px;	
+		display:inline-block;
+		vertical-align:top;
+	}
+	.ncpMultiSelectItemDelete{
+		width:16px;
+		height:16px;
+		display:inline-block;
+		border-left:solid 1px #A6C9E2;
+    	background:url(../../platform-style/plugins/platform/themes/default/images/remove.png) center center;
+    	cursor:pointer;
+	}
+	</style>
+	
+	<script> 
+	$(document).ready(function(){ 
+		var initParam = window.parent.popInitParam; 
+		
+		var multiSelectedRowIdValueToRow = new Object();
+		
+		var p = { 
+			containerId:"testGridContainer",   
+			multiselect:initParam.isMultiValue,  
+			dataModel:dataModels.res_Ground,
+			onePageRowCount:20, 
+			viewModel:viewModels.res_Ground,
+			hideOperateColumn: true
+		};
+		var grid = new NcpGrid(p); 
+
+		//数据权限过滤
+		var externalObject = {
+				beforeDoPage:function(param){
+					param.previousField = initParam.previousField;
+					param.previousData = initParam.previousData;
+					param.popDataField = initParam.popDataField;
+					return true;
+				} 
+		};
+		grid.addExternalObject(externalObject); 		
+
+		var closePop = function(rows){ 
+			initParam.closeWin({selectedRows:rows});
+		}
+				
+		grid.setGridOtherParam = function(initParam){
+			initParam.ondblClickRow = function(rowId, iRow, iCol, e){  
+				var selectedRows = new Object();
+				selectedRows[rowId] = grid.datatable.rows(rowId).allCells();
+				closePop(selectedRows);
+			}
+		}
+		
+		var checkHadSelected = function(idValue){
+			return multiSelectedRowIdValueToRow[idValue] != null;
+		}
+		
+		var showSelectedTotalCount = function(){
+			var count = getSelectedTotalCount();
+			$("#returnBtnId").text("返回(" + count + "条)");
+		}
+
+		var getSelectedTotalCount = function(){
+			var count = 0;
+			if(initParam.isMultiValue){ 
+				for (var k in multiSelectedRowIdValueToRow)
+				{ 
+					count++; 
+				} 
+			}
+			else{
+				multiSelectedRowIdValueToRow = new Object();
+				var currentRow = grid.getCurrentRow();
+				if(currentRow != null){
+				    var idValue = grid.getCurrentIdValue();
+					multiSelectedRowIdValueToRow[idValue] = currentRow.allCells();
+					count++; 
+				}
+			}
+			return count;
+		}
+
+		var addSelectedItem = function(idValue, row){
+			var showFieldName = initParam.showField; 
+			var showValue = row[showFieldName]; 
+			if(!checkHadSelected(idValue)){
+				multiSelectedRowIdValueToRow[idValue] = row;
+				var itemId = idValue + "selectedItem";
+				var itemValueId = idValue + "selectedItemValue";
+				var itemDeleteId = idValue + "selectedItemDelete";
+				
+				//添加到显示界面
+				var itemHtml = "<span class=\"ncpMultiSelectItemSpan\" idValue=\"" + idValue + "\" id=\"" + itemId + "\"><span class=\"ncpMultiSelectItemValueSpan\" id=\"" + itemValueId + "\"></span><span class=\"ncpMultiSelectItemDelete\" id=\"" + itemDeleteId + "\" idValue=\"" + idValue + "\" ></span></span>";
+				$("#selectedItemsContainerId").append(itemHtml);
+				$("#" + itemValueId).text(showValue);
+				$("#" + itemDeleteId).click(function(){
+					var deleteIdValue = $(this).attr("idValue");
+					removeSelectedItem(deleteIdValue);
+					var idFieldName = grid.dataModel.idFieldName;
+			        var rowId = grid.datatable.getRowIdByIdField(deleteIdValue, idFieldName);
+			        grid.setRowSelectCheck(rowId, false);
+				});
+			}
+			
+			showSelectedTotalCount();
+			
+			//高亮显示被选中项
+			$(".ncpMultiSelectItemSpan").each(function(){
+				var iv = $(this).attr("idValue");
+				if(iv == idValue){
+					$(this).addClass("ncpMultiSelectItemSpanCurrent");
+				}
+				else{
+					$(this).removeClass("ncpMultiSelectItemSpanCurrent");
+				}
+			});
+		}
+		var removeSelectedItem = function(idValue){ 
+			var itemId = idValue + "selectedItem"; 
+	        delete multiSelectedRowIdValueToRow[idValue];
+	        $("#" + itemId).empty();
+	        $("#" + itemId).remove();
+	        showSelectedTotalCount();
+		}
+		grid.onRowCheckClick = function(rowId, checked){
+			var row = grid.datatable.rows(rowId).allCells()
+			var idFieldName = grid.dataModel.idFieldName;
+			var idValue = row[idFieldName];
+			if(checked){
+				addSelectedItem(idValue, row);
+			}
+			else{
+				removeSelectedItem(idValue);
+			}
+		} 
+		
+		grid.show();	
+
+		$("#testGridContainer").find("a[name='returnBtn']").click(function(){
+			//20160127修改此处代码，多选时返回multiSelectedRowIdValueToRow保存的rows！！！！！！！！！！！！！！！！！！！！！！！！！！！
+			var selectedCount = getSelectedTotalCount();
+			if(selectedCount == 0){
+				msgBox.alert({info:"请选中记录."});
+			}
+			else{
+				closePop(multiSelectedRowIdValueToRow);
+			}
+		});
+		$("#testGridContainer").find("a[name='returnNullBtn']").click(function(){
+			closePop(new Object());
+		});
+		$("#testGridContainer").find("a[name='closeBtn']").click(function(){
+			closePop(null);
+		});
+		
+		var initShowSelectItems = function(){
+			if(initParam.isMultiValue){
+				var idFieldName = grid.dataModel.idFieldName;
+				for (var rowId in initParam.value)
+				{ 
+					var row = initParam.value[rowId]; 
+					var idValue = row[idFieldName];
+					addSelectedItem(idValue, row)
+				} 
+			}
+		}
+		initShowSelectItems();
+		
+	});  
+	</script>
+</head>
+<body id="testGridContainer">
+	<div class="zlpGridStyleContainer">
+		<div class="zlpGridStyleInnerContainer">
+			<div class="zlpToolbarContainer">
+				<div class="zlpToolbarLeftContainer">
+					<div class="zlpToolbarQueryContainer">
+						<input type="text" class="zlpToolbarQueryInputText" placeholder="请输入关键字" />
+						<a name="queryBtn" href="#" class="zlpToolbarQueryBtn">查询</a>
+					</div> 
+					<a name="returnNullBtn" href="#" class="zlpToolbarBtn returnNullBtn">清除</a>  
+					<a name="returnBtn" href="#" class="zlpToolbarBtn addBtn">确定</a>  
+				</div> 
+			</div> 
+			<div class="zlpGridContainer" name="gridDiv">
+				<table name="gridCtrl" class="zlpGridTable"></table>
+			</div>
+			<div class="zlpBottomContainer">
+				<ul class="zlpNavUl pagination">
+				</ul> 
+			</div>
+		</div>
+	</div>
+</body> 
+</html>

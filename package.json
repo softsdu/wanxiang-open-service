@@ -1,0 +1,14 @@
+{
+  "name": "wanxiang-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "qrcode-generator": "^1.4.4",
+    "qrcode2": "^1.2.3"
+  }
+}

@@ -1,0 +1,40 @@
+viewModels.com_FamilyFile = {
+  id:"5931b79a-5106-48ac-b118-52e5c2dab098",
+  name:"com_FamilyFile",
+  dataName:"com_FamilyFile",
+  title:"族表",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:30, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, align:'center', edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"componentid", label:"构件ID", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"filename", label:"文件名", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"designtoolid", label:"设计工具ID", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"designtoolname", label:"设计工具", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"list"},
+    {name:"filesize", label:"文件大小", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'right', canEdit:true, nullable:true, edittype:"text", dispunitType:"decimal"},
+    {name:"filemd5", label:"文件MD5", width:100, hidden:false, sortable:false, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"description", label:"描述", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createusername", label:"创建人", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"modifyusername", label:"修改人", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"modifytime", label:"修改时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"versionnum", label:"族版本", width:100, hidden:false, sortable:false, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"isactive", label:"已启用", width:60, hidden:false, sortable:false, search:true, resizable:true, editable:true, align:'center', canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"ncpRowOperate", label:"操作", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:false, canEdit:false, nullable:true, align:'center'}
+  ],
+  dispUnitModel:[
+    {name:"componentid", label:"构件ID", editable:true,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"filename", label:"文件名", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"designtoolid", label:"设计工具ID", editable:true,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"designtoolname", label:"设计工具", editable:true,nullable:false, hidden:false, dispunitType:"list", },
+    {name:"filesize", label:"文件大小", editable:true,nullable:true, hidden:false, dispunitType:"decimal", },
+    {name:"filemd5", label:"文件MD5", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"createusername", label:"创建人", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"createtime", label:"创建时间", editable:true,nullable:true, hidden:false, dispunitType:"time", },
+    {name:"modifyusername", label:"修改人", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"modifytime", label:"修改时间", editable:true,nullable:true, hidden:false, dispunitType:"time", },
+    {name:"versionnum", label:"族版本", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"isactive", label:"已启用", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", },
+    {name:"id", label:"id", editable:true,nullable:true, hidden:false, dispunitType:"text", }
+  ]
+}

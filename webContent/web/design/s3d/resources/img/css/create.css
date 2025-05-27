@@ -1,0 +1,165 @@
+@CHARSET "UTF-8";
+body{
+	width:100%;
+	height:100%;
+}
+.createFileNavigator{
+	width:500px;
+	height:280px;
+	border: solid 0px #cccccc;
+	margin:0 auto; 
+}
+.createFileTitleDiv{
+	position:relative;
+	width:100%;
+	height:50px;
+	text-align:left;
+	border-bottom:solid 1px #dddddd;
+}
+.createFileTitle{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	font-size:15px; 
+	font-weight:600;
+	padding-left:5px;
+}
+.createFileBackToBegin{
+	position:absolute;
+	right:10px;
+	bottom:5px;
+	font-size:13px; 
+	cursor:pointer;
+	text-decoration:none;
+	color:#888888;
+}
+.createFileBackToBegin:hover{
+	text-decoration:underline;
+}
+.createFileStyleItem{
+	width:400px;
+	height:80px;
+	cursor:pointer;
+	border: solid 1px #dddddd;
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.createFileStyleItem:hover{
+	background-color:#F56600; 
+	border: solid 0px #dddddd;
+	color:#ffffff;
+}
+
+.createFileStyleItem h3{ 
+	height:40px;
+	margin:0px;
+	line-height:40px;
+	font-size:15px;
+	padding-left:10px;
+}
+
+.createFileStyleItem span{ 
+	height:40px; 
+	font-size:10px;
+	padding-left:10px;
+	text-decoration:none;
+}
+
+.createFileStyleUpload{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:400px;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+}
+.selectFileDiv{
+	width:100%;
+	height:40px;
+	margin:0 auto;
+	margin-top:20px;
+	position:relative;
+	text-align:left;
+}
+.createFileStyleUpload input{
+	position:absolute;
+	top:5px; 
+	cursor:pointer;
+	margin:0px;
+	text-align:center;
+}
+.selectFilePromptDiv{
+	position:absolute;
+	top:0px;
+	left:105px;
+	width:100%;
+	height:23px;
+	line-height:23px;
+	font-size:13px;
+}
+.selectErrorDiv{
+	width:100%;
+	height:100p;
+	font-size:10px;
+	color: #FF4300;
+	display:none;
+}
+.uploadFileBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+}
+
+.waitingValidateFileDiv{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:400px;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+}
+
+.fileInfoContainerDiv{ 
+	margin-top:10px;
+	margin-bottom:10px;
+	width:100%;
+	height:80px;
+	border: solid 0px #dddddd;
+	padding:0px;
+	font-size:15px;
+	overflow: hidden;
+}
+.processStatusDiv{
+	width:100%;
+	height:100%;
+	line-height:30px;
+	border: solid 0px #dddddd;
+	margin:0 auto;
+	margin-top:15px;
+	margin-bottom:5px;
+	font-size:15px;
+	text-align:left; 
+}
+.beginProcessFileBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+} 
+.beginProcessFileBtnDivDisable{
+	background-color:#c0c0c0; 
+}

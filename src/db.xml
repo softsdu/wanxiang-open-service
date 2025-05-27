@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                                            http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                                            http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+    default-autowire="autodetect">
+	<!-- 引入配置文件 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:system.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--配置数据源 -->
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource" primary="true">
+		<property name="driver" value="${jdbc.driverClassName}"/>
+		<property name="driverUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="maximumConnectionCount" value="${proxool.maxConnCount}"/>
+		<property name="minimumConnectionCount" value="${proxool.minConnCount}"/>
+		<property name="statistics" value="${proxool.statistics}"/>
+		<property name="simultaneousBuildThrottle" value="${proxool.simultaneousBuildThrottle}"/>
+		<property name="trace" value="${proxool.trace}"/>
+		<property name="verbose" value="${proxool.verbose}"/>
+		<property name="maximumActiveTime" value="${proxool.maximumActiveTime}"/>
+	</bean>
+
+	<!-- 会话配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				
+				<!-- Oracle 数据库配置  marked by liyh 20181109 -->
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+				
+				<!-- Mysql 数据库配置  marked by liyh 20181109 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				
+				<prop key="hibernate.current_session_context_class">thread</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>	
+				<!-- 项目应用实体对象 
+				<value>com/ssh/entity/User.hbm.xml</value>-->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 事务管理配置 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false"/>
+	
+	<!--
+		业务类声明式事务管理配模板,需要使用事务管理业务服务对象,直接继承此Bean[即配置parent属性为此bean的id],方便统一配置
+	-->
+	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="transactionAttributes">
+			<props>
+				<!-- 指明进行事务管理业务方法名[*是通配符] -->
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="edit*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean> 
+	
+	<!--  Dao模板,具体实现Dao继承此bean的配置,省去各个Dao的重复配置 -->
+	<bean id="daoTemplate" abstract="true">
+		<property name="transactionManager" ref="transactionManager"/>
+	</bean>
+</beans>

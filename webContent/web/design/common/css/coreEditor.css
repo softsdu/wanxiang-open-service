@@ -1,0 +1,2016 @@
+
+*::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+    background-color: #f8f8f8; 
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #dddddd; 
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+body{ 
+	font-size: 13px;
+}
+.coreContainer {
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	left:0px;
+	right:0px;
+	top:75px;
+	bottom:0px;
+} 
+
+.coreInnerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%; 	
+}
+.gizmoContainer{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 100px;
+	height:100px;
+}
+.coreInnerContainerDraw{
+	cursor: default;
+}
+.contextMenuContainer{
+	position:absolute;
+	width:120px; 
+	display:none;
+}
+.contextMenuGroundPlaneContainer{ 
+	height:92px;
+}
+
+.contextMenuMultiGroundPlaneContainer{ 
+	height:32px;	 
+}
+
+.contextMenuComponentContainer{ 
+	height:212px;	 
+}
+
+.contextMenuContainerPopup{
+	display:block;
+}
+.contextMenuInnerContainer{
+	position:absolute;
+	left:1px;
+	top:1px;
+	right:1px;
+	bottom:1px;
+	background-color:transparent;
+} 
+.contextMenuContainerBackground{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:#ffffff; 
+	border-radius:1px;	
+	border: solid 1px #aaaaaa;
+}
+.contextMenuBtnContainer{
+	position:relative;
+	width:100%;
+	height:30px;
+	line-height:30px;	
+	text-indent:45px;	
+}
+.contextMenuBtnContainerRoot{	
+	text-indent:35px;
+}
+.contextMenuBtnContainerEnable{ 
+	text-indent:35px;
+}
+.contextMenuBtnContainerSub{
+	text-indent:55px;
+}
+.contextMenuBtnContainerRoot:hover{
+	background-color:transparent;
+}
+.contextMenuBtnContainerEnable:hover{
+	background-color: #eeeeee;
+}
+.contextMenuBtn{
+	position:relative;
+	width:100%; 
+	height:100%;
+	line-height:30px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position-y: center;
+    background-position-x: 30px;
+    display:block;
+    cursor:default;
+    color: #444444;
+}
+.contextMenuBtnRoot{
+	position:relative; 
+    background-position-x: 10px; 
+} 
+.contextMenuBtnComponent{
+	background-image:url('../img/toolbar/insert.png');
+}
+.contextMenuBtnCut{
+	background-image:url('../img/toolbar/cut.png');
+}
+.contextMenuBtnCopy{
+	background-image:url('../img/toolbar/copy.png');
+}
+.contextMenuBtnWorkPlaneViewport{
+	background-image:url('../img/toolbar/workPlaneViewport.png');
+}
+.contextMenuBtnPaste{
+	background-image:url('../img/toolbar/paste.png');
+}
+.contextMenuBtnMultiPaste{
+	background-image:url('../img/toolbar/multiPaste.png');
+}
+.contextMenuBtnDelete{
+	background-image:url('../img/toolbar/delete.png');
+}  
+
+.contextMenuBtnEditUnitComponent{
+	background-image:url('../img/toolbar/edit.png');
+}  
+.contextMenuBtnEditUnitParameters{
+	background-image:url('../img/toolbar/editUnitParameters.png');	
+}
+.contextMenuBtnMove{
+	background-image:url('../img/toolbar/itemBtnMove.png');	
+}
+.contextMenuBtnSetCenter{
+	background-image:url('../img/toolbar/itemBtnSetCenter.png');	
+}
+.contextMenuBtnRotate{
+	background-image:url('../img/toolbar/itemBtnRotate.png');	
+} 
+
+.core3dLeftContainer {
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	width:250px;
+	left:0px;
+	top:75px;
+	bottom:0px;
+	background-color: #282828;
+} 
+.core3dRightContainer {
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	width:250px;
+	right:0px;
+	top:75px;
+	bottom:0px;
+	background-color: #282828;
+} 
+.tabContainerClosed{
+	width: 30px;
+}
+.core3dTabTitleContainer{
+	position: absolute;
+	top: 0px;
+	width: 30px;
+	height: 100%;
+	background-color: transparent;
+}
+.core3dTabTitleContainerLeft{
+	left: 0px;
+}
+.core3dTabTitleContainerRight{
+	right: 0px;
+}
+.core3dTabTitleTop{
+	position:relative;
+	width: 30px;
+	height: auto;
+	line-height: 30px;
+	border-bottom: solid 1px #505050;
+	text-align:center;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: cursive;
+	border-top: 0px;
+}
+.core3dTabTitleTop:hover{
+	font-weight: 600;
+	background-color: #EEEEEE;
+	color: #111111;
+}
+.core3dTabTitle{
+	position:relative;
+	padding-top:10px;
+	padding-bottom:10px;
+	width: 30px;
+	height: auto;
+	min-height: 70px;
+	line-height: 30px;
+	border-bottom: solid 1px #505050;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	text-align:center;
+	background-color: transparent;
+	cursor: pointer;
+	writing-mode: tb-rl;
+	border-top: 0px;
+	letter-spacing: 2px;
+	color: #AAAAAA;
+	display: none;
+}
+.core3dTabTitle:hover{
+	background-color: #EEEEEE;
+	color: #111111;
+}
+.titleSelected{
+	background-color: #383838;
+	border-right: 0;
+	border-left: 0;
+	color: #f2f2f2;
+}
+.titleSelected:hover{
+	background-color: #ffffff;
+}
+
+.core3dTabContentContainer{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	background-color: #383838;
+	border-bottom-width: 0px;
+	border-radius: 0px;
+	overflow-y:auto;
+}
+
+.core3dTabContentContainerLeft{
+	left: 30px;
+	right: 0px;
+	border-right: solid 1px #505050;
+}
+.core3dTabContentContainerRight{
+	right: 30px;
+	left: 0px;
+	border-left: solid 1px #505050;
+}
+.core3dTabContent{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px; 
+	display: none;
+}
+.core3dListContainer{
+	position:relative;
+	width:100%;
+	height:auto;
+}
+.contentSelected{
+	display: block;
+} 
+.propertyList{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+.propertyListSelected{
+	display:block;
+}
+.propertyItem{
+	position:relative;
+	width:100%;
+	height:34px;	 
+}
+.propertyItemMulti{ 
+	height:160px;	 
+}
+.propertyName{
+	position:absolute;
+	left:0px;
+	width:60px;
+	top:0px;
+	height:34px;
+	line-height:34px;
+	
+	/* 去掉缩进 deleted by ls 20230726 
+	text-indent:7px;
+	*/
+	
+	text-align:right; 
+}
+.propertyCategory{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 4px;
+    height: 28px;
+    line-height: 28px;
+    font-weight: bold;
+    text-indent: 10px;
+    text-align: left;
+    background-color: transparent;
+} 
+.propertyValue{
+	position:absolute; 
+	left:65px;
+	right:0px;
+	top:0px;
+	height:35px;
+	line-height:35px;
+}
+.propertyValueCheckbox{
+	padding-top:3px;
+}
+.propertyValueExp{ 
+	right:75px; 
+}
+.propertyValueExpPim{ 
+	left:auto;
+	width:48px;
+	right:23px; 
+}
+.propertyExpBtn{
+	position: absolute; 
+	top: 3px;
+	right: 0;
+	width: 24px;
+	height: 29px;
+	line-height:29px;
+	text-align:center;
+	border-width: 0;
+	background-color: #f2f2f2;
+	cursor: pointer;
+	font-size: 9px;
+	background-image:url('../img/toolbar/exp.png');
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+}
+.propertyInput::placeholder{
+	color: #BBBBBB;
+	font-size: 12px;
+}
+.propertyValueRightSelect{ 
+	top: 0px;
+	left: auto;
+	width: 70px;
+	right: 0px; 
+}
+.propertyValueMulti{ 
+	height:150px;	 
+	line-height:22px;
+	overflow-y: auto;
+}
+.propertyInput{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:solid 1px #505050;
+	background-color: #EEEEEE;
+	text-indent: 3px;
+	color: #111111;
+}
+.propertyInputMulti{ 
+	position:relative;
+	top:3px;
+	height:140px;	
+	resize: none; 
+}
+.propertyNum{
+	text-align:right;
+}
+.propertyCheckbox{
+	height:16px;
+}
+.multiUnitList{
+	height:auto;
+	max-height:300px;
+	overflow: auto;
+}
+.multiUnitItem{
+	position:relative;
+	height:34px;
+	width:100%;	
+}
+.multiUnitName{
+	position:absolute;
+	left:5px;
+	right:24px;
+	top:0px;
+	bottom:0px;
+	padding-top:5px;
+	line-height:16px;	
+}
+.multiUnitDeleteBtn{
+	position:absolute; 
+	right: 5px;
+	top:9px; 	
+	height:16px;
+	width:16px;
+	background-image:url('../img/toolbar/itemBtnCancel.png');
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+	display:none;
+}
+.multiUnitItem:hover .multiUnitDeleteBtn{
+	display:block;
+	cursor:pointer;
+}
+.core3dHeaderContainer{
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	left:0px;
+	right:0px;
+	height:75px;
+	top:0px; 
+    background-color: #000000;
+    border-bottom: solid 1px #505050;
+}
+.core3dHeaderToolbarContainer{
+	position: absolute;
+	top: 0px;
+	left: 45px;
+	height: 30px;
+	width: auto;
+	background: transparent;
+    background-color: #0A192F;
+}
+.core3dHeaderToolbarTab{
+	position: relative;
+	float: left;
+	width: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 30px;
+	line-height: 30px;	
+	border-top-right-radius: 1px;
+	border-top-left-radius: 1px;
+	color: #cccccc;
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+.core3dHeaderToolbarTab:hover{
+	color: #222222;
+	font-weight: 600;
+	background-color: #CCCCCC;
+}
+.core3dHeaderToolbarTabActive{
+	color: #f2f2f2;
+	background-color: #383838;
+	font-weight: 600;
+}
+.core3dHeaderToolbarTabActive:hover{
+	color: #222222;
+	background-color: #EEEEEE;
+	font-weight: 600;
+	cursor: default;
+}
+.core3dHeaderSubToolbarContainer{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	height: 45px;
+	right: 0px;
+	padding-left:5px;
+	padding-right:5px;
+	background-color: #383838;
+}
+.core3dHeaderSubToolbar{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+.core3dHeaderSubToolbarActive{
+	display: block;
+}
+.core3dHeaderButton{
+	position: relative;
+	float: left;
+	width: auto;
+	padding-right: 7px;
+	padding-left: 7px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 45px;
+	border-radius: 1px;
+	margin-top:1px;
+	cursor: pointer;
+	color: #f2f2f2;
+}
+.core3dHeaderButtonSpliter{    
+	position: relative;
+    float: left;
+    width: 2px;
+    height: 35px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    background-color: #505050;
+    border-left: solid 1px #383838;
+}
+.core3dHeaderButton:hover{
+	background-color: #b9dfff;
+	color: #111111;
+}
+.core3dHeaderButtonImg{
+	position: relative;
+	float: left;
+	width: 36px;
+	height: 36px;
+	margin-top: 4px;
+	object-fit: cover;
+}
+.core3dHeaderButtonText{
+	position: relative;
+	float: left;
+	width: auto;
+	height: 36px;
+	line-height: 36px;
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.core3dShortcutContainer{
+	position: relative;
+	width: 30px;
+	height: 100px;
+	padding-top:15px;
+}
+.core3dShortCutButton{
+	position: relative;
+	width: auto;
+	padding: 2px 6px;
+	height: 30px;
+	border-radius: 1px;
+	margin-top: 2px;
+	cursor: pointer;
+	background-color: #383838;
+}
+.core3dShortCutButton:hover{
+	background-color: #b9dfff;
+	font-weight: 600;
+}
+.core3dShortCutButtonImg{
+	position: relative;
+	text-align: center;
+	width: 19px;
+	height: 19px;
+	margin-top: 4px;
+}
+.core3dLogoContainer{
+	position:absolute;
+	left:10px;
+	width:25px;
+	top:3px;
+	height:25px;
+	background-size: 25px 25px;
+	background-image:url('../img/logo/logo.png');
+}
+.core3dTitleContainer{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #F2F2F2;
+    font-weight: 400;
+    text-align: center;
+}
+.core3dFooterContainer {
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	left:250px;
+	right:250px;
+	height:100px;
+	bottom:0px;
+    background-color: #f5f5f5; 
+    border-top: solid 1px #e2e2e2;
+    display: none;
+}
+
+/* AI助手 added by ls 20240301*/
+.assistantAIMsgContainer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:100px;
+}
+.assistantAIMsgLog{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	overflow-y:auto;
+	line-height:18px;
+}
+.assistantAIContainer{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	height:100px;
+}
+.assistantAIBtn{
+	position: absolute;
+	width: 95px;
+	height: 28px;
+	bottom: 5px;
+	cursor: pointer;
+	line-height: 28px;
+	background-repeat:no-repeat;
+	background-size:19px 19px;
+	background-position-x:18px;
+	background-position-y:center;
+	border: solid 1px #cccccc;
+	background-color: #cccccc;
+	text-indent: 42px;
+}
+.assistantAISendBtn{
+	right:0px;
+	background-image:url('../img/toolbar/send.png');
+	border-radius: 3px;
+	color: #111111;
+}
+.assistantAIInputContainer{
+	position:absolute;
+	right:0px;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:40px;
+}
+.assistantAIInput{
+	position:relative;
+	width:100%;
+	height:100%;
+	border: solid 1px #e2e2e2;
+	padding:2px;
+	text-indent:3px;
+	line-height:18px;
+	letter-spacing: 1px;
+	font-size:13px;
+	resize: none;
+	outline: none;
+	background-color: #EEEEEE;
+	border-radius: 3px;
+	color: #111111;
+}
+.assistantAIInput::placeholder{
+	color: #AAAAAA;
+	font-size: 12px;
+}
+.cmdMsgItem{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.cmdMsgItemOwner{
+	position: relative;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+.cmdMsgItemUser{
+	color: #418AC6;
+}
+.cmdMsgItemAI{
+	color: #C45C61;
+}
+.cmdMsgItemSys{
+	color: #f2f2f2;
+}
+.cmsMsgItemTime{
+	text-indent: 10px;
+	color: #CCCCCC;
+}
+.cmsMsgItemWaiting{
+	height:20px;
+}
+.cmdMsgItemContent{
+	line-height: 20px;
+	color: #f2f2f2;
+	display: inline-block;
+	overflow-x: clip;
+	border-radius: 5px;
+	padding: 5px 5px 10px 20px;
+}
+
+/* 命令行 */
+.cmdRunLogContainer{
+	position:absolute;
+	top:100px;
+	left:0px;
+	right:0px;
+	bottom:0px;	
+	background: transparent;
+}
+.cmdRunLog{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	overflow-y:auto;
+	line-height:18px;
+}
+.cmdLogHr{    
+	margin-top: 0px;
+    margin-bottom: 10px;
+}
+.cmdLineContainer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:100px;
+	background: transparent;
+} 
+.cmdLineInputContainer{
+	position:absolute;
+	right:0px;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:40px;
+}
+.cmdLineInput{
+	position: relative;
+	width:100%;
+	height:100%;
+	border: solid 1px #e2e2e2;
+	padding:2px;
+	text-indent:3px;
+	line-height:18px;
+	letter-spacing: 1px;
+	font-size:13px;
+	resize: none;
+	outline: none;
+	background-color: #EEEEEE;
+	border-radius: 3px;
+	color: #111111;
+}
+.cmdLineInput::placeholder{
+	color: #AAAAAA;
+	font-size: 12px;
+}
+.cmdLineBtn{
+	position: absolute;
+	width: 95px;
+	height: 28px;
+	bottom: 5px;
+	cursor: pointer;
+	line-height: 28px;
+	background-repeat:no-repeat;
+	background-size:19px 19px;
+	background-position-x:18px;
+	background-position-y:center;
+	border: solid 1px #cccccc;
+    background-color: #cccccc;
+    text-indent: 42px;
+	border-radius: 3px;
+	color: #111111;
+}
+.cmdLineBtn:hover{
+	background-color: #ddf0ff;
+	font-weight: 600;
+}
+.cmdLineHelperBtn{
+	left:0px;
+	background-image:url('../img/toolbar/bimFunctionHelper.png');
+}
+.cmdLineRunBtn{
+	right:0px;
+	background-image:url('../img/toolbar/run.png');
+}
+.cmdLogTime{
+	display: inline-block;
+    position: relative;
+    top: 10px;
+    width: auto;
+    color: #AAAAAA;
+    background-color: #ffffff;
+}
+.cmdLogCommand{
+	position: relative;
+	width: auto;
+	margin-left:5px;
+	margin-right:10px;
+	cursor: pointer;
+	color: #bf2e00;
+}
+.cmdLogSplitSpan{
+	position: relative;
+	width: 15px;
+	display: inline-block;	
+}
+.cmdLogResult{
+	position: relative;
+	width: auto;
+	margin-left:5px;
+	margin-right:10px;
+}
+.cmdLogKeyWord{
+	position: relative;
+	color: #AAAAAA;
+}
+
+.loadingContainer{ 
+	position: absolute;
+	width:100%;
+	height:100%;   
+	z-index:9999;
+	display:none;
+}
+.loadingInnerContainer{
+	position: absolute;
+	width:200px;
+	height:80px;
+	top:50%;
+	left:50%;
+	margin-top:-40px;
+	margin-left:-100px;
+	border-radius:5px;
+}
+.loadingTextContainer{
+	position: absolute;
+	width:200px;
+	height:80px;
+	top:50%;
+	left:50%;
+	margin-top:-40px;
+	margin-left:-100px; 
+}
+.loadingContainerBackground{
+	position: relative;
+	width:100%;
+	height:100%; 
+	background-color:#444444;
+	opacity:0.5; 
+	filter:alpha(opacity=50);	
+}
+.loadingText{
+	position:absolute;
+	left:0px;
+	right:0px;
+	width:100%;
+	height:100%; 
+	top:30px;
+	line-height:20px;
+	text-align:center;	
+	color:#FFFFFF;
+	font-weight:400;
+	font-size:15px;
+	letter-spacing:1px;
+} 
+
+.publishingContainer{ 
+	display:none;
+	width:100%;
+	height:100%;   
+	z-index:1000;
+}
+.publishingInnerContainer{
+	position: absolute;
+	width:300px;
+	height:100px;
+	top:50%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-150px;
+	border:solid 1px #444444;
+	border-radius:5px;
+	background-color:#888888;
+	opacity:0.5; 
+	filter:alpha(opacity=50);
+}
+.publishingTextContainer{
+	position: absolute;
+	width:300px;
+	height:100px;
+	top:50%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-150px; 
+}
+.publishingContainerBackground{
+	position: relative;
+	width:100%;
+	height:100%; 
+	background-color:#888888;
+	opacity:0.05; 
+	filter:alpha(opacity=5);	
+}
+.publishingText{
+	position:absolute;
+	left:0px;
+	right:0px;
+	width:100%;
+	height:100%; 
+	top:40px;
+	line-height:20px;
+	text-align:center;	
+	color:#FFFFFF;
+	font-weight:600;
+	font-size:16px;
+	letter-spacing:1px;
+} 
+
+.drawHelpLineContainer{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+}
+.drawHelpLine{
+	stroke:#dddddd;
+	opacity:0.3; 
+	filter:alpha(opacity=70);
+	stroke-width:1;
+	display:none;
+}
+.drawHelpText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#000000;
+}
+.drawHelpArcText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#000000; 
+}
+.drawHelpArcRect{ 
+	display:none;
+	width:40px;
+	height:16px;  
+	opacity:0.8; 
+	filter:alpha(opacity=80);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+.drawHelpReadonlyText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#777777;
+}
+.drawHelpRect{ 
+	display:none;
+	width:40px;
+	height:16px;  
+	opacity:0.8; 
+	filter:alpha(opacity=80);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+.drawHelpReadonlyRect{ 
+	display:none;
+	width:40px;
+	height:16px;  
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+.popLengthSettingContainer{
+	position:absolute;
+	z-index:9999;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:none;
+}
+.popLengthSettingBackground{
+	position:relative;
+	width:100%;
+	height:100%;
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	background-color:#ffffff;	
+}
+.popLengthSettingInputContainer{
+	position:absolute;
+	width:40px;
+	height:20px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+.popLengthSettingInput{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-width:0px;
+}
+.rulerContainer{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+}
+.rulerText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#000000;
+}
+.rulerRect{ 
+	display:none;
+	width:70px;
+	height:16px;  
+	opacity:0.8; 
+	filter:alpha(opacity=80);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+ 
+.attachHelpLineContainer{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+}
+.attachHelpLine{
+	stroke:#dddddd;
+	opacity:0.3; 
+	filter:alpha(opacity=70);
+	stroke-width:1;
+	display:none;
+}
+.attachHelpText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#000000;
+}
+.attachHelpReadonlyText{ 
+	display:none;
+	width:50px;
+	height:18px; 
+	text-anchor:middle; 
+	dominant-baseline:middle; 
+	fill:#777777;
+}
+.attachHelpRect{ 
+	display:none;
+	width:40px;
+	height:16px;  
+	opacity:0.3; 
+	filter:alpha(opacity=80);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+.attachHelpReadonlyRect{ 
+	display:none;
+	width:40px;
+	height:16px;  
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	stroke:#dddddd;
+	fill:#ffffff;
+}
+.popPosSettingContainer{
+	position:absolute;
+	z-index:9999;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:none;
+}
+.popPosSettingBackground{
+	position:relative;
+	width:100%;
+	height:100%;
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	background-color:#ffffff;	
+}
+.popPosSettingInputContainer{
+	position:absolute;
+	width:40px;
+	height:20px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+.popPosSettingInput{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-width:0px;
+}
+.popPosSettingContainer{
+	position:absolute;
+	z-index:9999;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:none;
+}
+.popPosSettingBackground{
+	position:relative;
+	width:100%;
+	height:100%;
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	background-color:#ffffff;	
+}
+.popPosSettingInputContainer{
+	position:absolute;
+	width:40px;
+	height:20px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+.popPosSettingInput{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-width:0px;
+}
+.popLengthSettingContainer{
+	position:absolute;
+	z-index:9999;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:none;
+}
+.popLengthSettingBackground{
+	position:relative;
+	width:100%;
+	height:100%;
+	opacity:0.3; 
+	filter:alpha(opacity=30);	
+	background-color:#ffffff;	
+}
+.popLengthSettingInputContainer{
+	position:absolute;
+	width:40px;
+	height:20px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+.popLengthSettingInput{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-width:0px;
+}
+
+.propertyBtn{
+	position:absolute;
+	right:0px;
+	left:0px;
+	top:5px;
+	height:25px;
+	border:solid 1px #cccccc;
+	background-color:#eeeeee;
+	text-align:center;
+	line-height:25px;
+	cursor:pointer;
+}
+.propertyBtn:hover{
+	background-color: #ddf0ff;
+	font-weight: 600;
+}
+.groupToolbar{
+	position:relative;
+	width:100%;
+	height:30px;
+	border-top:dotted 1px #fafafa;
+}
+.groupAddBtn{
+	position:absolute;
+	left:5px;
+	top:5px;
+	bottom:0px;
+	width:70px;
+	background-color:#ffefbe;
+	border-color:#cccccc;
+	cursor:pointer;
+	border-radius:3px;
+	text-align:center;
+	line-height:25px;
+	height:25px;
+}
+.groupContainer{
+	position:relative;
+	width:100%;
+	height:auto;
+}
+.groupItem{
+	position:relative;
+	width:100%;
+	margin-top:1px;
+	margin-bottom:1px;
+	height:36px;
+	line-height:36px;
+	text-align:left;
+	padding-left:0px;
+	background-color:transparent;
+	font-weight:600; 
+}
+.groupItemActive{ 
+	color:#ff3f3f;
+}
+.groupItem:hover{
+	font-weight:800; 
+}
+.groupItemExpand{
+	position: absolute;
+	left: 0px;
+	width:24px;
+	top: 6px;
+	height: 24px;
+	background-image:url('../img/toolbar/groupItemExpand.png');
+	background-repeat:no-repeat;
+	background-size:24px 24px;
+	background-position-x:center;
+	background-position-y:center;
+}
+.groupItemExpand:hover{
+	cursor:pointer;
+}
+.groupItemExpandClose{
+	background-image:url('../img/toolbar/groupItemExpandClose.png');
+}
+
+.groupItemCheck{
+	position:absolute;
+	left:25px;
+	width:16px;
+	top:6px;
+	height:16px;   
+	font-size: 14px;
+}
+.groupItemCheck::after{
+     position: absolute;
+     top: 0;
+     background-color: #ffffff;
+     color: #000;
+     width: 16px;
+     height: 16px;
+     display: inline-block;
+     visibility: visible;
+     padding-left: 0px;
+     text-align: center;
+     content: "√";
+     font-size: 12px;
+     font-weight: bold;
+     border:solid 1px #cccccc;
+}     
+.groupItemNoneCheck{
+}        
+.groupItemNoneCheck::after{
+     content: ' '; 
+     font-size: 12px;
+     font-weight: bold;
+}      
+.groupItemPartCheck{
+}
+.groupItemPartCheck::after{
+     content: "■";
+     font-size: 12px;
+     color:#cccccc;
+     font-weight: bold;
+} 
+.groupItemText{
+	position:absolute;
+	left:47px;	
+	right:10px;	
+	top:0px;
+	bottom:0px;
+	line-height:16px;
+	padding-top:10px;
+}
+.groupItemName{
+	cursor:pointer;
+}
+.groupItemCount{
+	font-weight:400;
+}
+.groupItemDeleteBtn{
+	right:0px;
+	background-image:url('../img/toolbar/itemBtnDelete.png');
+}
+.groupItemRenameBtn{
+	right:24px;
+	background-image:url('../img/toolbar/itemBtnRename.png');
+} 
+.groupItemUnitSortBtn{
+	right:48px;
+	background-image:url('../img/toolbar/itemBtnUnitSort.png');
+} 
+.groupItemBtn{
+	position:absolute;
+	width:24px;
+	height:36px;
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+	background-color: #F6f6F6;
+	display:none;
+	cursor:pointer;
+} 
+.groupItemMultiSelectBtn{
+	right:72px;
+	background-image:url('../img/toolbar/itemBtnMultiSelect.png');
+} 
+.groupItemBtn:hover{
+	background-color: #ddf0ff;
+}
+.groupItem:hover .groupItemBtn{
+	display:block;
+}
+.unitContainer{
+	position: relative;
+	width: 100%;
+	height:auto;
+} 
+.unitItem{
+	position:relative;
+	width:100%;
+	height:34px;	
+	border-bottom: dotted 1px #505050;
+}  
+.unitItem:hover{
+	background-color: #999999;
+	color: #111111;
+}
+.unitItemSelected{
+	background-color:#FFF5EE; 
+}
+.unitItemSelected .unitItemName{ 
+	color:#f12828;
+	font-weight: 600;
+}
+.unitItemCheck{
+	position:absolute;
+	left:28px;
+	width:16px;
+	top:5px;
+	height:16px;   
+	font-size: 14px;
+}
+.unitItemCheck::after{
+     position: absolute;
+     top: 0;
+     background-color: #ffffff;
+     color: #000;
+     width: 16px;
+     height: 16px;
+     display: inline-block;
+     visibility: visible;
+     padding-left: 0px;
+     text-align: center;
+     content: "√";
+     font-size: 12px;
+     font-weight: bold;
+     border:solid 1px #cccccc;
+}     
+.unitItemNoneCheck{
+}        
+.unitItemNoneCheck::after{
+     content: ' '; 
+     font-size: 12px;
+     font-weight: bold;
+}      
+.unitItemText{
+	position: absolute;
+	left: 53px;
+	right: 0px;
+	top: 0px;
+	height: 34px;
+	line-height:16px;
+	padding-top:9px;
+}
+.unitItemName{
+	cursor: pointer;
+}
+.unitItemMixType{ 
+	font-size: 11px;
+	color: #bbbbbb; 
+}
+.unitItemBtn{
+	position:absolute;
+	width:24px;
+	height:30px;
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+	display:none;
+	cursor:pointer;
+} 
+.unitItemBtn:hover{
+	background-color: #ddf0ff;
+}
+.unitItemDeleteBtn{
+	right:0px;
+	background-image:url('../img/toolbar/itemBtnDelete.png');	
+} 
+.unitItemChangeGroupBtn{
+	right:24px;
+	background-image:url('../img/toolbar/itemBtnChangeGroup.png');	
+} 
+.unitItemMultiSelectBtn{
+	right:48px;
+	background-image:url('../img/toolbar/itemBtnMultiSelect.png');
+} 
+.unitItem:hover .unitItemBtn{
+	display:block;
+}
+.pointCtrlItem{
+	position:relative;
+	width:100%;
+	height:34px;	
+	border-bottom: dotted 1px #f2f2f2;
+}  
+.pointCtrlItem:hover{
+	font-weight:600;  
+	background-color: #fafafa;
+}
+.pointCtrlItemSelected{
+	background-color:#FFF5EE; 
+}
+.pointCtrlItemSelected .pointCtrlItemName{ 
+	color:#f12828;
+	font-weight: 600;
+}
+.pointCtrlItemCheck{
+	position:absolute;
+	left:8px;
+	width:16px;
+	top:5px;
+	height:16px;   
+	font-size: 14px;
+}
+.pointCtrlItemCheck::after{
+     position: absolute;
+     top: 0;
+     background-color: #ffffff;
+     color: #000;
+     width: 16px;
+     height: 16px;
+     display: inline-block;
+     visibility: visible;
+     padding-left: 0px;
+     text-align: center;
+     content: "√";
+     font-size: 12px;
+     font-weight: bold;
+     border:solid 1px #cccccc;
+}     
+.pointCtrlItemNoneCheck{
+}        
+.pointCtrlItemNoneCheck::after{
+     content: ' '; 
+     font-size: 12px;
+     font-weight: bold;
+}      
+.pointCtrlItemText{
+	position: absolute;
+	left: 33px;
+	right: 0px;
+	top: 0px;
+	height: 34px;
+	line-height:16px;
+	padding-top:9px;
+	color: #444444; 
+}
+.pointCtrlItemName{ 
+	color: #444444;
+	cursor: pointer;
+} 
+.pointCtrlItemBtn{
+	position:relative;
+	float:right; 
+	height:100%;width:24px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position-y: center;
+    background-position-x: center;
+	display:none;
+	cursor:pointer;
+} 
+.pointCtrlItemDeleteBtn{
+	position:absolute;
+	right:0px;
+	width:24px;
+	height:30px;
+	background-image:url('../img/toolbar/itemBtnDelete.png');	
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+	display:none;
+	cursor:pointer;
+}  
+.pointCtrlItemRenameBtn{
+	position:absolute;
+	right:24px;
+	width:24px;
+	height:36px;
+	background-image:url('../img/toolbar/itemBtnRename.png');
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+	background-position-x:center;
+	background-position-y:center;
+	display:none;
+	cursor:pointer;
+} 
+.pointCtrlItem:hover .pointCtrlItemDeleteBtn{
+	display:block;
+} 
+.pointCtrlItem:hover .pointCtrlItemRenameBtn{
+	display:block;
+} 
+.componentParametersEditHeaderItemContainer{
+	position: relative;
+	height: auto;
+	width: 100%;	
+}
+.componentParametersEditItemContainer{
+	position: relative;
+	height: auto;
+	width: 100%;	
+}
+.componentParametersEditHeader{
+	position: absolute;
+	top:0px;
+	left:0px;
+	height: 36px; 
+	width: 100%;	
+	border-bottom: solid 1px #f2f2f2;
+	text-align: left;
+}
+.componentParametersEditMiddle{
+	position: absolute; 
+	top:36px;
+	bottom:32px;
+	left:0px;
+	width: 100%;	
+	border-bottom: solid 1px #f2f2f2;
+	text-align: left;
+	overflow:auto;
+}
+.componentParametersEditFooter{
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	height: 32px; 
+	width: 100%; 
+	text-align: right; 
+	border-top: solid 1px #f2f2f2;
+}
+.componentParametersEditStatus{
+	position: relative;
+	height: 32px;
+	width: 200px;
+	line-height: 32px;
+	text-align: right;
+}
+.componentParametersEditAddParameter{
+	position: absolute;
+	left: 0px;
+	width: 32px;
+	height: 32px;
+	background-image: url('../img/toolbar/addParameter.png');
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position-x: center;
+	background-position-y: center; 
+	cursor: pointer;
+}
+.componentParametersEditAddParameters{
+	position: absolute;
+	left: 32px;
+	width: 32px;
+	height: 32px;
+	background-image: url('../img/toolbar/addParameters.png');
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position-x: center;
+	background-position-y: center; 
+	cursor: pointer;
+}
+.componentParametersEditAddParameter:hover{
+	background-color: #f0f0f0;
+	text-align: left;
+}
+.componentParametersEditAddParameters:hover{
+	background-color: #f0f0f0;
+	text-align: left;
+}
+.componentParametersEditItem{
+	position: relative;
+	height: 36px; 
+	width: 100%; 
+	text-align: left; 
+} 
+.componentParametersEditItemTd{
+	position: relative; 
+} 
+.componentParametersEditItemTitleName{
+	font-weight:600;
+	width:105px;
+	line-height:34px;
+}
+.componentParametersEditItemTitleValueType{
+	font-weight:600;
+	width: 90px;
+	line-height:34px;
+}
+.componentParametersEditItemTitleIsNullable{
+	font-weight:600;
+	width:50px;
+	line-height:34px;
+}
+.componentParametersEditItemTitleIsEditable{
+	font-weight:600;
+	width:50px;
+	line-height:34px;
+}
+.componentParametersEditItemTitleIsGeo{
+	font-weight:600;
+	width:50px;
+	line-height:34px;
+}
+.componentParametersEditItemTitleDefaultValue{
+	font-weight:600;
+	width:85px;
+	line-height:34px;
+} 
+.componentParametersEditItemTitleMinValue{
+	font-weight:600;
+	width:50px;
+	line-height:34px;
+} 
+.componentParametersEditItemTitleMaxValue{
+	font-weight:600;
+	width:50px;
+	line-height:34px;
+}  
+.componentParametersEditItemTitleExpPim{
+	font-weight:600;
+	width:120px;
+	line-height:34px;
+} 
+.componentParametersEditItemTitleListValues{
+	font-weight:600;
+	width:95px;
+	line-height:34px;
+}   
+/*构件参数类型下拉列 added by ls 20230731*/
+.componentParametersEditItemTitleCategoryName{
+	font-weight:600;
+	width:80px;
+	line-height:34px;
+}   
+/*构件参数组内序号 added by ls 20230804*/
+.componentParametersEditItemTitleIndexInGroup{
+	font-weight:600;
+	width:60px;
+	line-height:34px;
+}   
+.componentParametersEditItemTitleGroupName{
+	font-weight:600;
+	width:80px;
+	line-height:34px;
+}   
+
+/*统计指标 added by ls 20230731*/
+.componentParametersEditItemTitleStatisticIndex{
+	font-weight:600;
+	width: 95px;
+	line-height: 34px;
+}
+.componentParametersEditItemTitleStatisticIndexType{
+	font-weight:600;
+	width: 95px;
+	line-height: 34px;
+	display: none;
+}
+
+/*是否显示 added by ls 20230731*/
+.componentParametersEditItemTitleDesignVisible{
+	font-weight:600;
+	width: 55px;
+	line-height: 34px;
+}
+
+/*删除参数按钮td added by ls 20230731*/
+.componentParametersEditItemTitleDelete{
+	font-weight:600;
+	width:32px;
+	line-height:34px;
+}   
+.componentParametersEditItemDeleteBtn{
+	position:relative;
+	height:32px;
+	width:32px;
+	background-image: url('../img/toolbar/deleteParameter.png');
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position-x: center;
+	background-position-y: center; 
+	display: none;
+}
+.componentParametersEditExpBtn{
+	position: absolute;
+	right: 5px;
+	height:30px;
+	width:30px;
+	background-color: #f2f2f2;
+	line-height:30px;
+	text-align:center;
+	border-right: solid 1px #e4e4e4;
+	border-top: solid 1px #e4e4e4;
+	border-bottom: solid 1px #e4e4e4;
+	cursor: pointer;
+}
+.componentParametersEditItem:hover{
+	background-color: #eeeeee;
+}
+.componentParametersEditItem:hover .componentParametersEditItemDeleteBtn{
+	display:block;
+}
+.componentParametersEditItemTd{
+	position: relative; 
+	font-weight:400;	
+}
+.core3dToolbar{
+	position:relative;
+	width:100%;
+	height:40px;
+}
+.core3dToolbarBtn{
+	position:absolute;
+	height:32px;
+	width:75px;
+	top:5px; 
+	cursor:pointer;
+	border:solid 1px #383838;
+	line-height:32px;
+	text-align:center;
+	background-color:#999999;
+	border-radius: 5px;
+	color: #111111;
+}
+.core3dToolbarBtn:hover{
+	background-color: #EEEEEE;
+	font-weight: 600;
+}
+.addGroupBtn{ 
+	right:85px;
+}
+.sortGroupBtn{ 
+	right:5px;
+} 
+.sortPointControlBtn{
+	right:5px;
+	width:85px;
+}
+
+.coreUvMaterialEditContainer{
+	display:none;
+	position:relative;
+	height:100%;
+	width:100%;
+}
+.uvMaterialEditCoreContainer{
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	right:505px; 
+}
+.uvMaterialEditRightContainer{
+	position:absolute;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	width:500px; 
+}
+.uvMaterialEditCoreInnerContainer{
+	position:relative;
+	height:100%;
+	width:100%;
+}
+.uvMaterialEditMeshListContainer{
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	width:145px;
+	background-color:#f2f2f2;	
+	overflow: auto;
+}
+.uvMaterialEditMeshItem{
+	position:relative;
+	height: 40px;
+	width:100%;  
+	border-bottom:solid 1px #eeeeee;
+	cursor:pointer;
+} 
+.uvMaterialEditMeshItemText{
+	position:absolute; 
+  	top:50%;
+  	transform:translateY(-50%);
+  	text-align:left;
+  	left: 5px;
+  	right:0px;
+}
+.uvMaterialEditMeshItem:hover{
+	font-weight:600; 
+}
+.uvMaterialEditMeshItemActive{
+	font-weight:600;
+	color:#ff0000;
+	background-color:#ffffff;	
+}
+.uvMaterialEditFaceListContainer{
+	position:absolute;
+	left:150px;
+	top:0px;
+	bottom:0px;
+	width:80px;
+	background-color:#f2f2f2;
+	overflow:auto;	
+}
+.uvMaterialEditFaceItem{
+	position:relative;
+	height: 40px;
+	width:100%;
+	color:#000000;
+	border-bottom:solid 1px #f0f0f0;
+	cursor:pointer;
+}
+.uvMaterialEditFaceItemCheck{
+	position: absolute;
+	top:9px;
+	left:8px;
+    font-weight: bold;
+    color:#000000;
+    width: 16px;
+    height: 16px;
+	text-align: center;
+	display: inline-block;
+	visibility: visible;
+	-webkit-appearance: none !important;
+}
+.uvMaterialEditFaceItemCheck::after{
+	font-size: 12px;
+	content: ' '; 
+    font-weight: bold;
+}
+.uvMaterialEditFaceItemChecked{
+	
+}
+.uvMaterialEditFaceItemChecked::after{
+	font-size: 12px;
+	content: "√"; 
+    font-weight: bold;
+}
+.uvMaterialEditFaceItemText{
+	position:absolute; 
+  	top:50%;
+  	transform:translateY(-50%);
+  	text-align:left;
+  	left: 30px;
+  	right:0px;
+} 
+.uvMaterialEditFaceItem:hover{
+	font-weight:600; 
+}
+.uvMaterialEditFaceItemActive{
+	font-weight:600; 
+	color:#ff0000;
+	background-color:#ffffff;	
+}
+.uvMaterialEditFaceSettingContainer{
+	position:absolute;
+	left:235px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	background-color:#ffffff;	
+}
+.uvMaterialEditorFaceSettingTabContainer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:40px;
+	
+}
+.uvMaterialEditorFaceSettingTab{
+	position:relative;
+	width:80px;
+	height:40px;
+	line-height:40px;
+	font-size:15px;
+	border-left:solid 1px #f2f2f2;
+	border-top:solid 1px #f2f2f2;
+	border-right:solid 1px #f2f2f2; 
+	color:#888888;
+	float:left;
+	cursor:pointer;
+}
+.uvMaterialEditorFaceSettingTabActive{ 
+	height:41px;
+	color:#000000;
+	border-left:solid 1px #cccccc;
+	border-top:solid 1px #cccccc;
+	border-right:solid 1px #cccccc; 
+	background-color:#ffffff;
+	font-weight:600;
+}
+.uvMaterialEditFaceSettingInnerContainer{
+	position:absolute;
+	top:40px;
+	border:solid 1px #cccccc;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	display: none;
+}
+.uvMaterialEditFaceSettingInnerContainerActive{
+	display: block;
+}
+.statusInfoContainer{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: auto;
+	width: auto;
+	display: none;
+}
+.statusInfoInnerContainer{
+	position: relative;
+	height: auto;
+	width: auto;
+	text-align: left;
+	color: #ffffff;
+	background-color: #444444;
+	padding: 3px 3px 3px 3px;
+	border-radius: 3px;
+}
+
+@media all and (max-width: 1400px){	
+	.core3dTitleContainer{
+	    text-align: right;
+	    padding-right: 10px;
+	}
+}

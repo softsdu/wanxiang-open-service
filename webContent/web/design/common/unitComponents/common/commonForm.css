@@ -1,0 +1,179 @@
+
+*::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+    background-color: #f8f8f8; 
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #dddddd; 
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+body{ 
+}
+
+.parameterExpBtn{
+	position: relative; 
+	height:30px;
+	width:30px;
+	background-color: #f8f8f8;
+	line-height:30px;
+	text-align:center;
+	border-right: solid 1px #e4e4e4;
+	border-top: solid 1px #e4e4e4;
+	border-bottom: solid 1px #e4e4e4;
+	cursor: pointer;
+}
+
+/*����ͼ����ʾ���� added by liyh 20210825*/
+.componentImgDiv{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.componentImg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+	width:auto;
+	height:auto;
+	max-width:100%;
+	max-height:100%;
+}
+
+/*�����Ĳ���¼��������ѡ��ť added by ls 20220606*/
+.zlpDispunitPopLocation{
+	background-image:url('./img/dispunit/location.png');
+}
+
+/*�����Ĳ���¼����pathѡ��ť added by ls 20230105*/
+.zlpDispunitPopPath{
+	background-image:url('./img/dispunit/path.png');
+}
+
+/*����css added by ls 20230731*/
+.parameterGroupTd{
+	font-weight: 600;
+	font-size: 14px;
+	position: relative;
+}
+.parameterGroupSpan{
+	position: absolute;
+	height: 32px;
+	line-height: 32px;
+	bottom: 2px;
+	left: 0px;
+	right: 0px;
+	text-align: left;
+	text-indent: 10px;
+	border-bottom: solid 1px #505050;
+}
+.parameterNameTd{
+	width: 100px;
+	text-align: right;
+}
+.parameterValueTd{
+	width: 270px;
+}
+.parameterExpTd{
+	width: 350px;
+}
+.zlpDispUnitInputExp{
+	width:350px;
+	/*��Ҫ¼����� deleted by ls 20230804*/
+	/*display:none;*/
+}
+.zlpDispUnitInputExpJs{
+	width:350px;
+	display: none;
+}
+.zlpDispUnitInputExpPs{
+	width:350px;
+	display: none;
+}
+.parameterExpBtnTd{
+	width: 30px;
+}
+.catTabContainer{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+}
+.catTab{
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	width: auto;
+	margin: 5px 0 5px 0;
+	min-width: 80px;
+	background-color: #505050;
+	border-right: solid 1px #383838;
+	border-top: solid 1px #383838;
+	cursor: pointer;
+	text-align: center;
+	color: #AAAAAA;
+}
+.catTabActive{
+	background-color: #666666;
+	font-weight: 600;
+	color: #f2f2f2;
+}
+.catTab:hover{
+	font-weight: 600;
+}
+.catTabActive:hover{
+	background-color: #ffffff;
+}
+.catContentContainer{
+	position: absolute;
+	top: 35px;
+	left: 0px;
+	width: 100%;
+	bottom: 0px;
+	z-index: 0;
+}
+.catContent{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow-y: auto;
+}
+.catNoneContent{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	text-align:center;
+	margin-top: 200px;
+}
+.catContentActive{
+	display: block;
+}
+.parameterMainContainer{
+	bottom:0px;
+}

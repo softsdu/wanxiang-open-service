@@ -1,0 +1,52 @@
+
+*::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+    background-color: #f8f8f8; 
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #dddddd; 
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #e0e0e0;
+  font-size: 10px;
+}
+
+body{ 
+}
+
+.parameterExpBtn{
+	position: relative; 
+	height:30px;
+	width:30px;
+	background-color: #f8f8f8;
+	line-height:30px;
+	text-align:center;
+	border-right: solid 1px #e4e4e4;
+	border-top: solid 1px #e4e4e4;
+	border-bottom: solid 1px #e4e4e4;
+	cursor: pointer;
+}
+
+/*增加图例显示区域 added by liyh 20210825*/
+.compponentImgDiv{
+	padding-left: 50px;
+	padding-right: 10px;
+	text-align: center;
+}
+.componentImg{
+	width:auto;
+	height:auto;
+	max-width:100%;
+	max-height:100%;
+}

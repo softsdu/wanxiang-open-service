@@ -1,0 +1,697 @@
+﻿@CHARSET "UTF-8";
+
+*{
+	box-sizing: border-box;
+}
+
+html,body {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #383838;
+	color: #f2f2f2;
+}
+input[type=checkbox] {
+	-webkit-appearance: checkbox;
+}
+*::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #404040;
+}
+
+/*下拉*/
+.zlpListOverlay{
+	filter: alpha(opacity = 10);
+    -moz-opacity: 0.1;
+    -khtml-opacity: 0.1;
+    opacity: 0.1;
+    background-color: #000000;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;}
+
+.zlpListBox{
+	position: fixed;
+    top: -500px;
+    left: 30%;
+    right: 30%;
+    background-color: #fff;
+    color: #7F7F7F;
+    height: 300px;
+    width: 300px;
+    border: 1px solid #ccc;
+    z-index: 101;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*等待滚动条*/
+.waitingBarContainer{
+	background-color: #c0c0c0;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+	margin-top: 0px;
+	top: 0px;
+	opacity:0.2;
+	filter:alpha(opacity=20);
+}
+.waitingBarCenter{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.waitingBarCenterAbsolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 50px;
+	width: 150px;
+	margin-top: -25px;
+	margin-left: -75px;
+
+}
+.waitingBarObject{
+	width: 8px;
+	height: 50px;
+	margin-right:5px;
+	background-color: #008000;
+	-webkit-animation: animate 1s infinite;
+	animation: animate 1s infinite;
+	float: left;
+}
+.waitingBarObject:last-child {
+	margin-right: 0px;
+}
+.waitingBarObject:nth-child(10){
+	-webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;	
+}
+.waitingBarObject:nth-child(9){
+	-webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;	
+}	
+.waitingBarObject:nth-child(8){
+	-webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;	
+}
+.waitingBarObject:nth-child(7){
+	-webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;	
+}
+.waitingBarObject:nth-child(6){
+	-webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;	
+}
+.waitingBarObject:nth-child(5){
+	-webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+.waitingBarObject:nth-child(4){
+	-webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;		
+}
+.waitingBarObject:nth-child(3){
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;	
+}
+.waitingBarObject:nth-child(2){
+-webkit-animation-delay: 0.1s;
+   animation-delay: 0.1s;
+}
+@-webkit-keyframes animate {
+	50% {
+		-ms-transform: scaleY(0); 
+   		-webkit-transform: scaleY(0);
+    	transform: scaleY(0);	
+  	}
+}
+@keyframes animate {
+  	50% {
+		-ms-transform: scaleY(0); 
+   		-webkit-transform: scaleY(0);
+    	transform: scaleY(0);
+  	}  
+} 
+
+/*表单窗口常用样式*/
+.zlpGridStyleContainer{
+	position: relative; width:100%;height:100%;padding:0px;
+} 
+.zlpGridStyleInnerContainer{
+	position: relative; width:100%;height:100%;
+}
+.zlpCardStyleContainer{
+	position: relative; width:100%;height:100%;padding:0px;background-color:transparent;
+} 
+.zlpCardStyleInnerContainer{
+	position: relative; width:100%;height:100%;
+}
+.zlpToolbarContainer{
+	position:absolute; left: 0px; top: 0px; right: 0px; min-height: 44px; height: auto;
+}
+.zlpToolbarContainerGrid{
+	border-left: solid 1px #383838;
+	border-right: solid 1px #383838;
+}
+.zlpToolbarLeftContainer{
+	position: absolute; left: 0px; top: 0px; height: auto; right: 0px;
+}
+.ncpRowOperateBtn{
+	position:relative;
+	cursor:pointer;
+	float: left; 
+	display: block; 
+	border-radius: 3px; 
+	width: auto; 
+	padding-left: 12px; 
+	padding-right: 12px; 
+	height: 22px; 
+	line-height: 22px; 
+	border:solid 1px #eeeeee; 
+	margin-left: 5px; 
+	margin-right:5px;
+	color:#ffffff;
+	background-color: #9DC2E5;
+}
+.ncpRowOperateBtn:hover{
+	border:solid 1px #aaaaaa;
+	text-decoration: none;
+}
+.ncpRowOperateBtn:visited{ 
+	color:#ffffff;
+    text-decoration: none;
+}
+.ncpRowOperateBtn:link{ 
+	color:#ffffff;
+    text-decoration: none;
+}
+.zlpToolbarBtn{
+	position:relative; 
+	cursor:pointer;
+	float: left; 
+	display: block; 
+	border-radius: 5px;
+	width: auto; 
+	padding-left: 15px; 
+	padding-right: 15px; 
+	height: 34px; 
+	line-height: 34px; 
+	border:solid 1px #383838;
+    margin: 5px;
+	color:#f2f2f2;
+	background-color: #337ab7;
+}
+.zlpToolbarBtn:hover{
+	border:solid 1px #282828;
+    text-decoration: none;
+	color: #FFFFFF;
+	font-weight: 600;
+}
+.zlpToolbarBtn:visited{ 
+	color:#ffffff;
+    text-decoration: none;
+}
+.zlpToolbarBtn:link{ 
+	color:#ffffff;
+    text-decoration: none;
+}
+.backBtn{
+	background-color:#56d9eb;
+}
+.addBtn{
+	background-color:#3c763d;
+}
+.addChildBtn{
+	background-color:#5cb85c;
+}
+.editBtn{
+	background-color:#ab6c00;
+}
+.saveBtn{
+	background-color:#3EA9F5;
+}
+.cancelBtn{
+	background-color:#453b8a;
+}
+.deleteBtn{
+	background-color:#ab0300; 
+}
+.detailBtn{
+	background-color:#3EA9F5;
+}
+.exportBtn{
+	background-color:#5cb85c;
+}
+.okBtn{
+	background-color:#0080ff;
+}
+.returnBtn{
+	background-color:#0080ff;
+}
+.returnNullBtn{
+	background-color:#aeaed7;
+}
+.complexQueryBtn{
+	background-color:#ac2925;
+}
+.clearBtn{
+	background-color:#aeaed7;
+}
+.accessoryBtn{
+	background-color:#663300;
+}
+.rowBtnDisable{
+	display:none;
+}
+.toolbarBtnDisable{
+	cursor: auto;
+	opacity: 0.2;
+	border:solid 1px #383838;
+}
+.toolbarBtnDisable:hover{
+	border:solid 1px #282828;
+    text-decoration: none;
+	color:#f2f2f2;
+}
+.toolbarBtnDisable:visited{ 
+	border:solid 1px #282828;
+	color:#f2f2f2;
+    text-decoration: none;
+}
+.toolbarBtnDisable:link{ 
+	color:#f2f2f2;
+    text-decoration: none;
+}
+.rowOperateContainer{
+	width:100%;height:100%;display: contents;
+}
+.rowOperateContainer a{
+	color:#ffffff;
+	font-size: 11px;
+}
+.zlpToolbarRightContainer{
+	position: absolute; right: 0px; top: 0px; bottom: 0px; width: 0px;
+}
+.zlpNavUl{
+	position:relative;float:right;margin:0px; margin-left:5px;margin-top:7px; margin-right:5px;
+}
+.zlpToolbarQueryContainer{
+	position:relative;float:left;display:block;width:150px;height:34px;border:solid 1px #282828;border-radius: 3px;margin-left:5px; margin-right:5px;margin-top:5px; margin-bottom:5px;
+}
+.zlpToolbarQueryContainer:hover{
+	border-color: #282828;
+}
+.zlpToolbarQueryInputText{
+	position:absolute;display:block;left:0px;width:100px;top:0px;height:32px;border-width:0px;padding:0px;text-indent:5px;border-top-left-radius:5px;border-bottom-left-radius:5px;background-color:#999999;
+}
+.zlpToolbarQueryInputText::placeholder{
+	color: #f2f2f2;
+}
+.zlpToolbarQueryBtn{
+	position:absolute;display:block;width:47px;top:0px;right:0px;height:32px;border-width:0px;padding:0px;line-height:32px;text-align:center;color:#f2f2f2;background-color: #013260;border-top-right-radius:5px;border-bottom-right-radius:5px;
+}
+.zlpToolbarQueryBtn:hover{
+    text-decoration: none;
+	color: #FFFFFF;
+	font-weight: 600;
+}
+.zlpGridContainer{
+	position: absolute;
+	left: 0px;
+	top: 44px;
+	right: 0px; 
+	bottom: 45px;
+	background-color: #383838;
+	border-top: solid 1px #505050;
+}
+.zlpCardContainer{
+	position: absolute;
+	left: 0px;
+	top: 45px;
+	right: 0px; 
+	bottom: 0px; 
+	box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+	background-color: transparent;
+	border-top: solid 1px #505050;
+}
+.zlpCardMainContainer{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.zlpCardDetailContainer{
+	position: absolute;
+	left: 0px;
+	top: 100px;
+	right: 0px;
+	bottom: 0px;
+}
+.zlpCardMainTable{
+	position: relative;
+	width: auto;
+	height: auto;
+}
+.zlpCardDetailGridContainer{
+	position:absolute;
+	top:42px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	display: none;
+}
+.zlpCardDetailGridContainerActive{
+	display: block;
+}
+.zlpSubGridContainer{
+	position: absolute;
+	left: 0px;
+	top: 45px;
+	right: 0px; 
+	bottom: 0px; 
+}
+.zlpGridTable{
+	position:relative;width:100%;height:100%;text-indent:3px;
+}
+.zlpBottomContainer{
+	position: absolute; left: 0px; bottom: 0px; right: 0px; height: 45px;
+}
+.ui-jqgrid{
+	overflow:hidden;
+}
+.zlpDispunitTable {
+    position: relative;
+    border: solid 1px #505050;
+    height: 100%;
+    min-height: 24px;
+}
+.zlpDispunitContent{
+	height: 100%;
+    width: 100%;
+    min-height: 20px;
+    border: 0px;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 13px;
+    font-size: 14px;
+    min-height: 24px;
+}
+.zlpDispUnitTitle{
+	text-align:right;
+	padding-right:5px;
+	font-size: 14px;
+}
+.zlpDispUnitInput{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	height: 30px;
+	border-width: 0px;
+	padding: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin: 0px;
+	/*把标题颜色改重 modified by lixin 20210824*/
+	color: #111111;
+	background-color: #dddddd;
+}
+.zlpDispUnitInput:disabled{
+	background-color: #999999;
+	color: #111111;
+}
+.zlpDispunitCtrl{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+}
+.zlpDispunitCtrlWithButton{
+	right: 20px; 
+}
+.zlpDispunitBtn{
+	position: absolute;
+    width: 20px;
+    right: 0px;
+    height: 16px;
+    cursor: default;
+    background-color: #dddddd;
+}
+.zlpDispunitList{
+    background-image: url("../images/common/dispunitList.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.zlpListTable{
+	border-width: 0px;
+}
+.zlpListTr{
+	height: 30px;
+	border-bottom: solid 1px #f2f2f2;
+}
+.zlpListTr:hover{
+	background: #9FC5E8;
+}
+.zlpListTd{
+	line-height: 30px;	
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1; 	
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 3px;
+	display: inline-block;
+}
+.ui-jqgrid tr.ui-row-ltr td{
+}
+.zlpDispunitDateTime {
+	background-image: url('../images/common/dispunitDateTime.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.zlpDispunitPop{
+	background-image: url('../images/common/dispunitPop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*弹出窗口*/
+.zlpPopOverlay {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+}
+.zlpPopBackground {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #000000;
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+.zlpPopBox {
+	position: fixed;
+	top: 200px;
+	left: 30%;
+	right: 30%;
+	background-color: #383838;
+	color: #f2f2f2;
+	height: 300px;
+	width: 300px;
+	padding: 5px; 
+	z-index: 101; 
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    border-radius: 6px;
+}
+.zlpPopTitle{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	height: 35px;
+	line-height: 35px;
+	text-indent: 10px;
+	font-size: 15px;
+	color: #f2f2f2;
+	font-weight: 600;
+	border-bottom: solid 1px #505050;
+}
+.zlpPopCloseBtn{
+	position: absolute;
+	top: 10px;
+	width: 20px;
+	right: 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	text-align: center;	
+	cursor: default;
+}
+.zlpPopCloseBtn:hover{
+	background-color: #8DCBF4;
+	color: #ffffff;
+}
+
+/*新增最大化按钮样式 added by liyh 20230704*/
+.zlpPopScreenBtn{
+	position: absolute;
+	top: 10px;
+	width: 20px;
+	right: 40px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	text-align: center;
+	cursor: default;
+}
+.zlpPopScreenBtn:hover{
+	background-color: #8DCBF4;
+	color: #ffffff;
+}
+
+.zlpPopInnerBox{
+	position: absolute;
+	top: 45px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+.zlpCommonBorderLine{
+	width:100%;
+	height:1px;
+	border-top:solid 1px #eeeeee;
+}
+
+
+/*透明窗口*/ 
+.zlpOpacityBox {
+	position: fixed;
+	top: 200px;
+	left: 30%;
+	right: 30%;
+	background-color: transparent;
+	color: #7F7F7F;
+	height: 300px;
+	width: 300px;
+	padding: 5px; 
+	z-index: 101; 
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    border-radius: 6px;
+}
+.zlpOpacityBackground {
+	position: absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#000000;
+	filter: alpha(opacity = 40);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+    border-radius: 6px;
+}
+.zlpOpacityTitle{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	height: 45px;
+	line-height: 45px;
+	text-indent: 10px;
+	font-size: 18px;
+	color:#ffffff;
+}
+.zlpOpacityCloseBtn{
+	position: absolute;
+	top: 10px;
+	width: 20px;
+	right: 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	text-align: center;	
+	cursor: default;
+	color:#888888;
+}
+.zlpOpacityCloseBtn:hover{
+	background-color: #8DCBF4;
+	color: #ffffff;
+}
+.zlpOpacityInnerBox{
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	display:block;
+} 
+
+.ncpRowSelect { 
+	width: 14px;
+	height: 14px;
+	margin-top:5px !important;
+	margin:auto;
+}
+.commonBtn{
+	width: 75px;
+	height: 30px;
+	margin-top:5px;
+	margin-right:10px;
+	font-size:14px;
+	color: #111111;
+}
+.zlpNavUl .pageBtn{
+	color: #fff;
+	background-color: #383838;
+	border-color: #444444;
+}
+.zlpNavUl .active .pageBtn{
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+.zlpNavUl .disabled a{
+	color: #AAAAAA;
+	background-color: #383838;
+	border-color: #444444;
+}
+.zlpNavUl .disabled span{
+	color: #AAAAAA;
+	background-color: #383838;
+	border-color: #444444;
+}
+.zlpCardDetailTabbar{
+	border-bottom: 1px solid #505050;
+}
+.zlpCardDetailTabbar li a{
+	color: #666666;
+}
+.zlpCardDetailTabbar .active a{
+	background-color: transparent;
+	color: #f2f2f2;
+}

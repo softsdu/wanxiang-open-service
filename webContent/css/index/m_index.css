@@ -1,0 +1,486 @@
+﻿@CHARSET "UTF-8";
+
+html,body {
+	background-color:#323232;
+	font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	font-size: 15px
+}
+ 
+/*页面顶部区域*/
+.indexPageHeaderContainer{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 50px;
+	z-index: 1;
+	font-size: 15px;
+	border-bottom: solid 0px #f5f5f5;
+	background-color:#282828;
+}
+.indexPageHeaderInnerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%; 
+} 
+.indexPageHeaderLeftContainer{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 350px;
+}
+.indexPageHeaderImage{
+	position: absolute;
+	left: 10px;
+	top: 0px;
+	width: 300px;
+	height: 50px;
+	background-image: url("../../images/index/mainLogo.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.indexPageHeaderCenterContainer{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px; 
+	letter-spacing: 1px;
+	z-index:10000;
+	background-color: transparent;
+	display:none;
+}
+.indexPageHeaderCenterContainerBackground{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;  
+	background-color: #111111; 
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+.indexPageHeaderMainMenuContainer{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	width:120px;
+	left:32px;
+	background-color: #282828;
+}
+.indexPageMainMenuItem{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	float: right;
+	min-width: 100px;
+	text-align: center;
+	cursor: pointer;
+	color: #f2f2f2;
+	background-color: #282828;
+}
+.indexPageMainMenuItemActive{
+	background-color: #ffffff;
+	font-weight: bold;
+	color: #000000;
+}
+.indexPageMainMenuItem:hover{
+	background-color: #dddddd;
+	color: #444444;
+}
+.indexPageMainMenuItemActive:hover{
+	background-color: #ffffff;
+	font-weight: bold;
+	color: #000000;
+}
+.indexPageMainMenuItemSpan{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.indexPageHeaderRightContainer{
+	position: absolute;
+	top: 0px;
+	width: 50px;
+	left: 0px;
+	height: 50px;
+	letter-spacing: 1px;
+	color: #ffffff;
+	font-size:24px;
+	cursor:pointer;
+}
+.indexPageHeaderRightContainerActive{
+	display: block;
+}
+.indexPageAllMenuBtn{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	text-align: center;
+}
+
+/*左侧竖直菜单区*/
+.indexPageMainMenuHList{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	width:80px;
+	display:none;
+}
+.indexPageMainMenuHItem{
+	position:relative;
+	width:100%;
+	height:50px;
+	line-height:50px;
+	text-indent:3px;
+}
+.indexPageHMenuContainer{
+	position: absolute;
+	left: 152px;
+	top: 0px;
+	width: 240px;
+	bottom: 0px; 
+	background-color:#ffffff; 
+}
+.indexPageHMenuInnerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.indexPageSubMenuContainer{
+	position:absolute; 
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	overflow-x: auto;
+	overflow-y: auto;
+	display:none;
+}
+.indexPageSubMenuContainerActive{
+	display: block;
+}
+.indexPageSubMenuHList{
+	position:relative;
+	width:100%;
+	height:auto;
+}
+.indexPageSubMenuHListClose{
+	display:none;
+}
+.nextLevelMenu{
+	margin-left: 4px;
+}
+.indexPageSubMenuHItem{
+	position:relative;
+	width:100%;
+	height:auto;
+	background-color:#ffffff;
+}
+.indexPageSubMenuHItemLink{
+	position:relative;
+	width:100%;
+	height:50px;
+	line-height:50px;
+	display:block;
+	text-indent:32px;
+	color: #111111;	
+	cursor: pointer;
+    text-decoration: none;	
+}
+.indexPageSubMenuHItemLink:hover{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+.firstLevelMenu{
+	background-color: #ffffff;
+	color: #004284;
+	cursor: auto;
+	font-weight: bold;  
+	text-indent: 15px;
+	font-size: 15px;
+}
+.firstLevelMenu:hover{
+    text-decoration: none;
+	background-color: #f8f8f8;
+	color: #0063c6;
+}
+.indexPageSubMenuImage{
+	position:absolute;
+	left:8px;
+	top:17px;
+	height:16px;
+	width:16px;
+}
+
+/*主操作区*/
+.indexPageMainContainer{
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	right: 0px;
+	bottom: 0px; 
+}
+.indexPageMainInnerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.indexPageTabPageHeader{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:50px;
+	background-color: #323232;
+}
+.indexPageTabPageImage{
+	position:absolute;
+	top:15px;
+	left:15px;
+	bottom:10px;
+	width:4px;
+	background-color: #444444;
+}
+.indexPageTabPageTitle{
+	position:absolute;
+	top:15px;
+	left:30px;
+	bottom:10px;
+	right:30px;
+	line-height:25px;
+	color:#FFFFFF;
+	font-size:15px; 
+	font-weight:bold;
+} 
+.indexPageTabPageTabListBtn{
+	position: absolute;
+	height: 30px;
+	right: 10px;
+	bottom: 10px;
+	width: 40px;
+	background-image: url(../../images/index/tabs.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #282828;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #AAAAAA;
+	font-size: 32px;
+	cursor: default;
+}
+.indexPageTabPageTabCloseBtn{
+	position: absolute;
+	height: 30px;
+	right: 60px;
+	bottom: 10px;
+	width: 40px;
+	background-image: url(../../images/index/close.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #282828;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	cursor: default;
+	color: #AAAAAA;
+}
+.indexPageTabPageTabListBtn:hover{
+	background-color: #FFFFFF;
+	color: #666666;
+}
+.indexPageTabPageTabCloseBtn:hover{
+	background-color: #FFFFFF;
+	color: #666666;
+}
+.indexPageTabPageContainer{
+	position:absolute;
+	top:50px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+}
+.indexPageTabPage{
+	position:absolute;
+	left:0px;
+	right:0px;
+	width:100%;
+	height:100%;
+	display:none;
+}
+.indexPageTabPageActive{
+	display:block;
+}
+.indexPageTabIframe{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-width:0px;
+}
+.indexPageTabHelperContainer{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:1000;
+}
+.indexPageTabHelperContainerActive{
+	display:block;
+}
+.indexPageTabHelperBack{
+	position:relative;
+	width:100%;
+	height:100%;
+	background-color:#444444;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+.indexPageTabHelper{
+	position:absolute;
+	right:10px;
+	top:85px;
+	width:250px;
+	height:auto;
+	max-height:500px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	border:solid 1px #eeeeee;
+	background-color:#ffffff;
+}
+.indexPageTabHelperItem{
+	position:relative;
+	height:50px;
+	line-height:50px;
+	border-bottom:solid 1px #eeeeee;
+	cursor: default;
+	color: #666666;
+}
+.indexPageTabHelperItemActive{
+	color: #337ab7;
+	font-weight: bold;
+}
+.indexPageTabHelperItem:hover{
+	color: #000000;
+	font-weight: bold;
+}
+.indexPageTabHelperItemImage{
+	position:absolute;
+	top:12px;
+	left:15px;
+	bottom:7px;
+	width:4px;
+	background-color:#95b8e7;	
+}
+.indexPageTabHelperItemText{
+	position:absolute;
+	top:10px;
+	left:32px;
+	bottom:10px;
+	right: 30px;	
+	line-height: 30px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1; 	
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.indexPageTabHelperItemCloseBtn{
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center; 
+}
+.indexPageTabHelperItemCloseBtn:hover{
+	background-color: #ff8040;
+}
+
+/*页脚*/
+.indexPageFooterContainer{
+	position: absolute;
+	bottom: 0px;
+	height: 30px;
+	left: 0px;
+	right: 0px;
+	display: none;
+}
+.indexPageFooterInnerContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.indexPageFooterLine{
+	position: relative;
+	width: 100%;
+	height: 29px;
+	line-height: 29px;
+	border-top: solid 1px #cccccc;
+	text-indent: 5px;
+}
+.sysParamUserInfoContainer{
+	color: #444444;
+}
+.indexPageVSpliter{
+	position:absolute;
+	top:60px;
+	left:233px;
+	width:10px;
+	bottom:40px; 	
+}
+.indexPageVSpliter:hover{
+	background-image:url('../../images/index/vClose.png');
+	background-repeat: no-repeat;
+	background-position-y: center;
+}
+.indexPageVSplitterClosed{
+	left:3px;
+	background-image:url('../../images/index/vOpen.png');
+	background-repeat: no-repeat;
+	background-position-y: center;
+}
+.indexPageVSplitterClosed:hover{
+	background-image:url('../../images/index/vOpen.png');
+}
+.indexPageCloseMenuButton{
+	position:absolute; 
+	cursor:pointer; 
+	height:100px;
+	width:10px;
+	top: 50%;
+	margin-top:-50px; 
+}
+.indexPageHMenuContainerHidden{
+	display:none;
+}
+.indexPageMainContainerMax{
+	left:15px;
+}
+.indexPageCloseMenuBtn{
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	width: 32px;
+	top: 0px;
+	background-image:url('../../images/index/closeMenu.webp');
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: 10px;
+	background-size: 32px 32px;
+	background-color: #282828;
+	border-right: solid 1px #222d3e;
+	cursor: pointer;
+}
+.indexPageCloseMenuBtn:hover{
+	background-color: #0d1f39; 
+}

@@ -1,0 +1,15 @@
+{
+    "js": [
+        {
+            "url": "../../../section/template/aiAppTitle/js/aiAppTitle.js"
+        }
+    ],
+    "css": [
+        {
+            "url": "../../../section/template/aiAppTitle/css/aiAppTitle.css"
+        },
+        {
+            "url": "../../../section/template/aiAppTitle/qWeather/font/qweather-icons.css"
+        }
+    ]
+}

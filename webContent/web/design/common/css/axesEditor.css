@@ -1,0 +1,53 @@
+
+*::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+    background-color: #f8f8f8; 
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #dddddd; 
+}
+body{ 
+} 
+.propertyInputContainer {
+	position:absolute; 
+    overflow: hidden;  
+    font-size: 14px;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;  
+}  
+.propertyList{
+	position: relative; 
+	width: 100%;
+	height: 78px;  
+}
+.axesName{
+	position:absolute;; 
+	height:30px;
+	width:100%;  
+	left:0px;
+	top:0px;
+	line-height:40px;
+	text-align: left;
+} 
+.axesValueContainer{
+	position:absolute; 
+	right:0px; 
+	width:100%;   
+	left:0px; 
+	top: 30px;
+	bottom: 0px;
+} 
+.axesValue{
+	position:relative; 
+	width:100%;
+	height:100%;
+	resize:none;
+	border:solid 1px #cccccc;
+} 
+.sumText{
+	font-size:13px;
+	color:#888888;
+}

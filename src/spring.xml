@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+ 
+	<!-- webserice cxf默认配置-->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> 
+    
+	<!-- 数据库配置 -->
+	<import resource="/db.xml"/>  
+
+	<!-- 系统性功能 -->
+	<import resource="/systemFunction.xml"/>
+	
+	<!-- 数据模型 -->
+	<import resource="/model.xml"/> 
+	
+	<!-- redis连接 -->
+	<import resource="/redisConfig.xml"/>    
+	
+	<!-- d5Config -->
+	<import resource="/d5Config.xml"/>
+
+	<!-- S3D服务 added by ls 20240108 -->
+	<import resource="/s3dConfig.xml"/>
+
+</beans>

@@ -1,0 +1,382 @@
+﻿@CHARSET "UTF-8"; 
+html,body {
+	overflow: auto;
+	font-size: 15px;
+	font-family: "calibri","Microsoft YaHei";
+}
+.pageGroundContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	min-height: 600px;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+.pageBackground{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("../../images/login/bk.png");
+	background-repeat: repeat;
+	background-size: 23px 14px;
+}
+.pageBackgroundTop{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 40px;
+	background-image: url("../../images/login/topbk.png");
+	background-repeat: repeat;
+	background-size: auto 40px;
+}
+.pageBackgroundLeft{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("../../images/login/loginBackgroundRight.png");
+	background-position-x: right;
+	background-position-y: bottom;
+	background-repeat: no-repeat;
+	background-size: 35% auto;
+}
+.pageBackgroundRight{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("../../images/login/loginBackgroundLeft.png");
+	background-position-x: left;
+	background-position-y: bottom;
+	background-repeat: no-repeat;
+	background-size: 35% auto;
+}
+.pageForeground{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: #111111;
+	opacity:0.05;
+	filter:alpha(opacity=5);
+}
+.sloganContainer{
+	position: absolute;
+	left: 50%;
+	top: 200px;
+	width: 500px;
+	height: 200px;
+	margin-left: -250px;
+}
+.sloganPartA{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 500px;
+	height: 80px;	
+	text-align: center;
+	font-size: 65px;
+	line-height: 80px;
+	color: #062a52;
+	font-weight: 800;
+}
+.sloganPartB{
+	position: absolute;
+	right: 0;
+	top: 85px;
+	width: 500px;
+	height: 50px;	
+	text-align: center;
+	font-size: 35px;
+	line-height: 50px;
+	color: #54667c;
+	letter-spacing: 2px;
+}
+.loginContainer{
+	position: absolute;
+	right: 50%;
+	top: 370px;
+	height: 290px;
+	width: 600px;
+	margin-right: -300px;
+	min-height: 380px;
+	font-size: 16px;
+	color: #111111;
+}
+.loginInnerContainer{
+	position: absolute;
+	top: 10px;
+	left: 50px;
+	right: 50px;
+	bottom: 10px;
+}
+.loginBackground{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	opacity:0.50;
+	filter:alpha(opacity=50);
+}
+.loginLogo{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	top: 45px;
+	height: 80px;
+}
+.loginTitle{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	top: 30px;
+	height: 40px;
+	font-size: 23px;
+	letter-spacing: 3px;
+	text-align: center;
+	color: #666666;
+}
+.loginInputContainer{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	height: 45px;
+	letter-spacing: 1px;
+	text-align: center;
+	border: solid 1px #e2e2e2;
+	border-radius: 20px;
+}
+.loginUsernameContainer{
+	top: 100px;
+}
+.loginPasswordContainer{
+	top: 160px;
+}
+.loginInput{
+	position: relative;
+	width: 100%;
+	height:100%;
+	border-width: 0px;
+	text-indent: 15px;
+	color: #111111;
+	border-radius: 20px;
+}
+.loginRemember{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	top: 220px;
+	height: 40px;
+	text-align: right;	
+	color: #111111;
+	font-weight: 400;
+}
+.loginRememberCheckbox{
+    position: absolute;
+    right: 80px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+}
+.loginRememberLabel{
+	position: absolute;
+    top: 1px;
+    width: 68px;
+    right: 5px;
+    font-weight: 400;
+    text-align: left;
+}
+.loginSubmitBtnContainer{
+	top: 255px;
+	border-width: 0px;
+}
+.loginBtn{
+	position: relative;
+	width: 100%;
+	height:100%;
+	font-size: 18px;
+	border-width: 0px;
+	border-radius: 20px;
+	background-color: #004b8c;
+	color: #ffffff;
+}
+.loginBtn:hover{
+	background-color: #3d7dbe;
+	font-weight: 600;	
+}
+.loginBottomLine{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	height: 20px;
+	color: #666666;
+	line-height: 20px;
+	text-align: center;
+}
+.loginBottomLink{
+	color: #666666;	
+	cursor: pointer;
+}
+.loginBottomSpliter{
+	position: relative;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.copyrightContainer{
+	position: absolute;
+	left: 0px;
+	bottom: 10px;	
+	height: 20px;	
+	width: 100%;
+	text-align: center;	
+}
+.copyrightText{
+	position: relative;
+	width: 240px;
+	height: 20px;	
+	font-size: 15px;
+	line-height: 20px;
+	color: #111111;
+	text-align: center;
+}
+
+@media all and (min-width: 850px) and (max-width: 1500px){	
+	.sloganContainer{
+		position: absolute;
+		left: 50%;
+		top: 100px;
+		width: 400px;
+		margin-left: -200px;
+		height: 150px;
+	}
+	.sloganPartA{
+		top: 30px;
+		width: 400px;
+		height: 70px;	
+		text-align: center;
+		font-size: 65px;
+		line-height: 70px;
+	}
+	.sloganPartB{
+		top: 110px;
+		width: 400px;
+		height: 60px;
+		font-size: 35px;
+		line-height: 60px;
+	}
+	.loginContainer{
+		left: 50%;
+		top: 300px;
+		bottom: auto;
+		width: 500px;
+		height: 350px;
+		margin-left: -250px;
+		font-size: 16px;
+	}
+	.copyrightContainer{
+		right: 100px;
+		width: 360px;
+	}
+}
+
+@media all and (max-width: 850px){
+	.sloganContainer{
+		position: absolute;
+		left: 0;
+		top: 60px;
+		right: 0px;
+		height: 100px;
+		width: auto;
+		margin-left: auto;
+		border-bottom: solid 1px #e2e2e2;
+	}
+	.sloganPartA{
+		top: 0;
+		width: 100%;
+		height: 35px;	
+		text-align: center;
+		font-size: 38px;
+		line-height: 35px;
+		font-weight: 600;
+	}
+	.sloganPartB{
+		top: 45px;
+		width: 100%;
+		height: 36px;
+		text-align: center;
+		font-size: 20px;
+		line-height: 26px;
+	}
+	.loginContainer{
+		left: 0;
+		top: 80px;
+		bottom: 0;
+		right: 0;
+		min-height: 500px;
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+		max-height: 2000px;
+	}
+	.loginBackground{
+		opacity:0.0;
+		filter:alpha(opacity=0);
+		border-radius: 0;
+	}
+	.loginLogo{
+		left: 25px;
+		top: 0;
+		width: 60px;
+		height: 60px;
+		background-size: 60px 60px;
+	}
+	.loginTitle{
+		top: 100px;
+	}
+	.loginUsernameContainer{
+		top: 155px;
+	}
+	.loginPasswordContainer{
+		top: 215px;
+	}
+	.loginRemember{
+		top: 275px;
+	}
+	.loginSubmitBtnContainer{
+		top: 315px;
+	}
+	.loginBottomLine{
+		bottom: 30px;
+	}
+	.copyrightContainer{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 10px;	
+		height: 20px;	
+		width: auto;
+		text-align: center;	
+	}
+	.pageBackgroundRight{
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-size: 100% auto;
+	}
+	.pageBackgroundLeft{
+		display: none;
+	}
+}

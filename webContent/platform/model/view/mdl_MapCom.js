@@ -1,0 +1,40 @@
+viewModels.mdl_MapCom = {
+  id:"5c84c617-72a4-4df4-83e5-c3ea620f40d6",
+  name:"mdl_MapCom",
+  dataName:"mdl_MapCom",
+  title:"构件关系",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:30, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, align:'center', edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, align:'left', canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"fromcomid", label:"源构件ID", width:400, hidden:true, sortable:false, search:false, resizable:false, editable:true, align:'left', canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"fromcomcode", label:"源构件编码", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"fromcomname", label:"源构件名称", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"frompointname", label:"源定位点", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"tocomid", label:"目标构件ID", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, align:'left', canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"tocomcode", label:"目标构件编码", width:150, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"tocomname", label:"目标构件名称", width:200, hidden:false, sortable:true, search:true, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
+    {name:"topointname", label:"目标定位点", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"maptypename", label:"关系类型", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:false, edittype:"text", dispunitType:"list"},
+    {name:"isactive", label:"已启用", width:60, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'center', canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"description", label:"描述", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"modifytime", label:"修改时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, align:'left', canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"ncpRowOperate", label:"操作", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:false, canEdit:false, nullable:true, align:'center'}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"fromcomid", label:"源构件ID", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"fromcomcode", label:"源构件编码", editable:false,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"fromcomname", label:"源构件名称", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"frompointname", label:"源定位点", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"tocomid", label:"目标构件ID", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"tocomcode", label:"目标构件编码", editable:false,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"tocomname", label:"目标构件名称", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
+    {name:"topointname", label:"目标定位点", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"maptypename", label:"关系类型", editable:true,nullable:false, hidden:false, dispunitType:"list", },
+    {name:"isactive", label:"已启用", editable:true,nullable:false, hidden:false, dispunitType:"checkbox", },
+    {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"createtime", label:"创建时间", editable:false,nullable:true, hidden:false, dispunitType:"time", },
+    {name:"modifytime", label:"修改时间", editable:false,nullable:true, hidden:false, dispunitType:"time", }
+  ]
+}
