@@ -1,10 +1,10 @@
 # 一、简介
-基于s3dweb-open开发的数孪万象项目。项目开源，用户可私有化部署。
-用户使用浏览器访问系统，支持三维场景的在线设计工具。
-支持多用户、权限管理，数据存储在服务器端。
+本项目中文名为“数孪·万象”，项目前端使用了wanxiang-open-web，用户使用浏览器访问系统，支持三维场景的在线设计工具。
+项目还提供了后台管理功能，支持多用户、权限管理，数据存储在服务器端。
+项目代码开源，用户可私有化部署。
 开发语言：JavaScript、Java。
 
-三维场景设计的核心代码，请关注[s3dweb-open](https://github.com/softsdu/s3dweb-open)
+前端三维场景设计的核心代码为[wanxiang-open-web](https://github.com/softsdu/wanxiang-open-web)
 
 # 二、运行效果
 ![系统截图0](/images/系统0.png)
